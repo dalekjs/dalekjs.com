@@ -1,0 +1,200 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    STYLE.CSS
+\*------------------------------------*/
+/**
+ *
+ * sass --watch style.scss:style.min.css --style compressed
+ *
+ * Here we pull in some variables, include the inuit.css framework, then add our
+ * project-specific components afterwards.
+ */
+
+
+/**
+ * Setup
+ */
+@import "vars";
+@import "inuit.css/inuit";
+
+nav {
+	background: rgb(223, 3, 3);
+}
+
+nav a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.center{
+	margin-left: 17% !important;
+}
+
+h1 {
+	color: rgb(223, 3, 3);
+}
+
+@media all and (max-width: 1000px) and (min-width: 800px) {
+	nav a {
+		font-size: 14px;
+	}
+}
+
+@media all and (max-width: 800px) {
+	nav a {
+		font-size: 12px;
+	}
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+ul, pre, code {
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+background-image: linear-gradient(bottom, rgb(242,242,239) 14%, rgb(255,255,255) 74%, rgb(255,255,255) 87%);
+background-image: -o-linear-gradient(bottom, rgb(242,242,239) 14%, rgb(255,255,255) 74%, rgb(255,255,255) 87%);
+background-image: -moz-linear-gradient(bottom, rgb(242,242,239) 14%, rgb(255,255,255) 74%, rgb(255,255,255) 87%);
+background-image: -webkit-linear-gradient(bottom, rgb(242,242,239) 14%, rgb(255,255,255) 74%, rgb(255,255,255) 87%);
+background-image: -ms-linear-gradient(bottom, rgb(242,242,239) 14%, rgb(255,255,255) 74%, rgb(255,255,255) 87%);
+
+background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(0.14, rgb(242,242,239)),
+  color-stop(0.74, rgb(255,255,255)),
+  color-stop(0.87, rgb(255,255,255))
+);
+}
+
+.active-entry {
+  color: red;
+}
+
+header ul {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 120px !important
+}
+
+pre {
+  background: black !important;
+  border-radius: 15px;
+}
+
+.code {
+  width: 52.666%;
+}
+
+#code-intro li, #video-intro li {
+  cursor: pointer;
+}
+
+#code-intro li.active-entry {
+  cursor: default;
+}
+
+footer {
+  margin: 75px 0 0 0;
+  font-family: 'Londrina Solid', cursive;
+  font-size: 20px;
+  background: lime;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: yellow;
+}
+
+h1 {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 120px;
+}
+
+blockquote {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 40px;
+  line-height: 35px;
+}
+
+.browser-logo.first {
+  margin-left: 25px;
+}
+
+.browser-logo {
+  margin-right: 20px;
+  width: 70px;
+}
+
+.browser-logo.last {
+  margin-right: 0;
+}
+
+.dalek-logo {
+  float: right;
+  margin-top: -419px;
+}
+
+.dalek-logo img {
+  height: 50%;
+  width: 50%;
+}
+
+.info-box {
+  border-radius: 15px;
+  background: lime;
+  padding: 20px;
+  font-family: 'Londrina Solid', cursive;
+  margin-bottom: 40px;
+}
+
+.catchy {
+  color: yellow;
+  font-size: 35px;
+}
+
+.help-me {
+  color: red;
+  font-size: 35px;
+  margin-top: -30px;
+}
+
+.feature-list {
+  font-size: 30px;
+  margin-left: 48px;
+}
+
+.feature-list li {
+  list-style-type: disc
+}
+
+h2 {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 40px;
+}
+
+#code-intro {
+  margin-bottom: 40px;
+}
+
+#code-intro ul {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 30px;
+}
+
+#video-intro ul {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 30px;
+  width: 30%;
+}

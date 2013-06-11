@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>DalekJS - Automated cross browser testing with JavaScript</title>
+		<meta name="description" content="DalekJS - Exterminate all the bugs">
+		<meta name="viewport" content="width=device-width">
+
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.min.css">
+		<link rel="stylesheet" href="css/prism.css">
+		<link href='http://fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
+
+		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+	</head>
+	<body class="grid">
+
+		<header class="grid__item one-whole">
+			<nav>
+				<ul class="nav nav--fit nav--block">
+					<li><a href="/index.html">DALEKJS</a></li>
+					<li><a href="/pages/getStarted.html">Get started</a></li>
+					<li><a href="/pages/documentation.html">Documentation</a></li>
+					<li><a href="/pages/support.html">Support</a></li>
+					<li><a href="/pages/support.html">Issues</a></li>
+					<li><a href="/pages/faq.html">FAQ</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="grid grid__item one-whole center">
+			<div class="grid__item one-third">
+				<h1>DalekJS</h1>
+				<blockquote>
+					Automated cross browser testing with JavaScript!
+				</blockquote>
+				<blockquote>
+				Exterminate all the Bugs!
+				</blockquote>
+			</div>
+			<div>
+				<div class="grid grid__item one-third">
+					<img class="browser-logo first" src="img/chrome.png"/>
+					<img class="browser-logo" src="img/explorer.png"/>
+					<img class="browser-logo" src="img/firefox.png"/>
+					<img class="browser-logo last" src="img/lemmling_Cartoon_ghost.png"/>
+				</div>
+			</div>
+			<div class="dalek-logo grid__item two-thirds">
+				<img src="img/logo.jpg"/>
+			</div>
+		</section>
+
+		<section class="grid__item three-quarters center info-box">
+			<p class="catchy">DalekJS is an open source UI testing utility written in Javascript.</p>
+			<p class="help-me">It helps with:</p>
+			<ul class="feature-list">
+				<li>defining &amp; ordering browsing navigation steps</li>
+				<li>filling &amp; submitting forms</li>
+				<li>clicking &amp; following links</li>
+				<li>capturing screenshots of a page</li>
+				<li>writing functional test suites</li>
+				<li>... and it works on Windows, Linux &amp; Mac</li>
+			</ul>
+		</section>
+
+		<h2 class="grid__item three-quarters center">QuickStart</h2>
+		<section id="code-intro" class="grid grid__item three-quarters center">
+			<ul class="grid__item one-third">
+				<li class="active-entry">Create a package.json</li>
+				<li>Install the dalek tools</li>
+				<li>Write your first test</li>
+				<li>Run this beast!</li>
+			</ul>
+
+<div class="grid__item two-thirds stage code">
+	<pre><code class="language-javascript">{
+  "name": "myCssTardis",
+  "description": "Is awesome",
+  "version": "0.0.2"
+}</pre></code>
+</div>
+
+<div class="grid__item one-half stage hidden code"><pre><code class="language-dalek">$ npm install dalek-cli -g
+$ npm install dalekjs --save</pre></code></div>
+			<div class="grid__item one-half stage code hidden">
+<pre><code class="language-javascript">
+module.exports = {
+'Page title is correct': function (test) {
+  test
+    .open('http://google.com')
+    .assert.title().is('Google', 'It has title')
+    .done();
+}
+};
+</code></pre>
+			</div>
+			<div class="grid__item one-half stage hidden code">
+<pre><code class="language-dalek">
+$ dalek
+Running tests
+Running Browser: Phantomjs
+RUNNING TEST - "Title is as expected"
+▶ OPEN http://github.com
+✔ TITLE Title is as expected
+✔ 1 Assertions run
+✔ TEST - "Title is as expected" SUCCEEDED
+1/1 assertions passed. Elapsed Time: 5.02 sec
+</pre></code>
+			</div>
+		</section>
+
+		<h2 class="grid__item three-quarters center">Look'ma</h2>
+		<section id="video-intro" class="grid grid__item three-quarters center">
+			<ul class="grid__item one-half">
+				<li class="active-entry">Introducing DalekJS</li>
+				<li>Going multi browser</li>
+				<li>DalekJS @FrontTrends</li>
+				<li>DalekJS @ScotlandJS</li>
+			</ul>
+			<div class="grid__item one-half stage video">
+				<iframe src="http://player.vimeo.com/video/67050198" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			</div>
+			<div class="grid__item one-half stage video hidden">
+				<iframe src="http://player.vimeo.com/video/67050198" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			</div>
+			<div class="grid__item one-half stage video hidden">
+				<iframe src="http://player.vimeo.com/video/67050198" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			</div>
+			<div class="grid__item one-half stage video hidden">
+				<iframe src="http://player.vimeo.com/video/67050198" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			</div>
+		</section>
+
+		<footer class="grid__item one-whole">
+			DalekJS created by <a href="https://github.com/asciidisco">Sebastian Golasch</a>
+			Logo by <a href="http://www.redbubble.com/people/scottbarker">Scott Barker</a>
+		</footer>
+
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/prism.js"></script>
+		<script src="js/main.js"></script>
+		<script>
+			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+			g.src='//www.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+	</body>
+</html>
