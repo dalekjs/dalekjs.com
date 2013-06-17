@@ -354,6 +354,124 @@ if (script) {
 }
 
 })();;
+(function(){
+
+if(!window.Prism) {
+	return;
+}
+
+function $$(expr, con) {
+	return Array.prototype.slice.call((con || document).querySelectorAll(expr));
+}
+
+var CRLF = crlf = /\r?\n|\r/g;
+
+function highlightLines(pre, lines, classes) {
+	var ranges = lines.replace(/\s+/g, '').split(','),
+	    offset = +pre.getAttribute('data-line-offset') || 0;
+
+	var lineHeight = parseFloat(getComputedStyle(pre).lineHeight);
+
+	for (var i=0, range; range = ranges[i++];) {
+		range = range.split('-');
+
+		var start = +range[0],
+		    end = +range[1] || start;
+
+		var line = document.createElement('div');
+
+		line.textContent = Array(end - start + 2).join(' \r\n');
+		line.className = (classes || '') + ' line-highlight';
+		line.setAttribute('data-start', start);
+
+		if(end > start) {
+			line.setAttribute('data-end', end);
+		}
+
+		line.style.top = (start - offset - 1) * lineHeight + 'px';
+
+		(pre.querySelector('code') || pre).appendChild(line);
+	}
+}
+
+function applyHash() {
+	var hash = location.hash.slice(1);
+
+	// Remove pre-existing temporary lines
+	$$('.temporary.line-highlight').forEach(function (line) {
+		line.parentNode.removeChild(line);
+	});
+
+	var range = (hash.match(/\.([\d,-]+)$/) || [,''])[1];
+
+	if (!range || document.getElementById(hash)) {
+		return;
+	}
+
+	var id = hash.slice(0, hash.lastIndexOf('.')),
+	    pre = document.getElementById(id);
+
+	if (!pre) {
+		return;
+	}
+
+	if (!pre.hasAttribute('data-line')) {
+		pre.setAttribute('data-line', '');
+	}
+
+	highlightLines(pre, range, 'temporary ');
+
+	document.querySelector('.temporary.line-highlight').scrollIntoView();
+}
+
+var fakeTimer = 0; // Hack to limit the number of times applyHash() runs
+
+Prism.hooks.add('after-highlight', function(env) {
+	var pre = env.element.parentNode;
+	var lines = pre && pre.getAttribute('data-line');
+
+	if (!pre || !lines || !/pre/i.test(pre.nodeName)) {
+		return;
+	}
+
+	clearTimeout(fakeTimer);
+
+	$$('.line-highlight', pre).forEach(function (line) {
+		line.parentNode.removeChild(line);
+	});
+
+	highlightLines(pre, lines);
+
+	fakeTimer = setTimeout(applyHash, 1);
+});
+
+addEventListener('hashchange', applyHash);
+
+})();;
+Prism.hooks.add('after-highlight', function (env) {
+	// works only for <code> wrapped inside <pre data-line-numbers> (not inline)
+	var pre = env.element.parentNode;
+	if (!pre || !/pre/i.test(pre.nodeName) || pre.className.indexOf('line-numbers') === -1) {
+		return;
+	}
+
+	var linesNum = (1 + env.code.split('\n').length);
+	var lineNumbersWrapper;
+
+	lines = new Array(linesNum);
+	lines = lines.join('<span></span>');
+
+	lineNumbersWrapper = document.createElement('span');
+	lineNumbersWrapper.className = 'line-numbers-rows';
+	lineNumbersWrapper.innerHTML = lines;
+
+	if (pre.hasAttribute('data-start')) {
+		pre.style.counterReset = 'linenumber ' + (parseInt(pre.getAttribute('data-start'), 10) - 1);
+	}
+
+	env.element.appendChild(lineNumbersWrapper);
+
+});;
 Prism.languages.markup = {
 	'comment': /&lt;!--[\w\W]*?--(&gt;|&gt;)/g,
 	'prolog': /&lt;\?.+?\?&gt;/,
@@ -394,6 +512,48 @@ Prism.hooks.add('wrap', function(env) {
 	if (env.type === 'entity') {
 		env.attributes['title'] = env.content.replace(/&amp;/, '&');
 	}
+});;
+Prism.languages.css = {
+	'comment': /\/\*[\w\W]*?\*\//g,
+	'atrule': /@[\w-]+?(\s+[^;{]+)?(?=\s*{|\s*;)/gi,
+	'url': /url\((["']?).*?\1\)/gi,
+	'selector': /[^\{\}\s][^\{\}]*(?=\s*\{)/g,
+	'property': /(\b|\B)[a-z-]+(?=\s*:)/ig,
+	'string': /("|')(\\?.)*?\1/g,
+	'important': /\B!important\b/gi,
+	'ignore': /&(lt|gt|amp);/gi,
+	'punctuation': /[\{\};:]/g
+};
+
+if (Prism.languages.markup) {
+	Prism.languages.insertBefore('markup', 'tag', {
+		'style': {
+			pattern: /(&lt;|<)style[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/style(>|&gt;)/ig,
+			inside: {
+				'tag': {
+					pattern: /(&lt;|<)style[\w\W]*?(>|&gt;)|(&lt;|<)\/style(>|&gt;)/ig,
+					inside: Prism.languages.markup.tag.inside
+				},
+				rest: Prism.languages.css
+			}
+		}
+	});
+};
+Prism.languages.css.selector = {
+	pattern: /[^\{\}\s][^\{\}]*(?=\s*\{)/g,
+	inside: {
+		'pseudo-element': /:(?:after|before|first-letter|first-line|selection)|::[-\w]+/g,
+		'pseudo-class': /:[-\w]+(?:\(.*\))?/g,
+		'class': /\.[-:\.\w]+/g,
+		'id': /#[-:\.\w]+/g
+	}
+};
+
+Prism.languages.insertBefore('css', 'ignore', {
+	'hexcode': /#[\da-f]{3,6}/gi,
+	'entity': /\\[\da-f]{1,8}/gi,
+	'number': /[\d%\.]+/g,
+	'function': /(attr|calc|cross-fade|cycle|element|hsl|hsla|image|lang|linear-gradient|matrix|matrix3d|perspective|radial-gradient|repeating-linear-gradient|repeating-radial-gradient|rgb|rgba|rotate|rotatex|rotatey|rotatez|rotate3d|scale|scalex|scaley|scalez|scale3d|skew|skewx|skewy|steps|translate|translatex|translatey|translatez|translate3d|url|var)/ig
 });;
 Prism.languages.clike = {
 	'comment': {
@@ -447,45 +607,3 @@ if (Prism.languages.markup) {
 		}
 	});
 };
-Prism.languages.coffeescript = Prism.languages.extend('javascript', {
-	'block-comment': /([#]{3}\s*\r?\n(.*\s*\r*\n*)\s*?\r?\n[#]{3})/g,
-	'comment': /(\s|^)([#]{1}[^#^\r^\n]{2,}?(\r?\n|$))/g,
-	'keyword': /\b(this|window|delete|class|extends|namespace|extend|ar|let|if|else|while|do|for|each|of|return|in|instanceof|new|with|typeof|try|catch|finally|null|undefined|break|continue)\b/g
-});
-
-Prism.languages.insertBefore('coffeescript', 'keyword', {
-	'function': {
-		pattern: /[a-z|A-z]+\s*[:|=]\s*(\([.|a-z\s|,|:|{|}|\"|\'|=]*\))?\s*-&gt;/gi,
-		inside: {
-			'function-name': /[_?a-z-|A-Z-]+(\s*[:|=])| @[_?$?a-z-|A-Z-]+(\s*)| /g,
-			'operator': /[-+]{1,2}|!|=?&lt;|=?&gt;|={1,2}|(&amp;){1,2}|\|?\||\?|\*|\//g
-		}
-	},
-	'attr-name': /[_?a-z-|A-Z-]+(\s*:)| @[_?$?a-z-|A-Z-]+(\s*)| /g
-});
-;
-Prism.languages.bash = Prism.languages.extend('clike', {
-	'comment': {
-		pattern: /(^|[^"{\\])(#.*?(\r?\n|$))/g,
-		lookbehind: true
-	},
-	'string': {
-		//allow multiline string
-		pattern: /("|')(\\?[\s\S])*?\1/g,
-		inside: {
-			//'property' class reused for bash variables
-			'property': /\$([a-zA-Z0-9_#\?\-\*!@]+|\{[^\}]+\})/g
-		}
-	},
-	'keyword': /\b(if|then|else|elif|fi|for|break|continue|while|in|case|function|select|do|done|until|echo|exit|return|set|declare)\b/g
-});
-
-Prism.languages.insertBefore('bash', 'keyword', {
-	//'property' class reused for bash variables
-	'property': /\$([a-zA-Z0-9_#\?\-\*!@]+|\{[^}]+\})/g
-});
-Prism.languages.insertBefore('bash', 'comment', {
-	//shebang must be before comment, 'important' class from css reused
-	'important': /(^#!\s*\/bin\/bash)|(^#!\s*\/bin\/sh)/g
-});
-;
