@@ -21,7 +21,7 @@ module.exports = function(grunt) {
     cssmin: {
       compress: {
         files: {
-          'build/css/main.css': ['css/normalize.css', 'css/style.css', 'css/prism.css']
+          'build/css/main.css': ['css/normalize.css', 'css/style.min.css', 'css/prism.css']
         }
       }
     },
