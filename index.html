@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html>
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,12 +15,13 @@
 		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
 		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
 
+		<!-- build:css css/main.css -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.min.css">
 		<link rel="stylesheet" href="css/prism.css">
-		<link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
+		<!-- endbuild -->
 
-		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+		<link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
 	</head>
 	<body class="grid">
 
@@ -146,9 +147,12 @@ RUNNING TEST - "Title is as expected"
 			Logo by <a href="http://www.redbubble.com/people/scottbarker">Scott Barker</a>
 		</footer>
 
+		<!-- build:js js/main.js -->
 		<script src="js/vendor/jquery-1.9.1.min.js"></script>
 		<script src="js/prism.js"></script>
 		<script src="js/main.js"></script>
+		<!-- endbuild -->
+
 		<script>
 			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
 			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

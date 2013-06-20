@@ -1,2 +1,21 @@
-# Include your project-specific ignores in this file
-# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+page.zip
+
+/coverage/
+/node_modules/
+/report/
+/build/
+.DS_STORE
