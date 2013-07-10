@@ -45,7 +45,7 @@ module.exports = function(grunt) {
 
     // Inline asset rev
     usemin: {
-      html: ['build/index.html'],
+      html: ['build/index.html', 'build/pages/*.html'],
       css: ['build/css/main.css']
     },
 
