@@ -21,7 +21,7 @@ module.exports = function(grunt) {
     cssmin: {
       compress: {
         files: {
-          'build/css/main.css': ['css/normalize.css', 'css/style.min.css', 'css/prism.css']
+          'build/css/main.css': ['css/style.min.css', 'css/prism.css']
         }
       }
     },
@@ -38,14 +38,16 @@ module.exports = function(grunt) {
           removeOptionalTags: true
         },
         files: {
-          'build/index.html': 'build/index.html'
+          'build/index.html': 'build/index.html',
+          'build/pages/*.html': 'build/pages/*.html',
+          'build/docs/*.html': 'build/docs/*.html'
         }
       }
     },
 
     // Inline asset rev
     usemin: {
-      html: ['build/index.html', 'build/pages/*.html'],
+      html: ['build/index.html', 'build/pages/*.html', 'build/docs/*.html'],
       css: ['build/css/main.css']
     },
 
@@ -68,7 +70,8 @@ module.exports = function(grunt) {
       img: {src: ['img/**/*.{png,jpg,jpeg,gif,svg}'], dest: 'build/img', expand: true, flatten: true, filter: 'isFile'},
       html: {src: ['index.html'], dest: 'build/', expand: true, flatten: true, filter: 'isFile'},
       meta: {src: ['robots.txt', 'crossdomain.xml', 'favicon.ico', 'humans.txt', 'apple-touch*.png'], dest: 'build/', expand: true, flatten: true, filter: 'isFile'},
-      pages: {src: ['pages/*.html'], dest: 'build/pages', expand: true, flatten: true, filter: 'isFile'}
+      pages: {src: ['pages/*.html'], dest: 'build/pages', expand: true, flatten: true, filter: 'isFile'},
+      docs: {src: ['docs/*.html'], dest: 'build/docs', expand: true, flatten: true, filter: 'isFile'}
     },
 
     // compress artifacts
