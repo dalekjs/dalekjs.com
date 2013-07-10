@@ -1,43 +1,55 @@
-
 <!DOCTYPE html>
-<html class="no-js">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>DalekJS - Automated cross browser testing with JavaScript</title>
-		<meta name="description" content="DalekJS - Exterminate all the bugs">
-		<meta name="viewport" content="width=device-width">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>DalekJS - Automated cross browser testing with JavaScript</title>
+        <meta name="description" content="DalekJS - Exterminate all the bugs">
+        <meta name="viewport" content="width=device-width">
 
-		<base href="https://rawgithub.com/dalekjs/dalekjs.com/master/"/>
+        <!-- icon-ish stuff -->
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
 
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="/favicon.ico" type="image/x-icon">
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
-		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
-		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
-		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+        <!-- build:css ../css/main.css -->
+        <link rel="stylesheet" href="../css/style.min.css">
+        <link rel="stylesheet" href="../css/prism.css">
+        <!-- endbuild -->
 
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.min.css">
-		<link rel="stylesheet" href="css/prism.css">
-		<link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
-		<link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
-	</head>
-	<body class="grid">
+        <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
+    </head>
+    <body><!--
 
-		<header class="grid__item one-whole">
-			<nav>
-				<ul class="nav nav--fit nav--block">
-					<li><a href="/index.html">DALEKJS</a></li>
-					<li><a href="/pages/getStarted.html">Get started</a></li>
-					<li><a href="/pages/documentation.html">Documentation</a></li>
-					<li><a href="/pages/support.html">Support</a></li>
-					<li><a href="/pages/support.html">Issues</a></li>
-					<li><a href="/pages/faq.html">FAQ</a></li>
-				</ul>
-			</nav>
-		</header>
+        --><div class="grid"><!--
 
-		<section class="api-body grid grid__item two-thirds center">
+            --><header class="grid__item one-whole"><!--
+                --><nav role="select"><!--
+                    desktop menue
+                    --><ul class="nav nav--fit nav--block"><!--
+                        --><li><a href="../index.html">DALEKJS</a></li><!--
+                        --><li><a href="getStarted.html" class="active">Get started</a></li><!--
+                        --><li><a href="documentation.html">Documentation</a></li><!--
+                        --><li><a href="support.html">Support</a></li><!--
+                        --><li><a href="faq.html">FAQ</a></li><!--
+                        --><li><a href="merch.html">Merch</a></li><!--
+                    --></ul><!--
+
+                    mobile menue
+                    --><select onchange="if (this.value) window.location.href = this.value;"><!--
+                        --><option value="../index.html">DALEKJS</option><!--
+                        --><option selected value="getStarted.html">Get started</option><!--
+                        --><option value="documentation.html">Documentation</option><!--
+                        --><option value="support.html">Support</option><!--
+                        --><option value="faq.html">FAQ</option><!--
+                        --><option value="merch.html">Merch</option><!--
+                    --></select><!--
+                --></nav><!--
+            --></header><!--
+
+            Content wrapper
+            --><div class="wrapper">
