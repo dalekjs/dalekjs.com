@@ -1,15 +1,14 @@
 /**
- * prism.js Twilight theme
- * Based (more or less) on the Twilight theme originally of Textmate fame.
- * @author Remy Bach
+ * prism.js Funky theme
+ * Based on “Polyfilling the gaps” talk slides http://lea.verou.me/polyfilling-the-gaps/
+ * @author Lea Verou
  */
+
 code[class*="language-"],
 pre[class*="language-"] {
-	color: white;
-	direction: ltr;
 	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	direction: ltr;
 	text-align: left;
-	text-shadow: 0 -.1em .2em black;
 	white-space: pre;
 	word-spacing: normal;
 
@@ -23,79 +22,73 @@ pre[class*="language-"] {
 	hyphens: none;
 }
 
-pre[class*="language-"],
-:not(pre) > code[class*="language-"] {
-	background:hsl(0, 0%, 8%); /* #141414 */
-}
-
 /* Code blocks */
 pre[class*="language-"] {
-	border-radius: .5em;
-	border: .3em solid hsl(0,0%,33%); /* #282A2B */
-	box-shadow: 1px 1px .5em black inset;
+	padding: .4em .8em;
 	margin: .5em 0;
 	overflow: auto;
-	padding: 1em;
+	background: url('data:image/svg+xml;charset=utf-8,<svg%20version%3D"1.1"%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"%20width%3D"100"%20height%3D"100"%20fill%3D"rgba(0%2C0%2C0%2C.2)">%0D%0A<polygon%20points%3D"0%2C50%2050%2C0%200%2C0"%20%2F>%0D%0A<polygon%20points%3D"0%2C100%2050%2C100%20100%2C50%20100%2C0"%20%2F>%0D%0A<%2Fsvg>');
+	background-size: 1em 1em;
 }
-pre[class*="language-"]::selection { /* Safari */
-	background:hsl(200, 4%, 16%); /* #282A2B */
-}
-pre[class*="language-"]::selection { /* Firefox */
-	background:hsl(200, 4%, 16%); /* #282A2B */
+
+code[class*="language-"] {
+	background: black;
+	color: white;
+	box-shadow: -.3em 0 0 .3em black, .3em 0 0 .3em black;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
+	padding: .2em;
 	border-radius: .3em;
-	border: .13em solid hsl(0,0%,33%); /* #545454 */
-	box-shadow: 1px 1px .3em -.1em black inset;
-	padding: .15em .2em .05em;
+	box-shadow: none;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: hsl(0, 0%, 47%); /* #777777 */
+	color: #aaa;
 }
 
 .token.punctuation {
-	opacity: .7;
+	color: #999;
 }
 
 .namespace {
 	opacity: .7;
 }
 
+.token.property,
 .token.tag,
 .token.boolean,
 .token.number {
-	color: hsl(14, 58%, 55%); /* #CF6A4C */
+	color: #0cf;
 }
 
-.token.keyword,
-.token.property,
-.token.selector {
-	color:hsl(53, 89%, 79%); /* #F9EE98 */
-}
+.token.selector,
 .token.attr-name,
-.token.attr-value,
-.token.string,
+.token.string {
+	color: yellow;
+}
+
 .token.operator,
 .token.entity,
 .token.url,
-.language-css .token.string,
-.style .token.string {
-	color:hsl(76, 21%, 52%); /* #8F9D6A */
+.language-css .token.string {
+	color: yellowgreen;
 }
 
-.token.atrule {
-	color:hsl(218, 22%, 55%); /* #7587A6 */
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: deeppink;
 }
+
 
 .token.regex,
 .token.important {
-	color: hsl(42, 75%, 65%); /* #E9C062 */
+	color: orange;
 }
 
 .token.important {
@@ -104,71 +97,6 @@ pre[class*="language-"]::selection { /* Firefox */
 
 .token.entity {
 	cursor: help;
-}
-pre[data-line] {
-	padding: 1em 0 1em 3em;
-	position: relative;
-}
-
-/* Markup */
-.language-markup .token.tag,
-.language-markup .token.attr-name,
-.language-markup .token.punctuation  {
-	color: hsl(33, 33%, 52%); /* #AC885B */
-}
-
-/* Text Selection colour */
-::selection {
-	background: hsla(0,0%,93%,0.15); /* #EDEDED */
-}
-::-moz-selection {
-	background: hsla(0,0%,93%,0.15); /* #EDEDED */
-}
-
-/* Make the tokens sit above the line highlight so the colours don't look faded. */
-.token {
-	position:relative;
-	z-index:1;
-}
-.line-highlight {
-	background: -moz-linear-gradient(left, hsl(0, 0%, 33%,.1) 70%, hsl(0, 0%, 33%,0)); /* #545454 */
-	background: -o-linear-gradient(left, hsl(0, 0%, 33%,.1) 70%, hsl(0, 0%, 33%,0)); /* #545454 */
-	background: -webkit-linear-gradient(left, hsl(0, 0%, 33%,.1) 70%, hsl(0, 0%, 33%,0)); /* #545454 */
-	background: hsla(0, 0%, 33%, 0.25); /* #545454 */
-	background: linear-gradient(left, hsl(0, 0%, 33%,.1) 70%, hsl(0, 0%, 33%,0)); /* #545454 */
-	border-bottom:1px dashed hsl(0, 0%, 33%); /* #545454 */
-	border-top:1px dashed hsl(0, 0%, 33%); /* #545454 */
-	left: 0;
-	line-height: inherit;
-	margin-top: 0.75em; /* Same as .prism’s padding-top */
-	padding: inherit 0;
-	pointer-events: none;
-	position: absolute;
-	right: 0;
-	white-space: pre;
-	z-index:0;
-}
-.line-highlight:before,
-.line-highlight[data-end]:after {
-	background-color: hsl(215, 15%, 59%); /* #8794A6 */
-	border-radius: 999px;
-	box-shadow: 0 1px white;
-	color: hsl(24, 20%, 95%); /* #F5F2F0 */
-	content: attr(data-start);
-	font: bold 65%/1.5 sans-serif;
-	left: .6em;
-	min-width: 1em;
-	padding: 0 .5em;
-	position: absolute;
-	text-align: center;
-	text-shadow: none;
-	top: .4em;
-	vertical-align: .3em;
-}
-.line-highlight[data-end]:after {
-	bottom: .4em;
-	content: attr(data-end);
-	top: auto;
 }
 pre[data-line] {
 	position: relative;
@@ -257,3 +185,17 @@ pre.line-numbers > code {
 			padding-right: 0.8em;
 			text-align: right;
 		}
+.token a {
+	color: inherit;
+}
+code[class*="language-"] a[href],
+pre[class*="language-"] a[href] {
+	cursor: help;
+	text-decoration: none;
+}
+
+code[class*="language-"] a[href]:hover,
+pre[class*="language-"] a[href]:hover {
+	cursor: help;
+	text-decoration: underline;
+}

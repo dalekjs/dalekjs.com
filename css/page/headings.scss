@@ -1,0 +1,22 @@
+h1 {
+  color: rgb(223, 3, 3);
+  font-family: 'Londrina Solid', cursive;
+  font-size: 120px;
+}
+
+h2 {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 40px;
+}
+
+@media screen and (max-width: 47em) {
+	h1 {
+	  font-size: 90px;
+	}
+}
+
+@media screen and (max-width: 44em) {
+	h1 {
+	  font-size: 90px;
+	}
+}

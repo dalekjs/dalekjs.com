@@ -1,0 +1,19 @@
+.contact__icon {
+  width: 120%;
+  max-width: 120%;
+}
+
+.contact__text {
+  text-align: left;
+  font-family: $font;
+  font-size: 30px;
+  color: $color-red;
+  line-height: 3.2em;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: $lap-start) {
+  .contact__icon {
+	width: 100%;
+  }
+}

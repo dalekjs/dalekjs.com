@@ -1,0 +1,101 @@
+.code {
+  width: auto;
+  min-height: 280px;
+}
+
+.cmd-output {
+	max-width: 470px;
+}
+
+.code-intro li, .video-intro li {
+  cursor: pointer;
+}
+
+.code-intro .active-entry, .video-intro .active-entry{
+  cursor: default;
+  color: red;
+}
+
+.code-intro {
+  margin-bottom: 10px;
+}
+
+.video-intro {
+  margin-bottom: 40px;
+}
+
+.code-intro ul, .video-intro ul {
+  font-family: $font;
+  font-size: 28px;
+}
+
+.video {
+  position: relative;
+  left: 10px;
+}
+
+.video__frame {
+  width: 450px;
+  height: 300px;
+}
+
+// code related shit
+.code-thingie, .dalek-shell {
+  border-radius: .5em;
+  border: .3em solid hsl(0,0%,33%);
+  box-shadow: 1px 1px .5em black inset;
+  margin: .5em 0;
+  overflow: auto;
+  padding: 1em;
+}
+
+.own-shell {
+  direction: ltr;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  text-align: left;
+  text-shadow: 0 -.1em .2em black;
+  white-space: pre;
+  word-spacing: normal;
+}
+
+.token.shell-icon {
+  color: purple;
+  @extend .own-shell;
+}
+
+.token.shell-dalek {
+  color: lime;
+  @extend .own-shell;
+}
+
+.token.shell-npm, .token.shell-browser {
+  color: yellow;
+  @extend .own-shell;
+}
+
+.token.shell-rt {
+  color: magenta;
+  @extend .own-shell;
+}
+
+.token.shell-tt {
+  color: cyan;
+  @extend .own-shell;
+}
+
+.token.shell-sg {
+  color: lime;
+  @extend .own-shell;
+}
+
+.token.shell-action {
+  color: orange;
+  @extend .own-shell;
+}
+
+.token.shell-suc {
+  color: white;
+  background-color: lime;
+  @extend .own-shell;
+  text-shadow: none;
+}

@@ -1,0 +1,24 @@
+.footer {
+  margin: 75px 0 0 0;
+  font-family: $font;
+  font-size: 20px;
+  background: lime;
+  text-align: center;
+}
+
+.footer__author {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: yellow;
+}
+
+@media only screen and (max-width: $lap-start) {
+  .footer__author {
+	display: block;
+	margin: 0;
+  }
+}

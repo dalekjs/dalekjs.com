@@ -1,0 +1,23 @@
+// info box
+.info-box {
+  border-radius: 15px;
+  background: rgb(66,102,162);
+  font-family: $font;
+  margin-bottom: 40px;
+
+  .catchy {
+    color: #fff;
+    font-size: 32px;
+  }
+
+  .feature-list {
+    font-size: 30px;
+  }
+
+  .feature-list li {
+    color: yellow;
+    list-style-type: disc;
+    margin-left: 25px;
+  }
+
+}

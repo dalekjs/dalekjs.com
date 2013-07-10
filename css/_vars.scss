@@ -1,32 +1,10 @@
 /*------------------------------------*\
-    VARS.SCSS
-\*------------------------------------*/
-/**
- * Any variables you find set in inuit.css’ `_vars.scss` that you do not wish to
- * keep, simply redefine here. This means that if inuit.css, for example, sets
- * your `$base-font-size` at 16px and you wish it to be 14px, simply redeclare
- * that variable in this file. inuit.css ignores its own variables in favour of
- * using your own, so you can completely modify how inuit.css works without ever
- * having to alter the framework itself.
- */
-
-
-
-
-
-/*------------------------------------*\
     $OBJECTS-AND-ABSTRACTIONS
 \*------------------------------------*/
-/**
- * All of inuit.css’ objects and abstractions are initially turned off by
- * default. This means that you start any project with as little as possible,
- * and introducing objects and abstractions is as simple as switching the
- * following variables to `true`.
- */
 $use-grids:         true;
+$use-nav:           true;
 $use-flexbox:       false;
 $use-columns:       false;
-$use-nav:           true;
 $use-options:       false;
 $use-pagination:    false;
 $use-breadcrumb:    false;
@@ -49,22 +27,25 @@ $use-stats:         false;
 $use-greybox:       false;
 
 
-
-
-
 /*------------------------------------*\
     $OVERRIDES
 \*------------------------------------*/
-/**
- * Place any variables that should override inuit.css’ defaults here.
- */
-
-
-
+$lap-start: 580px;
 
 /*------------------------------------*\
     $CUSTOM
 \*------------------------------------*/
-/**
- * Place any of your own variables that sit on top of inuit.css here.
- */
+
+// general
+$font: 'Londrina Solid', cursive;
+$color-red: rgb(223, 3, 3);
+
+// navigation
+$nav-bg-color: $color-red;
+$nav-font: $font;
+$nav-font-size: 24px;
+$nav-font-color: #fff;
+$nav-font-color-inverted: $nav-bg-color;
+$nav-bg-color-inverted: $nav-font-color;
+
+

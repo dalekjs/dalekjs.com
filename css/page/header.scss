@@ -1,0 +1,52 @@
+nav[role="select"] {
+  background: $nav-bg-color;
+}
+
+// desktop meue
+nav[role="select"] {
+  > select {
+    display: none;
+  }
+
+  ul {
+    font-family: $nav-font;
+  }
+
+  .active {
+     color: $nav-font-color-inverted;
+     background-color: $nav-bg-color-inverted;
+  }
+
+  a {
+    font-size: $nav-font-size;
+    text-decoration: none;
+    color: $nav-font-color;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+// mobile menue
+@media screen and (max-width: 44em) {
+  nav[role="select"] {
+    background: #fff;
+  }
+
+  nav[role="select"] {
+    ul {
+      display: none;
+    }
+
+    select {
+      display: block;
+      width: 100%;
+    }
+
+    &:after {
+      position: absolute;
+      content: "";
+      right: 0;
+      bottom: -1em;
+    }
+  }
+}
