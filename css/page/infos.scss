@@ -27,6 +27,10 @@
 .code-intro ul, .video-intro ul {
   font-family: $font;
   font-size: 28px;
+
+  > li {
+    list-style: disc;
+  }
 }
 
 .video {

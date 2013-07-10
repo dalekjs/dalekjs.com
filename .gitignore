@@ -19,3 +19,5 @@ page.zip
 /report/
 /build/
 .DS_STORE
+
+/css/.sass-cache/*
