@@ -4,10 +4,12 @@
   background: rgb(66,102,162);
   font-family: $font;
   margin-bottom: 40px;
+  padding: $base-line-height;
 
   .catchy {
     color: #fff;
     font-size: 32px;
+    line-height: 1.2;
   }
 
   .feature-list {
