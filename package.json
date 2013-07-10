@@ -7,8 +7,7 @@
     "test": "test"
   },
   "dependencies": {
-    "underscore.string": "2.3.0",
-    "grunt": "0.4.1",
+    "grunt": "git://github.com/stefanjudis-pa/grunt.git#master",
     "grunt-contrib-clean": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.2",
