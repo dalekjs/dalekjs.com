@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>DalekJS - Automated cross browser testing with JavaScript</title>
+        <meta name="description" content="DalekJS - Exterminate all the bugs">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- icon-ish stuff -->
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+
+        <link rel="dns-prefetch" href="//dalekjs.github.io">
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//themes.googleusercontent.com">
+        <link rel="dns-prefetch" href="//player.vimeo.com">
+        <link rel="dns-prefetch" href="//a.vimeocdn.com">
+        <link rel="dns-prefetch" href="//b.vimeocdn.com">
+        <link rel="dns-prefetch" href="//www.google-analytics.com">
+
+        <!-- build:css ../css/main.css -->
+        <link rel="stylesheet" href="../css/style.min.css">
+        <link rel="stylesheet" href="../css/prism.css">
+        <!-- endbuild -->
+
+        <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    </head>
+    <body><!--
+
+        --><div class="grid"><!--
+
+            --><header class="grid__item one-whole"><!--
+                --><nav role="select"><!--
+                    desktop menue
+                    --><ul class="nav nav--fit nav--block"><!--
+                        --><li><a href="../index.html">DALEKJS</a></li><!--
+                        --><li><a href="../pages/getStarted.html" class="active">Get started</a></li><!--
+                        --><li><a href="../pages/documentation.html">Documentation</a></li><!--
+                        --><li><a href="../pages/support.html">Support</a></li><!--
+                        --><li><a href="../pages/faq.html">FAQ</a></li><!--
+                        --><li><a href="../pages/merch.html">Merch</a></li><!--
+                    --></ul><!--
+
+                    mobile menue
+                    --><select onchange="if (this.value) window.location.href = this.value;"><!--
+                        --><option value="../index.html">DALEKJS</option><!--
+                        --><option selected value="../pages/getStarted.html">Get started</option><!--
+                        --><option value="../pages/documentation.html">Documentation</option><!--
+                        --><option value="../pages/support.html">Support</option><!--
+                        --><option value="../pages/faq.html">FAQ</option><!--
+                        --><option value="../pages/merch.html">Merch</option><!--
+                    --></select><!--
+                --></nav><!--
+            --></header><!--
+
+            Content wrapper
+            --><div class="wrapper"><h1 class="topic">Actions</h1><h2 class="method"> .setHttpAuth</h2><p> Sets HTTP<em>AUTH</em>USER and HTTP<em>AUTH</em>PW values for HTTP based authentication systems.</p>
+
+<p> If your site is behind a HTTP basic auth, you&#39;re able to set the username and the password</p>
+
+<p> <pre><code class="language-javascript">
+ test.setHttpAuth(&#39;OSWIN&#39;, &#39;rycbrar&#39;)
+     .open(&#39;http://admin.therift.com&#39;);
+ </code></pre></p>
+
+<p> Most of the time, you`re not storing your passwords within files that will be checked
+ in your vcs, for this scenario, you have two options:</p>
+
+<p> The first option is, to use daleks cli capabilities to generate config variables
+ from the command line, like this</p>
+
+<p> <code>batch
+ $ dalek --vars USER=OSWIN,PASS=rycbrar
+ </code></p>
+
+<p> <pre><code class="language-javascript">
+ test.setHttpAuth(test.config.get(&#39;USER&#39;), test.config.get(&#39;PASS&#39;))
+     .open(&#39;http://admin.therift.com&#39;);
+ </code></pre></p>
+
+<p> The second option is, to use env variables to generate config variables
+ from the command line, like this</p>
+
+<p> <code>batch
+ $ SET USER=OSWIN
+ $ SET PASS=rycbrar
+ $ dalek
+ </code></p>
+
+<p> <pre><code class="language-javascript">
+ test.setHttpAuth(test.config.get(&#39;USER&#39;), test.config.get(&#39;PASS&#39;))
+     .open(&#39;http://admin.therift.com&#39;);
+ </code></pre></p>
+
+<p> If both, dalek variables &amp; env variables are set, the dalek variables win.
+ For more information about this, I recommend to check out the <a href="/docs/config.html">configuration docs</a></p><h2 class="method"> .toIFrame</h2><p> Switches to an iFrame context</p>
+
+<p> Sometimes you encounter situation, where you need to drive/access an iFrame sitting in your page.
+ You can access such frames with this mehtod, but be aware of the fact, that the complete test</p>
+
+<p> <pre><code class="language-markup">
+ &lt;div&gt;
+   &lt;iframe id=&quot;login&quot; src=&quot;/login.html&quot;/&gt;
+ &lt;/div&gt;
+ </code></pre></p>
+
+<p> <pre><code class="language-javascript">
+  test.open(&#39;http:adomain.withiframe.com&#39;)
+    .title().is(&#39;Title of a page that embeds an iframe&#39;)
+    .toIFrame(&#39;#login&#39;)
+      .title().is(&#39;Title of a page that can be embedded as an iframe&#39;)
+    .toParent()
+ </code></pre></p><h2 class="method"> .waitFor</h2><p> Waits until a function returns true to process any next step.</p>
+
+<p> You can also set a callback on timeout using the onTimeout argument,
+ and set the timeout using the timeout one, in milliseconds. The default timeout is set to 5000ms.</p><h2 class="method"> .waitForResource</h2><p> Wait until a resource that matches the given testFx is loaded to process a next step.</p><h2 class="method"> .waitForText</h2><p> Waits until the passed text is present in the page contents before processing the immediate next step.</p><h2 class="method"> .waitUntilVisible</h2><p> Waits until an element matching the provided selector expression is visible in the remote DOM to process a next step.</p><h2 class="method"> .waitWhileVisible</h2><p> Waits until an element matching the provided selector expression is no longer visible in remote DOM to process a next step.</p>
+
+<p> <pre><code class="language-javascript">
+ </code></pre></p><h2 class="method"> .screenshot</h2><p> Take a screenshot of the current page.</p>
+
+<p> The pathname argument takes some placeholders that will be replaced
+ Placeholder:</p>
+
+<ul><li><code>:browser</code> - The browser name (e.g. ‘Chrome‘, ‘Safari‘, ‘Firefox‘, etc.)</li><li><code>:version</code> -  The browser version (e.g. ‘10<em>0‘, ‘23</em>11_5‘, etc.)</li><li><code>:os</code> - The operating system (e.g. <code>OSX</code>, <code>Windows</code>, <code>Linux</code>)</li><li><code>:osVersion</code> - The operating system version (e.g <code>XP</code>, <code>7</code>, <code>10_8</code>, etc.)</li><li><code>:viewport</code> - The current viewport in pixels (e.g. <code>w1024_h768</code>)</li><li><code>:timestamp</code> - UNIX like timestapm (e.g. <code>637657345</code>)</li><li><code>:date</code> - Current date in format MM<em>DD</em>YYYY (e.g. <code>12_24_2013</code>)</li><li><p><code>:datetime</code> - Current datetime in format MM<em>DD</em>YYYY<em>HH</em>mm_ss (e.g. <code>12_24_2013_14_55_23</code>)</p><p><pre><code class="language-javascript">
+// creates &#39;my/folder/my_file.png&#39;
+test.screenshot(&#39;my/folder/my_file&#39;);
+// creates &#39;my/page/in/safari/homepage.png&#39;
+test.screenshot(&#39;my/page/in/:browser/homepage&#39;);
+// creates &#39;my/page/in/safari_6_0_1/homepage.png&#39;
+test.screenshot(&#39;my/page/in/:browser_:version/homepage&#39;);
+// creates &#39;my/page/in/safari_6_0_1/on/osx/homepage.png&#39;
+test.screenshot(&#39;my/page/in/:browser_:version/on/:os/homepage&#39;);
+// creates &#39;my/page/in/safari_6_0_1/on/osx_10_8/homepage.png&#39;
+test.screenshot(&#39;my/page/in/:browser_:version/on/:os_:osVersion/homepage&#39;);
+// creates &#39;my/page/at/w1024_h768/homepage.png&#39;
+test.screenshot(&#39;my/page/at/:viewport/homepage&#39;);
+// creates &#39;my/page/at/637657345/homepage.png&#39;
+test.screenshot(&#39;my/page/in_time/:timestamp/homepage&#39;);
+// creates &#39;my/page/at/12_24_2013/homepage.png&#39;
+test.screenshot(&#39;my/page/in_time/:date/homepage&#39;);
+// creates &#39;my/page/at/12_24_2013_14_55_23/homepage.png&#39;
+test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
+</code></pre></p></li></ul><h2 class="method"> .wait</h2><p> Pause steps suite execution for a given amount of time, and optionally execute a step on done.</p>
+
+<p> This makes sense, if you have a ticker for example, tht scrolls like every ten seconds
+ &amp; you want to assure that the visible content changes every ten seconds</p>
+
+<p> <pre><code class="language-javascript">
+ test.open(&#39;http://myticker.org&#39;)
+   .visible(&#39;.ticker-element:first&#39;, &#39;First ticker element is visible&#39;)
+   .wait(10000)
+   .visible(&#39;.ticker-element:nth-child(2)&#39;, &#39;Snd. ticker element is visible&#39;)
+   .wait(10000)
+   .visible(&#39;.ticker-element:last&#39;, &#39;Third ticker element is visible&#39;)
+   .all.success(&#39;Ticker seems to work quite well&#39;);
+ </code></pre>
+ If no timeout argument is given, a default timeout of 5 seconds will be used</p>
+
+<p> <pre><code class="language-javascript">
+ test.open(&#39;http://myticker.org&#39;)
+   .visible(&#39;.ticker-element:first&#39;, &#39;First ticker element is visible&#39;)
+   .wait()
+   .visible(&#39;.ticker-element:nth-child(2)&#39;, &#39;Snd. ticker element is visible&#39;)
+   .wait()
+   .visible(&#39;.ticker-element:last&#39;, &#39;Third ticker element is visible&#39;)
+   .all.success(&#39;This ticker changed every 5 seconds, cool!&#39;);
+ </code></pre></p><h2 class="method"> .reload</h2><p> Reloads current page location.</p>
+
+<p> This is basically the same as hitting F5/refresh in your browser</p>
+
+<p> <pre><code class="language-javascript">
+ test.open(&#39;http://google.com&#39;)
+   .refresh();
+ </code></pre></p><h2 class="method"> .forward</h2><p> Moves a step forward in browser&#39;s history.</p>
+
+<p> This is basically the same as hitting the forward button in your browser</p>
+
+<p> <pre><code class="language-javascript">
+ test.open(&#39;http://google.com&#39;)
+   .open(&#39;https://github.com&#39;)
+   .url.is(&#39;https://github.com/&#39;, &#39;We are at GitHub&#39;)
+   .back()
+   .url.is(&#39;http://google.com&#39;, &#39;We are at Google!&#39;)
+   .forward()
+   .url.is(&#39;https://github.com/&#39;, &#39;Back at GitHub! Timetravel FTW&#39;);
+ </code></pre></p><h2 class="method"> .back</h2><p> Moves back a step in browser&#39;s history.</p>
+
+<p> This is basically the same as hitting the back button in your browser</p>
+
+<p> <pre><code class="language-javascript">
+ test.open(&#39;http://google.com&#39;)
+   .open(&#39;https://github.com&#39;)
+   .url.is(&#39;https://github.com/&#39;, &#39;We are at GitHub&#39;)
+   .back()
+   .url.is(&#39;http://google.com&#39;, &#39;We are at Google!&#39;)
+   .forward()
+   .url.is(&#39;https://github.com/&#39;, &#39;Back at GitHub! Timetravel FTW&#39;);
+ </code></pre></p><h2 class="method"> .click</h2><p> Performs a click on the element matching the provided selector expression.</p>
+
+<p> If we take Daleks homepage (the one you&#39;re probably visiting right now),
+ the HTML looks something like this</p>
+
+<p> <pre><code class="language-markup">
+ &lt;nav&gt;
+   &lt;ul&gt;
+     &lt;li&gt;&lt;a id=&quot;homeapge&quot; href=&quot;/index.html&quot;&gt;DalekJS&lt;/a&gt;&lt;/li&gt;
+     &lt;li&gt;&lt;a id=&quot;docs&quot;  href=&quot;/docs.html&quot;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+     &lt;li&gt;&lt;a id=&quot;faq&quot; href=&quot;/faq.html&quot;&gt;F.A.Q&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+ &lt;/nav&gt;
+ </code></pre></p>
+
+<p> <pre><code class="language-javascript">
+ test.open(&#39;http://dalekjs.com&#39;)
+     .click(&#39;#faq&#39;)
+     .title().is(&#39;DalekJS - Frequently asked questions&#39;, &#39;What the F.A.Q.&#39;);
+ </code></pre></p>
+
+<p> By default, this performs a left click.</p><h2 class="method"> .val</h2><p> Fills the fields of a form with given values.</p>
+
+<p> <pre><code class="language-markup">
+ &lt;nav&gt;
+   &lt;ul&gt;
+     &lt;li&gt;&lt;a id=&quot;homeapge&quot; href=&quot;/index.html&quot;&gt;DalekJS&lt;/a&gt;&lt;/li&gt;
+     &lt;li&gt;&lt;a id=&quot;docs&quot;  href=&quot;/docs.html&quot;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+     &lt;li&gt;&lt;a id=&quot;faq&quot; href=&quot;/faq.html&quot;&gt;F.A.Q&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+ &lt;/nav&gt;
+ </code></pre></p>
+
+<p> <pre><code class="language-javascript">
+ test.open(&#39;http://dalekjs.com&#39;)
+     .val(&#39;#ijustwannahaveavalue&#39;, )
+     .title().is(&#39;DalekJS - Frequently asked questions&#39;, &#39;What the F.A.Q.&#39;);
+ </code></pre></p><h2 class="method"> .open</h2><p> Performs an HTTP request for opening a given location.
+ You can forge GET, POST, PUT, DELETE and HEAD requests.</p>
+
+<p> <pre><code class="language-javascript">
+ test.open(&#39;http://dalekjs.com&#39;)
+     .url().is(&#39;http://dalekjs.com&#39;, &#39;DalekJS I&#39;m in you&#39;);
+ </code></pre></p><h2 class="method"> .waitForElement</h2><p> Waits until an element matching the provided
+ selector expression exists in remote DOM to process any next step.</p></div><!--
+
+            Footer
+            --><footer class="grid__item one-whole footer"><!--
+                --><span class="footer__author">DalekJS created by <a class="footer__link" href="https://github.com/asciidisco">Sebastian Golasch</a></span><!--
+                --><span class="footer__author">Logo by <a class="footer__link" href="http://www.redbubble.com/people/scottbarker">Scott Barker</a></span><!--
+                --><span class="footer__author">Browser icons by <a class="footer__link" href="https://github.com/substack">Substack</a></span><!--
+            --></footer><!--
+        --></div>
+        <!-- build:js ../js/main.js -->
+        <script src="../js/vendor/jquery-1.9.1.min.js"></script>
+        <script src="../js/prism.js"></script>
+        <script src="../js/main.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>
