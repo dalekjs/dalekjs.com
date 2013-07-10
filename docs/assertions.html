@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>DalekJS - Automated cross browser testing with JavaScript</title>
+        <meta name="description" content="DalekJS - Exterminate all the bugs">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- icon-ish stuff -->
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+
+        <!-- build:css ../css/main.css -->
+        <link rel="stylesheet" href="../css/style.min.css">
+        <link rel="stylesheet" href="../css/prism.css">
+        <!-- endbuild -->
+
+        <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
+    </head>
+    <body><!--
+
+        --><div class="grid"><!--
+
+            --><header class="grid__item one-whole"><!--
+                --><nav role="select"><!--
+                    desktop menue
+                    --><ul class="nav nav--fit nav--block"><!--
+                        --><li><a href="../index.html">DALEKJS</a></li><!--
+                        --><li><a href="getStarted.html" class="active">Get started</a></li><!--
+                        --><li><a href="documentation.html">Documentation</a></li><!--
+                        --><li><a href="support.html">Support</a></li><!--
+                        --><li><a href="faq.html">FAQ</a></li><!--
+                        --><li><a href="merch.html">Merch</a></li><!--
+                    --></ul><!--
+
+                    mobile menue
+                    --><select onchange="if (this.value) window.location.href = this.value;"><!--
+                        --><option value="../index.html">DALEKJS</option><!--
+                        --><option selected value="getStarted.html">Get started</option><!--
+                        --><option value="documentation.html">Documentation</option><!--
+                        --><option value="support.html">Support</option><!--
+                        --><option value="faq.html">FAQ</option><!--
+                        --><option value="merch.html">Merch</option><!--
+                    --></select><!--
+                --></nav><!--
+            --></header><!--
+
+            Content wrapper
+            --><div class="wrapper"><h1 class="topic">Assertions</h1><h2 class="method"> .chain</h2><p> Starts assertion chaining</p><h2 class="method"> .end</h2><p> Ends an assertion chain</p><h2 class="method"> .resourceExists</h2><p> Asserts that a given ressource does exist in the environment.</p><h2 class="method"> .numberOfElements</h2><p> Asserts that a given element appears n times on the page.</p>
+
+<p> Given this portion of html, you would like to assure that all of these elements
+ are ending up in your rendered markup on your page.</p>
+
+<p> <pre><code class="language-markup">
+ &lt;section id=&quot;blog-overview&quot;&gt;
+   &lt;article class=&quot;teaser&quot;&gt;&lt;/article&gt;
+   &lt;article class=&quot;teaser&quot;&gt;&lt;/article&gt;
+   &lt;article class=&quot;teaser&quot;&gt;&lt;/article&gt;
+   &lt;article class=&quot;teaser&quot;&gt;&lt;/article&gt;
+ &lt;/section&gt;
+ </code></pre></p>
+
+<p> The simple solution is to check if all these elements are present</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfElements(&#39;#blog-overview .teaser&#39;, 4, &#39;4 blog teasers are present&#39;)
+ </code></pre>
+ The alternate syntax for this is:</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfElements(&#39;#blog-overview .teaser&#39;)
+     .is(4, &#39;4 blog teasers are present&#39;)
+ </code></pre></p>
+
+<p> If you are not sure how many elements will exactly end up in your markup,
+ you could use the between assertion handler</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfElements(&#39;#blog-overview .teaser&#39;)
+     .is.between(2, 6, &#39;Between 2 and 6 blog teasers are present&#39;)
+ </code></pre></p>
+
+<p> If you dealing with the situation that you have a minimum of elements,
+ you expect, you can use this helper...</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfElements(&#39;#blog-overview .teaser&#39;)
+     .is.gt(2, &#39;At least 3 blog teasers are present&#39;)
+ </code></pre>
+ ... if you want to know if its &#39;greater than equal&#39;, you can use this one...</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfElements(&#39;#blog-overview .teaser&#39;)
+     .is.gte(2, &#39;At least 2 blog teasers are present&#39;)
+ </code></pre>
+ ... as well as their &#39;lower than&#39; and &#39;lower than equal&#39; equivalents</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfElements(&#39;#blog-overview .teaser&#39;)
+     .is.lt(5, &#39;Less than 5 blog teasers are present&#39;)
+ </code></pre></p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfElements(&#39;#blog-overview .teaser&#39;)
+     .is.lte(5, &#39;Less than, or 5 blog teasers are present&#39;)
+ </code></pre>
+ And if you just wan&#39;t to know, if a certain amount of teasers isn&#39;t present,
+ you can still use the &#39;:not(): assertion helper</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfElements(&#39;#blog-overview .teaser&#39;)
+     .is.not(5, &#39;There are more or less than 5 teasers present&#39;)
+ </code></pre></p>
+
+<p> If you wan&#39;t to allow multiple correct values, you can use the &#39;:are()&#39; helper</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfElements(&#39;#blog-overview .teaser&#39;)
+     .are([1,3,6], &#39;Teaser count is an odd number between 1 and 6&#39;)
+ </code></pre></p>
+
+<p> of couse you can test for the opoosite with &#39;:are()&#39;</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfElements(&#39;#blog-overview .teaser&#39;)
+     .are([0,2,4], &#39;Teaser count is not an even number between 1 and 6&#39;)
+ </code></pre></p><h2 class="method"> .numberOfVisibleElements</h2><p> Asserts that a given element is visible n times in the current viewport.</p>
+
+<p> Given this portion of html, you would like to assure that all of these elements
+ are ending up in your rendered markup on your page.</p>
+
+<p> <pre><code class="language-markup">
+ &lt;section id=&quot;blog-overview&quot;&gt;
+   &lt;article class=&quot;teaser&quot;&gt;&lt;/article&gt;
+   &lt;article class=&quot;teaser&quot;&gt;&lt;/article&gt;
+   &lt;article class=&quot;teaser&quot;&gt;&lt;/article&gt;
+   &lt;article class=&quot;teaser&quot;&gt;&lt;/article&gt;
+ &lt;/section&gt;
+ </code></pre></p>
+
+<p> The simple solution is to check if all these elements are visible</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;, 4, &#39;4 blog teasers are visible&#39;)
+ </code></pre>
+ The alternate syntax for this is:</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;)
+     .is(4, &#39;4 blog teasers are visible&#39;)
+ </code></pre></p>
+
+<p> If you are not sure how many elements will exactly be shown in the current viewport,
+ you could use the between assertion handler</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;)
+     .is.between(2, 6, &#39;Between 2 and 6 blog teasers are visible&#39;)
+ </code></pre></p>
+
+<p> If you dealing with the situation that you have a minimum of elements,
+ you expect, you can use this helper...</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;)
+     .is.gt(2, &#39;At least 3 blog teasers are visible&#39;)
+ </code></pre>
+ ... if you want to know if its &#39;greater than equal&#39;, you can use this one...</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;)
+     .is.gte(2, &#39;At least 2 blog teasers are visible&#39;)
+ </code></pre>
+ ... as well as their &#39;lower than&#39; and &#39;lower than equal&#39; equivalents</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;)
+     .is.lt(5, &#39;Less than 5 blog teasers are visible&#39;)
+ </code></pre></p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;)
+     .is.lte(5, &#39;Less than, or 5 blog teasers are visible&#39;)
+ </code></pre>
+ And if you just wan&#39;t to know, if a certain amount of teasers isn&#39;t visible,
+ you can still use the &#39;:not(): assertion helper</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;)
+     .is.not(5, &#39;There are more or less than 5 teasers visible&#39;)
+ </code></pre></p>
+
+<p> If you wan&#39;t to allow multiple correct values, you can use the &#39;:are()&#39; helper</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;)
+     .are([1,3,6], &#39;Teaser count is an odd number between 1 and 6&#39;)
+ </code></pre></p>
+
+<p> of couse you can test for the opoosite with &#39;:are()&#39; and &#39;:not()&#39;</p>
+
+<p> <pre><code class="language-javascript">
+ test.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;)
+     .are.not([0,2,4], &#39;Teaser count is not an even number between 1 and 6&#39;)
+ </code></pre></p><h2 class="method"> .val</h2><p> Asserts that a given form field has the provided value.</p>
+
+<p> Given this portion of html, we would like to get the information which option element
+ is currently selected.</p>
+
+<p> <pre><code class="language-markup">
+ &lt;form name=&quot;fav-doctor&quot; id=&quot;fav-doctor&quot;&gt;
+   &lt;select id=&quot;the-doctors&quot;&gt;
+     &lt;option value=&quot;9&quot;&gt;Eccleston&lt;/option&gt;
+     &lt;option selected value=&quot;10&quot;&gt;Tennant&lt;/option&gt;
+     &lt;option value=&quot;11&quot;&gt;Smith&lt;/option&gt;
+   &lt;/select&gt;
+ &lt;/form&gt;
+ </code></pre></p>
+
+<p> <pre><code class="language-javascript">
+ test
+   .val(&#39;#the-doctors&#39;, 10, &#39;David is the favourite&#39;)
+   // lets change the favourite by selection the last option
+  .click(&#39;#the-doctors option:last&#39;)
+  .val(&#39;#the-doctors&#39;, 11, &#39;Matt is now my favourite, bow ties are cool&#39;)
+ </code></pre></p>
+
+<p> This assertion is capable of getting the values from every form element
+ that holds a value attribute</p>
+
+<p> Getting texts out of normal input fields is pretty straight forward</p>
+
+<p> <pre><code class="language-markup">
+ &lt;label for=&quot;fav-enemy&quot;&gt;Tell my your favourity Who enemy:&lt;/label&gt;
+ &lt;input id=&quot;fav-enemy&quot; name=&quot;fav-enemy&quot; type=&quot;text&quot; value=&quot;Daleks&quot; /&gt;
+ </code></pre></p>
+
+<p> <pre><code class="language-javascript">
+ test
+   .val(&#39;#fav-enemy&#39;, &#39;Daleks&#39;, &#39;Daleks are so cute&#39;)
+   // lets change the favourite by typing smth. new
+  .type(&#39;#fav-enemy&#39;, &#39;Cyberman&#39;)
+  .val(&#39;#fav-enemy&#39;, &#39;Cyberman&#39;, &#39;Cyberman are so cyber&#39;)
+ </code></pre></p>
+
+<p> Of course, you can use a bunch of assertion helpers, to enable
+ yourself to do more than just one assertion with the &#39;:are()&#39; helper.</p>
+
+<p> <pre><code class="language-javascript">
+ test
+   .val(&#39;#fav-enemy&#39;)
+   .is(&#39;Daleks&#39;, &#39;Still cute, those daleks&#39;)
+   .is.not(&#39;Klingons&#39;, &#39;Different fandom bro&#39;)
+   // yep, multiple mentions are allowed
+   .are([&#39;Daleks&#39;, &#39;Cyberman&#39;, &#39;The master&#39;], &#39;All of them are cool&#39;);
+ </code></pre></p><h2 class="method"> .exists</h2><p> Asserts that an element matching the provided selector expression exists in remote DOM environment.</p>
+
+<p> <pre><code class="language-markup">
+ &lt;body&gt;
+   &lt;p id=&quot;so-lonely&quot;&gt;Last of the timelords&lt;/p&gt;
+ &lt;/body&gt;
+ </code></pre></p>
+
+<p> <pre><code class="language-javascript">
+ test
+   .exists(&#39;#so-lonely&#39;, &#39;The loneliest element in the universe exists&#39;)
+ </code></pre></p><h2 class="method"> .doesntExist</h2><p> Asserts that an element matching the provided selector expression doesn&#39;t exists within the remote DOM environment.</p>
+
+<p> <pre><code class="language-markup">
+ &lt;body&gt;
+   &lt;p id=&quot;so-lonely&quot;&gt;Last of the timelords&lt;/p&gt;
+ &lt;/body&gt;
+ </code></pre></p>
+
+<p> <pre><code class="language-javascript">
+ test
+   .doesntExist(&#39;#the-master&#39;, &#39;The master element has not been seen&#39;)
+ </code></pre></p>             --></div><!--
+
+            Footer
+            --><footer class="grid__item one-whole footer"><!--
+                --><span class="footer__author">DalekJS created by <a class="footer__link" href="https://github.com/asciidisco">Sebastian Golasch</a></span><!--
+                --><span class="footer__author">Logo by <a class="footer__link" href="http://www.redbubble.com/people/scottbarker">Scott Barker</a></span><!--
+                --><span class="footer__author">Browser icons by <a class="footer__link" href="https://github.com/substack">Substack</a></span><!--
+            --></footer><!--
+        --></div><!--
+    --><!-- build:js ../js/main.js -->
+        <script src="../js/vendor/jquery-1.9.1.min.js"></script>
+        <script src="../js/prism.js"></script>
+        <script src="../js/main.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>
