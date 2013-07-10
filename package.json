@@ -7,7 +7,7 @@
     "test": "test"
   },
   "dependencies": {
-    "grunt": "0.4.1",
+    "grunt": "git+https://github.com/divdavem/grunt.git#13da751bdfd291c25a47ca7669ae0778eb289b28",
     "grunt-contrib-clean": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.2",
