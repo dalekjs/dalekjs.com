@@ -38,7 +38,9 @@ module.exports = function(grunt) {
           removeOptionalTags: true
         },
         files: {
-          'build/index.html': 'build/index.html'
+          'build/index.html': 'build/index.html',
+          'build/pages/*.html': 'build/pages/*.html',
+          'build/docs/*.html': 'build/docs/*.html'
         }
       }
     },
