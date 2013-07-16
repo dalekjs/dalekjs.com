@@ -61,7 +61,9 @@
             --></header><!--
 
             Content wrapper
-            --><div class="wrapper"><h1 class="topic">Actions</h1><h2 class="method"> .setHttpAuth</h2><p> Sets HTTP<em>AUTH</em>USER and HTTP<em>AUTH</em>PW values for HTTP based authentication systems.</p>
+            --><div class="wrapper"><h1 class="topic">Actions</h1><h2 class="method"> .mouseEvent</h2><p> Triggers a mouse event on the first element found matching the provided selector.
+ Supported events are mouseup, mousedown, click, mousemove, mouseover and mouseout.
+ TODO: IMPLEMENT</p><h2 class="method"> .setHttpAuth</h2><p> Sets HTTP<em>AUTH</em>USER and HTTP<em>AUTH</em>PW values for HTTP based authentication systems.</p>
 
 <p> If your site is behind a HTTP basic auth, you&#39;re able to set the username and the password</p>
 
@@ -100,7 +102,7 @@
  </code></pre></p>
 
 <p> If both, dalek variables &amp; env variables are set, the dalek variables win.
- For more information about this, I recommend to check out the <a href="/docs/config.html">configuration docs</a></p><h2 class="method"> .toIFrame</h2><p> Switches to an iFrame context</p>
+ For more information about this, I recommend to check out the <a href="/docs/config.html">configuration docs</a></p><h2 class="method"> .toFrame</h2><p> Switches to an iFrame context</p>
 
 <p> Sometimes you encounter situation, where you need to drive/access an iFrame sitting in your page.
  You can access such frames with this mehtod, but be aware of the fact, that the complete test</p>
@@ -245,7 +247,7 @@ test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
 <p> <pre><code class="language-javascript">
  test.open(&#39;http://dalekjs.com&#39;)
      .url().is(&#39;http://dalekjs.com&#39;, &#39;DalekJS I&#39;m in you&#39;);
- </code></pre></p><h2 class="method"> .waitForElement</h2><p> Waits until an element matching the provided
+ </code></pre></p><h2 class="method"> .type</h2><h2 class="method"> .waitForElement</h2><p> Waits until an element matching the provided
  selector expression exists in remote DOM to process any next step.</p></div><!--
 
             Footer
