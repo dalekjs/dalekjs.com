@@ -20,6 +20,6 @@ page.zip
 /build/
 .DS_STORE
 
-/css/style.min.css
-/css/.sass-cache/*
-/.sass-cache/*
+css/style.min.css
+css/.sass-cache/*
+.sass-cache/*
