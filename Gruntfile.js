@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     uglify: {
       compress: {
         files: {
-          'build/js/main.js': ['js/vendor/jquery-1.9.1.min.js', 'js/prism.js', 'js/main.js']
+          'build/js/main.js': ['js/vendor/jquery-1.9.1.min.js', 'js/vendor/jquery.inviewport.js', 'js/prism.js', 'js/main.js']
         }
       }
     },
