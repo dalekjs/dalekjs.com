@@ -111,22 +111,52 @@
                             Daleks installation is pretty forward, just make sure you have Node.js installed. If you don't have Node installed, just go to <a href="http://nodejs.org/" target="_blank">nodejs.org</a> &amp; follow the instructions of the graphical installer.<br /><br />
                             With node there comes some handy package management tool called `npm`.
                             You can verify, if the installation succeeded when you open your command line &amp; type
-                            <pre><code>npm --version</code></pre>
+                            <pre class="dalek-shell"><code><span class="token shell-icon">$</span> <span class="token shell-npm">npm</span> <span class="token shell-npm">--version</span></code></pre>
                             <span class="description">then you should see some output like this</span>
-                            <pre><code>1.1.62</code></pre>
+                            <pre class="dalek-shell"><code><span class="token shell-icon">$</span> <span class="token shell-icon" style="color: #fff">1.1.62</span></code></pre>
                             <span class="description">where the version number depends on your installed version of Node.</span><br /><br />
                             <span class="description">If that worked, you should be able to install DalekJS.<br/>
                             Dalek is splitted up in a few different parts, to get it working initially, you first have to install the "Dalek Command Line Tools", this is as easy as typing</span>
-                            <pre><code>npm install dalek-cli -g</pre></code><span class="description"> in your command line.<br /> Verify that the installation worked by checking with</span><pre><code>dalek -v</pre></code><span class="description">You should see something like this
-                            </span><pre><code>DalekJS CLI Tools Version: 0.0.1<br />
-    Brought to you with love by: Sebastian Golasch (@asciidisco) 2013</pre></code><br /><br />
-                            </p><!--
+                            <pre class="dalek-shell"><code><span class="token shell-icon">$</span> <span class="token shell-npm">npm install</span> <span class="token shell-dalek">dalek-cli</span> <span class="token shell-npm">-g</span></code></pre><span class="description"> in your command line.<br /> Verify that the installation worked by checking with</span><pre class="dalek-shell"><code><span class="token shell-icon">$</span> <span class="token shell-dalek">dalek</span> <span class="token shell-npm">-v</span></code></pre><span class="description">You should see something like this</span><pre class="dalek-shell"><code><span class="token shell-icon">$</span> <span class="token shell-icon" style="color: #fff">DalekJS CLI Tools Version: 0.0.1</span>
+<!--
+                            --><span class="token shell-icon" style="color: #fff">  Brought to you with love by: Sebastian Golasch (@asciidisco) 2013</span></code></pre><!--
+                            --><span class="description">Awesome, you`re one step closer to the finish line, next up, you need to add a <strong>package.json</strong> file to your projects root directory, if you haven't one already. You can start with the bare minimum of that file, which should look something like this:</span><!--
+                            --><pre class="code-thingie"><code class="language-javascript"><!--
+                    -->{
+<!--                -->  "name": "myCssTardis",
+<!--                -->  "description": "Is awesome",
+<!--                -->  "version": "0.0.2"
+<!--                -->}<!--
+                    --></code></pre><!--
+                        --><span class="description">Hah, you "nodyfied" project &amp; I guess, now that you learned to love the commandline, you would really like to go back &amp; hack!? Great, than the next step is something for you, we install the dalek base framwork &amp; all its dependencies with a one liner that looks like this:</span><!--
+                        --><pre class="dalek-shell"><code><!--
+<!--                    --><span class="token shell-icon">$</span> <span class="token shell-npm">npm install</span> <span class="token shell-dalek">dalekjs</span> <span class="token shell-npm">--save</span><!--
+                            --></pre></code><!--
+                            --><span class="description">Guess what?! That was it. You installed DalekJS you old commandline hero, if you wan't to verify, that the local installation worked, you can, again, ask Dalek in which version it is running, because now, it will also tell you the version number of your local Dalek installation:</span><!--
+                           --><pre class="dalek-shell"><code><span class="token shell-icon">$</span> <span class="token shell-dalek">dalek</span> <span class="token shell-npm">-v</span></code></pre><span class="description">You should see something like this</span><pre class="dalek-shell"><code><span class="token shell-icon">$</span> <span class="token shell-icon" style="color: #fff">DalekJS CLI Tools Version: 0.0.1</span>
+<!--
+                            --><span class="token shell-icon" style="color: #fff">  DalekJS local install: 0.0.1</span>
+<!--
+                            --><span class="token shell-icon" style="color: #fff">  Brought to you with love by: Sebastian Golasch (@asciidisco) 2013</span></code></pre><!--
+                            --></p><!--
                         --></div><!--
 
                         Write your first test
                         --><div class="grid__item one-whole"><!--
                             --><a class="nav-helper" name="firsttest"></a><!--
                             --><h2>Write your first test</h2><!--
+                            --><p class="description">Okay commandline cowboys &amp; cowgirls, it is time to write our first test!<br/>And, because I don't know your pages &amp; sites, I think we should test something we all know, yes it is time to penetrate our old friend Google again! In this test, we will verify that the &lt;title&gt; element from Googles homepage has the correct value.<br/>The test we need to write, to make this happen, looks like this:</p><!--
+                    --><pre class="code-thingie"><code class="language-javascript"><!--
+                    -->module.exports = {
+<!--                -->'Page title is correct': function (test) {
+<!--                -->  test
+<!--                -->    .open('http://google.com')
+<!--                -->    .assert.title().is('Google', 'It has title')
+<!--                -->    .done();
+<!--                -->}
+<!--                -->};<!--
+                    --></code></pre><!--
+                            </p><!--
                         --></div><!--
 
                         Run your tests
