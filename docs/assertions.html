@@ -58,10 +58,7 @@
                         --><option value="../pages/merch.html">Merch</option><!--
                     --></select><!--
                 --></nav><!--
-            --></header><!--
-
-            Content wrapper
-            --><div class="wrapper"><h1 class="topic">Assertions</h1><h2 class="method"> .chain</h2><p> Starts assertion chaining</p><h2 class="method"> .end</h2><p> Ends an assertion chain</p><h2 class="method"> .resourceExists</h2><p> Asserts that a given ressource does exist in the environment.</p><h2 class="method"> .numberOfElements</h2><p> Asserts that a given element appears n times on the page.</p>
+            --></header><div class="grid__item one-whole"><div class="grid__item one-quarter sidenav"><ul><li class="nav-chain"><a href="#meth-chain">chain</a></li><li class="nav-end"><a href="#meth-end">end</a></li><li class="nav-resourceExists"><a href="#meth-resourceExists">resourceExists</a></li><li class="nav-numberOfElements"><a href="#meth-numberOfElements">numberOfElements</a></li><li class="nav-numberOfVisibleElements"><a href="#meth-numberOfVisibleElements">numberOfVisibleElements</a></li><li class="nav-val"><a href="#meth-val">val</a></li><li class="nav-exists"><a href="#meth-exists">exists</a></li><li class="nav-doesntExist"><a href="#meth-doesntExist">doesntExist</a></li></ul></div><div class="grid__item three-quarters"><h1 class="topic">Assertions</h1><a name="meth-chain"></a><h2 class="method"> .chain</h2><p> Starts assertion chaining</p><a name="meth-end"></a><h2 class="method"> .end</h2><p> Ends an assertion chain</p><a name="meth-resourceExists"></a><h2 class="method"> .resourceExists</h2><p> Asserts that a given ressource does exist in the environment.</p><a name="meth-numberOfElements"></a><h2 class="method"> .numberOfElements</h2><p> Asserts that a given element appears n times on the page.</p>
 
 <p> Given this portion of html, you would like to assure that all of these elements
  are ending up in your rendered markup on your page.</p>
@@ -139,7 +136,7 @@
 <p> <pre><code class="language-javascript">
  test.numberOfElements(&#39;#blog-overview .teaser&#39;)
      .are([0,2,4], &#39;Teaser count is not an even number between 1 and 6&#39;)
- </code></pre></p><h2 class="method"> .numberOfVisibleElements</h2><p> Asserts that a given element is visible n times in the current viewport.</p>
+ </code></pre></p><a name="meth-numberOfVisibleElements"></a><h2 class="method"> .numberOfVisibleElements</h2><p> Asserts that a given element is visible n times in the current viewport.</p>
 
 <p> Given this portion of html, you would like to assure that all of these elements
  are ending up in your rendered markup on your page.</p>
@@ -217,7 +214,7 @@
 <p> <pre><code class="language-javascript">
  test.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;)
      .are.not([0,2,4], &#39;Teaser count is not an even number between 1 and 6&#39;)
- </code></pre></p><h2 class="method"> .val</h2><p> Asserts that a given form field has the provided value.</p>
+ </code></pre></p><a name="meth-val"></a><h2 class="method"> .val</h2><p> Asserts that a given form field has the provided value.</p>
 
 <p> Given this portion of html, we would like to get the information which option element
  is currently selected.</p>
@@ -268,7 +265,7 @@
    .is.not(&#39;Klingons&#39;, &#39;Different fandom bro&#39;)
    // yep, multiple mentions are allowed
    .are([&#39;Daleks&#39;, &#39;Cyberman&#39;, &#39;The master&#39;], &#39;All of them are cool&#39;);
- </code></pre></p><h2 class="method"> .exists</h2><p> Asserts that an element matching the provided selector expression exists in remote DOM environment.</p>
+ </code></pre></p><a name="meth-exists"></a><h2 class="method"> .exists</h2><p> Asserts that an element matching the provided selector expression exists in remote DOM environment.</p>
 
 <p> <pre><code class="language-markup">
  &lt;body&gt;
@@ -279,7 +276,7 @@
 <p> <pre><code class="language-javascript">
  test
    .exists(&#39;#so-lonely&#39;, &#39;The loneliest element in the universe exists&#39;)
- </code></pre></p><h2 class="method"> .doesntExist</h2><p> Asserts that an element matching the provided selector expression doesn&#39;t exists within the remote DOM environment.</p>
+ </code></pre></p><a name="meth-doesntExist"></a><h2 class="method"> .doesntExist</h2><p> Asserts that an element matching the provided selector expression doesn&#39;t exists within the remote DOM environment.</p>
 
 <p> <pre><code class="language-markup">
  &lt;body&gt;
@@ -301,6 +298,7 @@
         --></div>
         <!-- build:js ../js/main.js -->
         <script src="../js/vendor/jquery-1.9.1.min.js"></script>
+        <script src="../js/vendor/jquery.inviewport.js"></script>
         <script src="../js/prism.js"></script>
         <script src="../js/main.js"></script>
         <!-- endbuild -->
