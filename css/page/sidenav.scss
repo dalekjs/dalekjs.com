@@ -1,0 +1,28 @@
+.sidenav {
+
+	padding: 0;
+	margin: 0;
+	margin-top: 40px;
+
+	ul.sticky {
+		position: fixed;
+	}
+
+	li {
+		background-color: #000;
+		font-family: $font;
+		font-size: 22px;
+		border-bottom: 1px #fff solid;
+		padding-right: 10px;
+	}
+
+	li a {
+		margin-left: 10px;
+		color: $nav-font-color;
+		text-decoration: none;
+	}
+
+	li.active a{
+		color: yellow;
+	}
+}
