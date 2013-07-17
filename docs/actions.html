@@ -32,7 +32,7 @@
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Wednesday, July 17th, 2013, 9:08:56 AM"><!--
+    <body data-buildtime="Wednesday, July 17th, 2013, 11:57:22 AM"><!--
 
         --><div class="grid"><!--
 
@@ -58,7 +58,7 @@
                         --><option value="../pages/merch.html">Merch</option><!--
                     --></select><!--
                 --></nav><!--
-            --></header><div class="grid__item one-whole"><div class="grid__item one-quarter sidenav"><ul><li class="nav-mouseEvent"><a href="#meth-mouseEvent">mouseEvent</a></li><li class="nav-setHttpAuth"><a href="#meth-setHttpAuth">setHttpAuth</a></li><li class="nav-toFrame"><a href="#meth-toFrame">toFrame</a></li><li class="nav-waitFor"><a href="#meth-waitFor">waitFor</a></li><li class="nav-waitForResource"><a href="#meth-waitForResource">waitForResource</a></li><li class="nav-waitForText"><a href="#meth-waitForText">waitForText</a></li><li class="nav-waitUntilVisible"><a href="#meth-waitUntilVisible">waitUntilVisible</a></li><li class="nav-waitWhileVisible"><a href="#meth-waitWhileVisible">waitWhileVisible</a></li><li class="nav-screenshot"><a href="#meth-screenshot">screenshot</a></li><li class="nav-wait"><a href="#meth-wait">wait</a></li><li class="nav-reload"><a href="#meth-reload">reload</a></li><li class="nav-forward"><a href="#meth-forward">forward</a></li><li class="nav-back"><a href="#meth-back">back</a></li><li class="nav-click"><a href="#meth-click">click</a></li><li class="nav-val"><a href="#meth-val">val</a></li><li class="nav-open"><a href="#meth-open">open</a></li><li class="nav-type"><a href="#meth-type">type</a></li><li class="nav-waitForElement"><a href="#meth-waitForElement">waitForElement</a></li></ul></div><div class="grid__item three-quarters"><h1 class="topic">Actions</h1><a name="meth-mouseEvent"></a><h2 class="method"> .mouseEvent</h2><p> Triggers a mouse event on the first element found matching the provided selector.
+            --></header><div class="grid__item one-whole"><div class="grid__item one-quarter sidenav"><ul><li class="nav-mouseEvent"><a href="#meth-mouseEvent">mouseEvent</a></li><li class="nav-setHttpAuth"><a href="#meth-setHttpAuth">setHttpAuth</a></li><li class="nav-toFrame"><a href="#meth-toFrame">toFrame</a></li><li class="nav-waitFor"><a href="#meth-waitFor">waitFor</a></li><li class="nav-waitForResource"><a href="#meth-waitForResource">waitForResource</a></li><li class="nav-waitForText"><a href="#meth-waitForText">waitForText</a></li><li class="nav-waitUntilVisible"><a href="#meth-waitUntilVisible">waitUntilVisible</a></li><li class="nav-waitWhileVisible"><a href="#meth-waitWhileVisible">waitWhileVisible</a></li><li class="nav-screenshot"><a href="#meth-screenshot">screenshot</a></li><li class="nav-wait"><a href="#meth-wait">wait</a></li><li class="nav-reload"><a href="#meth-reload">reload</a></li><li class="nav-forward"><a href="#meth-forward">forward</a></li><li class="nav-back"><a href="#meth-back">back</a></li><li class="nav-click"><a href="#meth-click">click</a></li><li class="nav-setValue"><a href="#meth-setValue">setValue</a></li><li class="nav-open"><a href="#meth-open">open</a></li><li class="nav-type"><a href="#meth-type">type</a></li><li class="nav-waitForElement"><a href="#meth-waitForElement">waitForElement</a></li></ul></div><div class="grid__item three-quarters"><h1 class="topic">Actions</h1><a name="meth-mouseEvent"></a><h2 class="method"> .mouseEvent</h2><p> Triggers a mouse event on the first element found matching the provided selector.
  Supported events are mouseup, mousedown, click, mousemove, mouseover and mouseout.
  TODO: IMPLEMENT</p><a name="meth-setHttpAuth"></a><h2 class="method"> .setHttpAuth</h2><p> Sets HTTP<em>AUTH</em>USER and HTTP<em>AUTH</em>PW values for HTTP based authentication systems.</p>
 
@@ -222,7 +222,7 @@ test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
      .title().is(&#39;DalekJS - Frequently asked questions&#39;, &#39;What the F.A.Q.&#39;);
  </code></pre></p>
 
-<p> By default, this performs a left click.</p><a name="meth-val"></a><h2 class="method"> .val</h2><p> Fills the fields of a form with given values.</p>
+<p> By default, this performs a left click.</p><a name="meth-setValue"></a><h2 class="method"> .setValue</h2><p> Fills the fields of a form with given values.</p>
 
 <p> <pre><code class="language-markup">
  &lt;nav&gt;
@@ -236,7 +236,7 @@ test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
 
 <p> <pre><code class="language-javascript">
  test.open(&#39;http://dalekjs.com&#39;)
-     .val(&#39;#ijustwannahaveavalue&#39;, )
+     .setValue(&#39;#ijustwannahaveavalue&#39;, &#39;a value&#39;)
      .title().is(&#39;DalekJS - Frequently asked questions&#39;, &#39;What the F.A.Q.&#39;);
  </code></pre></p><a name="meth-open"></a><h2 class="method"> .open</h2><p> Performs an HTTP request for opening a given location.
  You can forge GET, POST, PUT, DELETE and HEAD requests.</p>
