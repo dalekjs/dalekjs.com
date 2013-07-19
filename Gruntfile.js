@@ -39,6 +39,7 @@ module.exports = function(grunt) {
         },
         files: {
           'build/index.html': 'build/index.html',
+          'build/404.html': 'build/404.html',
           'build/pages/*.html': 'build/pages/*.html',
           'build/docs/*.html': 'build/docs/*.html'
         }
@@ -68,7 +69,7 @@ module.exports = function(grunt) {
     // copy assets
     copy: {
       img: {src: ['img/**/*.{png,jpg,jpeg,gif,svg}'], dest: 'build/img', expand: true, flatten: true, filter: 'isFile'},
-      html: {src: ['index.html'], dest: 'build/', expand: true, flatten: true, filter: 'isFile'},
+      html: {src: ['index.html', '404.html'], dest: 'build/', expand: true, flatten: true, filter: 'isFile'},
       meta: {src: ['robots.txt', 'crossdomain.xml', 'favicon.ico', 'humans.txt', 'apple-touch*.png'], dest: 'build/', expand: true, flatten: true, filter: 'isFile'},
       pages: {src: ['pages/*.html'], dest: 'build/pages', expand: true, flatten: true, filter: 'isFile'},
       docs: {src: ['docs/*.html'], dest: 'build/docs', expand: true, flatten: true, filter: 'isFile'}
