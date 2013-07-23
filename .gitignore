@@ -16,6 +16,7 @@ page.zip
 
 /coverage/
 /node_modules/
+/bower_components/
 /report/
 /build/
 .DS_STORE
