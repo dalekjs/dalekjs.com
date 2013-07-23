@@ -16,7 +16,8 @@
     "grunt-contrib-compress": "~0.5.2",
     "grunt-contrib-sass": "~0.4.1",
     "grunt-rev": "~0.1.0",
-    "grunt-usemin": "~0.1.11"
+    "grunt-usemin": "~0.1.11",
+    "handlebars": "~1.0.12"
   },
   "repository": {
     "type": "git",
