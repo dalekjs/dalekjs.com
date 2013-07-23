@@ -6,7 +6,7 @@
     ".jshintrc"
   ],
   "dependencies": {
-    "prism": "latest",
+    "prism": "git://github.com/LeaVerou/prism.git",
     "jquery": "~2.0.3",
     "modernizr": "~2.6.2",
     "in-viewport": "~0.3.0",
