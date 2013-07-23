@@ -30,8 +30,20 @@
 /* Subpage iScroll */
 #sidenav {
 	position: absolute;
-	z-index: 3;
+	z-index: 1;
 	width: 250px;
 	overflow: hidden;
 	height: 90%;
+}
+
+@media all and (max-width: 1000px) and (min-width: 800px) {
+	#sidenav {
+		height: 80%;
+	}
+}
+
+@media all and (max-width: 800px) {
+	#sidenav {
+		display: none;
+	}
 }

@@ -71,16 +71,62 @@ pre {
 	.wrapper {
 		width: 900px;
 	}
+
+	#content {
+		width: 75%;
+		height: 82%;
+	}
+
+	#scroller {
+		width: 93%;
+	}
 }
 
 @media all and (max-width: 1000px) and (min-width: 800px) {
 	.wrapper {
 		width: 800px;
 	}
+
+	#content {
+		width: 69%;
+		height: 82%;
+	}
+
+	#scroller {
+		width: 93%;
+	}
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 800px) and (min-width: 600px) {
 	.wrapper {
 		width: auto;
+	}
+
+	#content {
+		left: 0;
+		top: 50px;
+		width: 95%;
+		height: 75%;
+	}
+
+	#scroller {
+		width: 93%;
+	}
+}
+
+@media all and (max-width: 600px) {
+	.wrapper {
+		width: auto;
+	}
+
+	#content {
+		left: 0;
+		top: 50px;
+		width: 93%;
+		height: 74%;
+	}
+
+	#scroller {
+		width: 93%;
 	}
 }
