@@ -41,7 +41,7 @@ var activeByViewport = function () {
   var inview = '.nav-undefined';
   $('.nav-helper').each(function (idx, elm) {
   	if (inViewport(elm) && inview === '.nav-undefined') {
-  		inview = '.nav-' + $(elm).attr('name');
+  		inview = '.nav-' + $(elm).attr('data-name');
   	}
   });
 
@@ -53,13 +53,31 @@ var activeByViewport = function () {
   }
 };
 
-var $window = $(window);
-$window.on('hashchange', activeSidebar);
-$window.on('scroll', activeByViewport);
+$(window).on('hashchange', activeSidebar);
+setInterval(activeByViewport, 250);
 activeSidebar();
-activeByViewport();
 
 // iScroll sidenav
 if (document.getElementById('content')) {
-	new IScroll('#content', { scrollbars: true, mouseWheel: true, interactiveScrollbars: true });
+	var scroller = new IScroll('#content', {
+		scrollbars: true,
+		mouseWheel: true,
+		interactiveScrollbars: true
+	 });
+
+	var sideScroller = new IScroll('#sidenav', {
+		mouseWheel: true
+	 });
+
+	var $scrollToElm = $('a[data-name="' + window.location.hash.replace('#', '') + '"]');
+	if ($scrollToElm.length) {
+		scroller.scrollToElement($scrollToElm[0], 0);
+	}
+
+	$(window).on('hashchange', function () {
+		var $scrollToElm = $('a[data-name="' + window.location.hash.replace('#', '') + '"]');
+		if ($scrollToElm.length) {
+			scroller.scrollToElement($scrollToElm[0], 400);
+		}
+	});
 }
