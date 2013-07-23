@@ -16,12 +16,18 @@
         <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
         <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
 
+        <link rel="dns-prefetch" href="//dalekjs.com">
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//themes.googleusercontent.com">
+        <link rel="dns-prefetch" href="//www.google-analytics.com">
+
         <!-- build:css ../css/main.css -->
+        <link rel="stylesheet" href="../bower_components/prism/prism-funky.css">
         <link rel="stylesheet" href="../css/style.min.css">
-        <link rel="stylesheet" href="../css/prism.css">
         <!-- endbuild -->
 
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     </head>
     <body><!--
 
@@ -68,9 +74,21 @@
                 --><span class="footer__author">Browser icons by <a class="footer__link" href="https://github.com/substack">Substack</a></span><!--
             --></footer><!--
         --></div>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-42520123-1', 'dalekjs.com');
+          ga('send', 'pageview');
+        </script>
         <!-- build:js ../js/main.js -->
-        <script src="../js/vendor/jquery-1.9.1.min.js"></script>
-        <script src="../js/prism.js"></script>
+        <script src="../bower_components/jquery/jquery.js"></script>
+        <script src="../bower_components/in-viewport/in-viewport.js"></script>
+        <script src="../bower_components/fastclick/lib/fastclick.js"></script>
+        <script src="../bower_components/iscroll/build/iscroll.js"></script>
+        <script src="../bower_components/prism/prism.js"></script>
         <script src="../js/main.js"></script>
         <!-- endbuild -->
     </body>

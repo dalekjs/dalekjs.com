@@ -16,9 +16,14 @@
         <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
         <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
 
+        <link rel="dns-prefetch" href="//dalekjs.com">
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//themes.googleusercontent.com">
+        <link rel="dns-prefetch" href="//www.google-analytics.com">
+
         <!-- build:css ../css/main.css -->
+        <link rel="stylesheet" href="../bower_components/prism/prism-funky.css">
         <link rel="stylesheet" href="../css/style.min.css">
-        <link rel="stylesheet" href="../css/prism.css">
         <!-- endbuild -->
 
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
@@ -33,21 +38,21 @@
                     desktop menue
                     --><ul class="nav nav--fit nav--block"><!--
                         --><li><a href="../index.html">DALEKJS</a></li><!--
-                        --><li><a href="getStarted.html" class="active">Get started</a></li><!--
-                        --><li><a href="documentation.html">Documentation</a></li><!--
-                        --><li><a href="support.html">Support</a></li><!--
-                        --><li><a href="faq.html">FAQ</a></li><!--
-                        --><li><a href="merch.html">Merch</a></li><!--
+                        --><li><a class="active" href="../pages/getStarted.html">Get started</a></li><!--
+                        --><li><a href="../pages/documentation.html">Documentation</a></li><!--
+                        --><li><a href="../pages/support.html">Support</a></li><!--
+                        --><li><a href="../pages/faq.html">FAQ</a></li><!--
+                        --><li><a href="../pages/merch.html">Merch</a></li><!--
                     --></ul><!--
 
                     mobile menue
                     --><select onchange="if (this.value) window.location.href = this.value;"><!--
                         --><option value="../index.html">DALEKJS</option><!--
-                        --><option selected value="getStarted.html">Get started</option><!--
-                        --><option value="documentation.html">Documentation</option><!--
-                        --><option value="support.html">Support</option><!--
-                        --><option value="faq.html">FAQ</option><!--
-                        --><option value="merch.html">Merch</option><!--
+                        --><option selected value="../pages/getStarted.html">Get started</option><!--
+                        --><option value="../pages/documentation.html">Documentation</option><!--
+                        --><option value="../pages/support.html">Support</option><!--
+                        --><option value="../pages/faq.html">FAQ</option><!--
+                        --><option value="../pages/merch.html">Merch</option><!--
                     --></select><!--
                 --></nav><!--
             --></header><!--
@@ -56,8 +61,8 @@
             --><div class="wrapper grid__item one-whole"><!--
 
                 Sidebar nav
-                --><div class="grid__item one-quarter sidenav"><!--
-                    --><ul class="sticky"><!--
+                --><div class="grid__item one-quarter sidenav" id="sidenav"><!--
+                    --><ul><!--
                         --><li class="active nav-selenium"><a href="#selenium">This ain't Selenium</a></li><!--
                         --><li class="nav-install"><a href="#install">Installation</a></li><!--
                         --><li class="nav-firsttest"><a href="#firsttest">Write your first test</a></li><!--
@@ -70,8 +75,8 @@
 
 
                 Content
-                --><div class="grid__item three-quarters"><!--
-                    --><div class="grid__item one-whole"><!--
+                --><div class="grid__item three-quarters" id="content"><!--
+                    --><div class="grid__item one-whole" id="scroller"><!--
                         --><h1>Get Started</h1><!--
                         Prelude
                         --><div class="grid__item one-whole"><!--
@@ -188,7 +193,7 @@
              --></div><!--
 
             Footer
-            --><footer class="grid__item one-whole footer"><!--
+            --><footer id="footer" class="grid__item one-whole footer"><!--
                 --><span class="footer__author">DalekJS created by <a class="footer__link" href="https://github.com/asciidisco">Sebastian Golasch</a></span><!--
                 --><span class="footer__author">Logo by <a class="footer__link" href="http://www.redbubble.com/people/scottbarker">Scott Barker</a></span><!--
             --></footer><!--
@@ -203,9 +208,11 @@
           ga('send', 'pageview');
         </script>
         <!-- build:js ../js/main.js -->
-        <script src="../js/vendor/jquery-1.9.1.min.js"></script>
-        <script src="../js/vendor/jquery.inviewport.js"></script>
-        <script src="../js/prism.js"></script>
+        <script src="../bower_components/jquery/jquery.js"></script>
+        <script src="../bower_components/in-viewport/in-viewport.js"></script>
+        <script src="../bower_components/fastclick/lib/fastclick.js"></script>
+        <script src="../bower_components/iscroll/build/iscroll.js"></script>
+        <script src="../bower_components/prism/prism.js"></script>
         <script src="../js/main.js"></script>
         <!-- endbuild -->
     </body>

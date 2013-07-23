@@ -12,7 +12,13 @@ module.exports = function(grunt) {
     uglify: {
       compress: {
         files: {
-          'build/js/main.js': ['js/vendor/jquery-1.9.1.min.js', 'js/vendor/jquery.inviewport.js', 'js/prism.js', 'js/main.js']
+          'build/js/main.js': [
+            'bower_components/jquery/jquery.js',
+            'bower_components/in-viewport/in-viewport.js',
+            'bower_components/fastclick/lib/fastclick.js',
+            'bower_components/iscroll/build/iscroll.js',
+            'bower_components/prism/prism.js',
+            'js/main.js']
         }
       }
     },
@@ -21,7 +27,10 @@ module.exports = function(grunt) {
     cssmin: {
       compress: {
         files: {
-          'build/css/main.css': ['css/style.min.css', 'css/prism.css']
+          'build/css/main.css': [
+            'bower_components/prism/prism-funky.css',
+            'css/style.min.css'
+          ]
         }
       }
     },

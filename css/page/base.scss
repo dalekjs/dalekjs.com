@@ -42,6 +42,30 @@ pre {
 	vertical-align: center;
 }
 
+/* Subpage iScroll */
+#content {
+	position: absolute;
+	z-index: 1;
+	overflow: hidden;
+	height: 90%;
+	width: 80%;
+	padding-left: 0;
+}
+
+#scroller {
+	position: absolute;
+	z-index: 1;
+	width: 99%;
+}
+
+#footer {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	left: 0;
+}
+
+
 @media all and (max-width: 1200px) and (min-width: 1000px) {
 	.wrapper {
 		width: 900px;

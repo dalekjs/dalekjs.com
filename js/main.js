@@ -38,7 +38,13 @@ var activeSidebar = function (event) {
 };
 
 var activeByViewport = function () {
-  var inview = '.nav-' + $('.nav-helper:in-viewport:first').attr('name');
+  var inview = '.nav-undefined';
+  $('.nav-helper').each(function (idx, elm) {
+  	if (inViewport(elm) && inview === '.nav-undefined') {
+  		inview = '.nav-' + $(elm).attr('name');
+  	}
+  });
+
   if (inview !== '.nav-undefined') {
   	var $elm = $('.sidenav ' + inview);
   	if (!$elm.hasClass('active')) {
@@ -52,3 +58,8 @@ $window.on('hashchange', activeSidebar);
 $window.on('scroll', activeByViewport);
 activeSidebar();
 activeByViewport();
+
+// iScroll sidenav
+if (document.getElementById('content')) {
+	new IScroll('#content', { scrollbars: true, mouseWheel: true, interactiveScrollbars: true });
+}
