@@ -3,6 +3,21 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
+    connect: {
+      livereload: {
+        options: {
+          port: 8888,
+          middleware: function(connect, options) {
+            return[
+              require('connect-livereload')(),
+              connect.static(options.base),
+              connect.directory(options.base)
+            ];
+          }
+        }
+      }
+    },
+
     // clean
     clean: {
       build: ['build']
@@ -18,7 +33,20 @@ module.exports = function(grunt) {
             'bower_components/fastclick/lib/fastclick.js',
             'bower_components/iscroll/build/iscroll.js',
             'bower_components/prism/prism.js',
-            'js/main.js']
+            'js/main.js'
+          ]
+        }
+      }
+    },
+
+    // compile sass files
+    sass: {
+      dist: {
+        options: {
+          style: 'expanded'
+        },
+        files: {
+          'css/style.min.css': 'css/style.scss'
         }
       }
     },
@@ -84,6 +112,20 @@ module.exports = function(grunt) {
       docs: {src: ['docs/*.html'], dest: 'build/docs', expand: true, flatten: true, filter: 'isFile'}
     },
 
+    // watch configuration
+    watch: {
+      options: {
+        livereload: true
+      },
+      html: {
+        files: ['**/*.html']
+      },
+      scss: {
+        files: ['css/**/*.scss'],
+        tasks: ['sass:dist'],
+      }
+    },
+
     // compress artifacts
     compress: {
       main: {
@@ -105,9 +147,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-rev');
   grunt.loadNpmTasks('grunt-usemin');
 
-  grunt.registerTask('build', ['clean', 'cssmin', 'uglify', 'copy', 'rev', 'usemin', 'htmlmin', 'compress']);
+  // Default
+  grunt.registerTask('default', ['connect', 'watch']);
+  grunt.registerTask('build', ['clean', 'sass', 'cssmin', 'uglify', 'copy', 'rev', 'usemin', 'htmlmin', 'compress']);
 
 };
