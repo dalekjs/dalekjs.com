@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>DalekJS - Automated cross browser testing with JavaScript</title>
-        <meta name="description" content="DalekJS - Exterminate all the bugs">
+        <title>FooBar</title>
+        <meta name="description" content="FooBar">
         <meta name="viewport" content="width=device-width">
 
         <!-- icon-ish stuff -->
@@ -16,23 +16,20 @@
         <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
         <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
 
-        <link rel="dns-prefetch" href="//dalekjs.github.io">
+        <link rel="dns-prefetch" href="//dalekjs.com">
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="dns-prefetch" href="//themes.googleusercontent.com">
-        <link rel="dns-prefetch" href="//player.vimeo.com">
-        <link rel="dns-prefetch" href="//a.vimeocdn.com">
-        <link rel="dns-prefetch" href="//b.vimeocdn.com">
         <link rel="dns-prefetch" href="//www.google-analytics.com">
 
         <!-- build:css ../css/main.css -->
+        <link rel="stylesheet" href="../bower_components/prism/prism-funky.css">
         <link rel="stylesheet" href="../css/style.min.css">
-        <link rel="stylesheet" href="../css/prism.css">
         <!-- endbuild -->
 
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Monday, July 22nd, 2013, 6:14:17 PM"><!--
+    <body data-buildtime="Tuesday, July 23rd, 2013, 6:40:46 PM"><!--
 
         --><div class="grid"><!--
 
@@ -41,26 +38,26 @@
                     desktop menue
                     --><ul class="nav nav--fit nav--block"><!--
                         --><li><a href="../index.html">DALEKJS</a></li><!--
-                        --><li><a href="../pages/getStarted.html" class="active">Get started</a></li><!--
-                        --><li><a href="../pages/documentation.html">Documentation</a></li><!--
-                        --><li><a href="../pages/support.html">Support</a></li><!--
-                        --><li><a href="../pages/faq.html">FAQ</a></li><!--
-                        --><li><a href="../pages/merch.html">Merch</a></li><!--
+                        --><li><a  href="../pages/getStarted.html">Get started</a></li><!--
+                        --><li><a class="active" href="../pages/documentation.html">Documentation</a></li><!--
+                        --><li><a  href="../pages/support.html">Support</a></li><!--
+                        --><li><a  href="../pages/faq.html">FAQ</a></li><!--
+                        --><li><a  href="../pages/merch.html">Merch</a></li><!--
                     --></ul><!--
 
                     mobile menue
                     --><select onchange="if (this.value) window.location.href = this.value;"><!--
                         --><option value="../index.html">DALEKJS</option><!--
-                        --><option selected value="../pages/getStarted.html">Get started</option><!--
-                        --><option value="../pages/documentation.html">Documentation</option><!--
-                        --><option value="../pages/support.html">Support</option><!--
-                        --><option value="../pages/faq.html">FAQ</option><!--
-                        --><option value="../pages/merch.html">Merch</option><!--
+                        --><option  value="../pages/getStarted.html">Get started</option><!--
+                        --><option selected value="../pages/documentation.html">Documentation</option><!--
+                        --><option  value="../pages/support.html">Support</option><!--
+                        --><option  value="../pages/faq.html">FAQ</option><!--
+                        --><option  value="../pages/merch.html">Merch</option><!--
                     --></select><!--
                 --></nav><!--
-            --></header><div class="grid__item one-whole"><div class="grid__item one-quarter sidenav"><ul><li class="nav-mouseEvent"><a href="#meth-mouseEvent">mouseEvent</a></li><li class="nav-setHttpAuth"><a href="#meth-setHttpAuth">setHttpAuth</a></li><li class="nav-toFrame"><a href="#meth-toFrame">toFrame</a></li><li class="nav-waitFor"><a href="#meth-waitFor">waitFor</a></li><li class="nav-waitForResource"><a href="#meth-waitForResource">waitForResource</a></li><li class="nav-waitForText"><a href="#meth-waitForText">waitForText</a></li><li class="nav-waitUntilVisible"><a href="#meth-waitUntilVisible">waitUntilVisible</a></li><li class="nav-waitWhileVisible"><a href="#meth-waitWhileVisible">waitWhileVisible</a></li><li class="nav-screenshot"><a href="#meth-screenshot">screenshot</a></li><li class="nav-wait"><a href="#meth-wait">wait</a></li><li class="nav-reload"><a href="#meth-reload">reload</a></li><li class="nav-forward"><a href="#meth-forward">forward</a></li><li class="nav-back"><a href="#meth-back">back</a></li><li class="nav-click"><a href="#meth-click">click</a></li><li class="nav-setValue"><a href="#meth-setValue">setValue</a></li><li class="nav-open"><a href="#meth-open">open</a></li><li class="nav-type"><a href="#meth-type">type</a></li><li class="nav-answer"><a href="#meth-answer">answer</a></li><li class="nav-acceptAlert"><a href="#meth-acceptAlert">acceptAlert</a></li><li class="nav-dismissAlert"><a href="#meth-dismissAlert">dismissAlert</a></li><li class="nav-waitForElement"><a href="#meth-waitForElement">waitForElement</a></li></ul></div><div class="grid__item three-quarters"><h1 class="topic">Actions</h1><a name="meth-mouseEvent"></a><h2 class="method"> .mouseEvent</h2><p> Triggers a mouse event on the first element found matching the provided selector.
+            --></header><div class="grid__item one-whole"><div class="grid__item one-quarter sidenav" id="sidenav"><ul><li class="nav-mouseEvent"><a href="#meth-mouseEvent">mouseEvent</a></li><li class="nav-setHttpAuth"><a href="#meth-setHttpAuth">setHttpAuth</a></li><li class="nav-toFrame"><a href="#meth-toFrame">toFrame</a></li><li class="nav-toParent"><a href="#meth-toParent">toParent</a></li><li class="nav-toWindow"><a href="#meth-toWindow">toWindow</a></li><li class="nav-toParentWindow"><a href="#meth-toParentWindow">toParentWindow</a></li><li class="nav-waitFor"><a href="#meth-waitFor">waitFor</a></li><li class="nav-waitForResource"><a href="#meth-waitForResource">waitForResource</a></li><li class="nav-waitForText"><a href="#meth-waitForText">waitForText</a></li><li class="nav-waitUntilVisible"><a href="#meth-waitUntilVisible">waitUntilVisible</a></li><li class="nav-waitWhileVisible"><a href="#meth-waitWhileVisible">waitWhileVisible</a></li><li class="nav-screenshot"><a href="#meth-screenshot">screenshot</a></li><li class="nav-wait"><a href="#meth-wait">wait</a></li><li class="nav-reload"><a href="#meth-reload">reload</a></li><li class="nav-forward"><a href="#meth-forward">forward</a></li><li class="nav-back"><a href="#meth-back">back</a></li><li class="nav-click"><a href="#meth-click">click</a></li><li class="nav-setValue"><a href="#meth-setValue">setValue</a></li><li class="nav-open"><a href="#meth-open">open</a></li><li class="nav-type"><a href="#meth-type">type</a></li><li class="nav-answer"><a href="#meth-answer">answer</a></li><li class="nav-acceptAlert"><a href="#meth-acceptAlert">acceptAlert</a></li><li class="nav-dismissAlert"><a href="#meth-dismissAlert">dismissAlert</a></li><li class="nav-waitForElement"><a href="#meth-waitForElement">waitForElement</a></li></ul></div><div class="grid__item three-quarters" id="content"><h1 class="topic">Actions</h1><a class="nav-helper" data-name="meth-mouseEvent"></a><h2 class="method"> .mouseEvent</h2><p> Triggers a mouse event on the first element found matching the provided selector.
  Supported events are mouseup, mousedown, click, mousemove, mouseover and mouseout.
- TODO: IMPLEMENT</p><a name="meth-setHttpAuth"></a><h2 class="method"> .setHttpAuth</h2><p> Sets HTTP<em>AUTH</em>USER and HTTP<em>AUTH</em>PW values for HTTP based authentication systems.</p>
+ TODO: IMPLEMENT</p><a class="nav-helper" data-name="meth-setHttpAuth"></a><h2 class="method"> .setHttpAuth</h2><p> Sets HTTP<em>AUTH</em>USER and HTTP<em>AUTH</em>PW values for HTTP based authentication systems.</p>
 
 <p> If your site is behind a HTTP basic auth, you&#39;re able to set the username and the password</p>
 
@@ -99,7 +96,7 @@
  </code></pre></p>
 
 <p> If both, dalek variables &amp; env variables are set, the dalek variables win.
- For more information about this, I recommend to check out the <a href="/docs/config.html">configuration docs</a></p><a name="meth-toFrame"></a><h2 class="method"> .toFrame</h2><p> Switches to an iFrame context</p>
+ For more information about this, I recommend to check out the <a href="/docs/config.html">configuration docs</a></p><a class="nav-helper" data-name="meth-toFrame"></a><h2 class="method"> .toFrame</h2><p> Switches to an iFrame context</p>
 
 <p> Sometimes you encounter situation, where you need to drive/access an iFrame sitting in your page.
  You can access such frames with this mehtod, but be aware of the fact, that the complete test</p>
@@ -116,13 +113,13 @@
     .toIFrame(&#39;#login&#39;)
       .title().is(&#39;Title of a page that can be embedded as an iframe&#39;)
     .toParent()
- </code></pre></p><a name="meth-waitFor"></a><h2 class="method"> .waitFor</h2><p> Waits until a function returns true to process any next step.</p>
+ </code></pre></p><a class="nav-helper" data-name="meth-toParent"></a><h2 class="method"> .toParent</h2><p> End of IFrame context</p><a class="nav-helper" data-name="meth-toWindow"></a><h2 class="method"> .toWindow</h2><p> Change scope to a specific window context</p><a class="nav-helper" data-name="meth-toParentWindow"></a><h2 class="method"> .toParentWindow</h2><p> Go back to the parent window context</p><a class="nav-helper" data-name="meth-waitFor"></a><h2 class="method"> .waitFor</h2><p> Waits until a function returns true to process any next step.</p>
 
 <p> You can also set a callback on timeout using the onTimeout argument,
- and set the timeout using the timeout one, in milliseconds. The default timeout is set to 5000ms.</p><a name="meth-waitForResource"></a><h2 class="method"> .waitForResource</h2><p> Wait until a resource that matches the given testFx is loaded to process a next step.</p><a name="meth-waitForText"></a><h2 class="method"> .waitForText</h2><p> Waits until the passed text is present in the page contents before processing the immediate next step.</p><a name="meth-waitUntilVisible"></a><h2 class="method"> .waitUntilVisible</h2><p> Waits until an element matching the provided selector expression is visible in the remote DOM to process a next step.</p><a name="meth-waitWhileVisible"></a><h2 class="method"> .waitWhileVisible</h2><p> Waits until an element matching the provided selector expression is no longer visible in remote DOM to process a next step.</p>
+ and set the timeout using the timeout one, in milliseconds. The default timeout is set to 5000ms.</p><a class="nav-helper" data-name="meth-waitForResource"></a><h2 class="method"> .waitForResource</h2><p> Wait until a resource that matches the given testFx is loaded to process a next step.</p><a class="nav-helper" data-name="meth-waitForText"></a><h2 class="method"> .waitForText</h2><p> Waits until the passed text is present in the page contents before processing the immediate next step.</p><a class="nav-helper" data-name="meth-waitUntilVisible"></a><h2 class="method"> .waitUntilVisible</h2><p> Waits until an element matching the provided selector expression is visible in the remote DOM to process a next step.</p><a class="nav-helper" data-name="meth-waitWhileVisible"></a><h2 class="method"> .waitWhileVisible</h2><p> Waits until an element matching the provided selector expression is no longer visible in remote DOM to process a next step.</p>
 
 <p> <pre><code class="language-javascript">
- </code></pre></p><a name="meth-screenshot"></a><h2 class="method"> .screenshot</h2><p> Take a screenshot of the current page.</p>
+ </code></pre></p><a class="nav-helper" data-name="meth-screenshot"></a><h2 class="method"> .screenshot</h2><p> Take a screenshot of the current page.</p>
 
 <p> The pathname argument takes some placeholders that will be replaced
  Placeholder:</p>
@@ -146,7 +143,7 @@ test.screenshot(&#39;my/page/in_time/:timestamp/homepage&#39;);
 test.screenshot(&#39;my/page/in_time/:date/homepage&#39;);
 // creates &#39;my/page/at/12_24_2013_14_55_23/homepage.png&#39;
 test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
-</code></pre></p></li></ul><a name="meth-wait"></a><h2 class="method"> .wait</h2><p> Pause steps suite execution for a given amount of time, and optionally execute a step on done.</p>
+</code></pre></p></li></ul><a class="nav-helper" data-name="meth-wait"></a><h2 class="method"> .wait</h2><p> Pause steps suite execution for a given amount of time, and optionally execute a step on done.</p>
 
 <p> This makes sense, if you have a ticker for example, tht scrolls like every ten seconds
  &amp; you want to assure that the visible content changes every ten seconds</p>
@@ -170,14 +167,14 @@ test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
    .wait()
    .visible(&#39;.ticker-element:last&#39;, &#39;Third ticker element is visible&#39;)
    .all.success(&#39;This ticker changed every 5 seconds, cool!&#39;);
- </code></pre></p><a name="meth-reload"></a><h2 class="method"> .reload</h2><p> Reloads current page location.</p>
+ </code></pre></p><a class="nav-helper" data-name="meth-reload"></a><h2 class="method"> .reload</h2><p> Reloads current page location.</p>
 
 <p> This is basically the same as hitting F5/refresh in your browser</p>
 
 <p> <pre><code class="language-javascript">
  test.open(&#39;http://google.com&#39;)
    .refresh();
- </code></pre></p><a name="meth-forward"></a><h2 class="method"> .forward</h2><p> Moves a step forward in browser&#39;s history.</p>
+ </code></pre></p><a class="nav-helper" data-name="meth-forward"></a><h2 class="method"> .forward</h2><p> Moves a step forward in browser&#39;s history.</p>
 
 <p> This is basically the same as hitting the forward button in your browser</p>
 
@@ -189,7 +186,7 @@ test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
    .url.is(&#39;http://google.com&#39;, &#39;We are at Google!&#39;)
    .forward()
    .url.is(&#39;https://github.com/&#39;, &#39;Back at GitHub! Timetravel FTW&#39;);
- </code></pre></p><a name="meth-back"></a><h2 class="method"> .back</h2><p> Moves back a step in browser&#39;s history.</p>
+ </code></pre></p><a class="nav-helper" data-name="meth-back"></a><h2 class="method"> .back</h2><p> Moves back a step in browser&#39;s history.</p>
 
 <p> This is basically the same as hitting the back button in your browser</p>
 
@@ -201,7 +198,7 @@ test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
    .url.is(&#39;http://google.com&#39;, &#39;We are at Google!&#39;)
    .forward()
    .url.is(&#39;https://github.com/&#39;, &#39;Back at GitHub! Timetravel FTW&#39;);
- </code></pre></p><a name="meth-click"></a><h2 class="method"> .click</h2><p> Performs a click on the element matching the provided selector expression.</p>
+ </code></pre></p><a class="nav-helper" data-name="meth-click"></a><h2 class="method"> .click</h2><p> Performs a click on the element matching the provided selector expression.</p>
 
 <p> If we take Daleks homepage (the one you&#39;re probably visiting right now),
  the HTML looks something like this</p>
@@ -222,7 +219,7 @@ test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
      .title().is(&#39;DalekJS - Frequently asked questions&#39;, &#39;What the F.A.Q.&#39;);
  </code></pre></p>
 
-<p> By default, this performs a left click.</p><a name="meth-setValue"></a><h2 class="method"> .setValue</h2><p> Fills the fields of a form with given values.</p>
+<p> By default, this performs a left click.</p><a class="nav-helper" data-name="meth-setValue"></a><h2 class="method"> .setValue</h2><p> Fills the fields of a form with given values.</p>
 
 <p> <pre><code class="language-markup">
  &lt;nav&gt;
@@ -238,17 +235,17 @@ test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
  test.open(&#39;http://dalekjs.com&#39;)
      .setValue(&#39;#ijustwannahaveavalue&#39;, &#39;a value&#39;)
      .title().is(&#39;DalekJS - Frequently asked questions&#39;, &#39;What the F.A.Q.&#39;);
- </code></pre></p><a name="meth-open"></a><h2 class="method"> .open</h2><p> Performs an HTTP request for opening a given location.
+ </code></pre></p><a class="nav-helper" data-name="meth-open"></a><h2 class="method"> .open</h2><p> Performs an HTTP request for opening a given location.
  You can forge GET, POST, PUT, DELETE and HEAD requests.</p>
 
 <p> <pre><code class="language-javascript">
  test.open(&#39;http://dalekjs.com&#39;)
      .url().is(&#39;http://dalekjs.com&#39;, &#39;DalekJS I&#39;m in you&#39;);
- </code></pre></p><a name="meth-type"></a><h2 class="method"> .type</h2><a name="meth-answer"></a><h2 class="method"> .answer</h2><a name="meth-acceptAlert"></a><h2 class="method"> .acceptAlert</h2><a name="meth-dismissAlert"></a><h2 class="method"> .dismissAlert</h2><a name="meth-waitForElement"></a><h2 class="method"> .waitForElement</h2><p> Waits until an element matching the provided
- selector expression exists in remote DOM to process any next step.</p></div><!--
+ </code></pre></p><a class="nav-helper" data-name="meth-type"></a><h2 class="method"> .type</h2><a class="nav-helper" data-name="meth-answer"></a><h2 class="method"> .answer</h2><a class="nav-helper" data-name="meth-acceptAlert"></a><h2 class="method"> .acceptAlert</h2><a class="nav-helper" data-name="meth-dismissAlert"></a><h2 class="method"> .dismissAlert</h2><a class="nav-helper" data-name="meth-waitForElement"></a><h2 class="method"> .waitForElement</h2><p> Waits until an element matching the provided
+ selector expression exists in remote DOM to process any next step.</p></div></div><!--
 
             Footer
-            --><footer class="grid__item one-whole footer"><!--
+            --><footer id="footer" class="grid__item one-whole footer"><!--
                 --><span class="footer__author">DalekJS created by <a class="footer__link" href="https://github.com/asciidisco">Sebastian Golasch</a></span><!--
                 --><span class="footer__author">Logo by <a class="footer__link" href="http://www.redbubble.com/people/scottbarker">Scott Barker</a></span><!--
                 --><span class="footer__author">Browser icons by <a class="footer__link" href="https://github.com/substack">Substack</a></span><!--
@@ -264,9 +261,11 @@ test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
           ga('send', 'pageview');
         </script>
         <!-- build:js ../js/main.js -->
-        <script src="../js/vendor/jquery-1.9.1.min.js"></script>
-        <script src="../js/vendor/jquery.inviewport.js"></script>
-        <script src="../js/prism.js"></script>
+        <script src="../bower_components/jquery/jquery.js"></script>
+        <script src="../bower_components/in-viewport/in-viewport.js"></script>
+        <script src="../bower_components/fastclick/lib/fastclick.js"></script>
+        <script src="../bower_components/iscroll/build/iscroll.js"></script>
+        <script src="../bower_components/prism/prism.js"></script>
         <script src="../js/main.js"></script>
         <!-- endbuild -->
     </body>
