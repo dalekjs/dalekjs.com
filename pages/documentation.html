@@ -15,6 +15,9 @@
                         --><li class="nav-reports"><a href="#reports">Reports</a></li><!--
                         --><li class="nav-drivers"><a href="#drivers">Drivers</a></li><!--
                         --><li class="nav-cli"><a href="#cli">CLI</a></li><!--
+                        --><li class="nav-grunt"><a href="#extending">Grunt</a></li><!--
+                        --><li class="nav-yeoman"><a href="#debugging">Yeoman</a></li><!--
+                        --><li class="nav-config"><a href="#config">Config</a></li><!--
                         --><li class="nav-extending"><a href="#extending">Extending</a></li><!--
                         --><li class="nav-debugging"><a href="#debugging">Debugging</a></li><!--
                     --></ul><!--
@@ -37,6 +40,9 @@
                             clicking elements, open urls, filling out input fields, etc.
                             </p><!--
                             --><a href="../docs/actions.html" class="doc-link">Docs</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-internal-actions" class="doc-link">Source</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-internal-actions/issues" class="doc-link">Issues</a><!--
+                            --><a href="https://trello.com/b/UAMDt8vU/dalek-internal-actions" class="doc-link">Trello</a><!--
                         --></div><!--
 
                         Assertions
@@ -44,10 +50,13 @@
                             --><a class="nav-helper" data-name="assertions"></a><!--
                             --><h2>Assertions</h2><!--
                             --><p class="description">
-                            Actions are a way to control your browsers, e.g. simulate user interactions like
-                            clicking elements, open urls, filling out input fields, etc.
+                            Assertions check if the assumptions you made about a website are correct.
+                            Assetions might check ig the title of a page is as expected, if an element has the expected text, if your mobile website version only displays a certian amount of elements and many more...
                             </p><!--
                             --><a href="../docs/assertions.html" class="doc-link">Docs</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-internal-assertions" class="doc-link">Source</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-internal-assertions/issues" class="doc-link">Issues</a><!--
+                            --><a href="https://trello.com/b/Xydy4ucE/dalek-internal-assertions" class="doc-link">Trello</a><!--
                         --></div><!--
 
                         Browsers
@@ -57,36 +66,43 @@
 
                             --><h3>PhantomJS</h3><!--
                             --><p class="description heavy-indent">
-                            Actions are a way to control your browsers, e.g. simulate user interactions like
-                            clicking elements, open urls, filling out input fields, etc.
+                            <a href="http://phantomjs.org" target="_blank">Phantom JS</a> is a <a href="http://blog.arhg.net/2009/10/what-is-headless-browser.html" target="_blank">headless</a> webbrowser. It will installed together with Dalek &amp; is the default browser to run your tests in.
                             </p><!--
-                            --><a href="/docs/actions.html" class="doc-link heavy-indent">Docs</a><!--
+                            --><a href="../docs/phantomjs.html" class="doc-link">Docs</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-browser-phantomjs" class="doc-link">Source</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-browser-phantomjs/issues" class="doc-link">Issues</a><!--
+                            --><a href="https://trello.com/b/UjcpWj7v/dalek-browser-phantomjs" class="doc-link">Trello</a><!--
 
                             --><h3>Chrome</h3><!--
                             --><p class="description heavy-indent">
-                            Actions are a way to control your browsers, e.g. simulate user interactions like
-                            clicking elements, open urls, filling out input fields, etc.
+                            Any version of Google Chrome, Chromium or Chrome Canary can be used with DalekJS, by default, Dalek will try to use your standard Chrome installation to run your tests.
                             </p><!--
-                            --><a href="/docs/actions.html" class="doc-link heavy-indent">Docs</a><!--
+                            --><a href="../docs/chrome.html" class="doc-link">Docs</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-browser-chrome" class="doc-link">Source</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-browser-chrome/issues" class="doc-link">Issues</a><!--
+                            --><a href="https://trello.com/b/xhw6Jv7A/dalek-browser-chrome" class="doc-link">Trello</a><!--
 
                             --><h3>Internet Explorer</h3><!--
                             --><p class="description heavy-indent">
-                            Actions are a way to control your browsers, e.g. simulate user interactions like
-                            clicking elements, open urls, filling out input fields, etc.
+                            Any version of Internet Explorer &gt;= 6 can be used with DalekJS.
                             </p><!--
-                            --><a href="/docs/actions.html" class="doc-link heavy-indent">Docs</a><!--
+                            --><a href="../docs/internetexplorer.html" class="doc-link">Docs</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-browser-ie" class="doc-link">Source</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-browser-ie/issues" class="doc-link">Issues</a><!--
+                            --><a href="https://trello.com/b/JmwfjVHo/dalek-browser-ie" class="doc-link">Trello</a><!--
 
                             --><h3>Firefox</h3><!--
                             --><p class="description heavy-indent">
-                            Actions are a way to control your browsers, e.g. simulate user interactions like
-                            clicking elements, open urls, filling out input fields, etc.
-                            </p><!--
-                            --><a href="/docs/actions.html" class="doc-link heavy-indent">Docs</a><!--
+                            At the moment, it is only possible to get the Aurora Debug builds (&gt;= 22)) of Firefox up &amp; running, please refer to the docs page on how to download &amp; install them. According to the awesome Mozillians, this will change soon.</p><!--
+                            --><a href="../docs/firefox.html" class="doc-link">Docs</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-browser-firefox" class="doc-link">Source</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-browser-firefox/issues" class="doc-link">Issues</a><!--
+                            --><a href="https://trello.com/b/DAdivSdx/dalek-browser-firefox" class="doc-link">Trello</a><!--
 
                             --><h3>Other</h3><!--
                             --><p class="description heavy-indent">
-                            Actions are a way to control your browsers, e.g. simulate user interactions like
-                            clicking elements, open urls, filling out input fields, etc.
+                            Other browsers will follow soon. If you would like to help, please get in touch with me.
+                            I have plans to get Desktop Opera, Firefox OS, Safari on iOS &amp; Chrome running, for the other ones, I currently have no idea how to get them up &amp; running.
                             </p><!--
 
                         --></div><!--
@@ -98,31 +114,37 @@
 
                             --><h3>Console</h3><!--
                             --><p class="description heavy-indent">
-                            Actions are a way to control your browsers, e.g. simulate user interactions like
-                            clicking elements, open urls, filling out input fields, etc.
-                            </p><!--
-                            --><a href="/docs/actions.html" class="doc-link heavy-indent">Docs</a><!--
-
+                            Daleks basic reporter, all the lovely colors &amp; symbols you see when running dalek.</p><!--
+                            --><a href="../docs/console.html" class="doc-link">Docs</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-reporter-console" class="doc-link">Source</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-reporter-console/issues" class="doc-link">Issues</a><!--
+                            --><a href="https://trello.com/b/luoOUHVq/dalek-reporter-console" class="doc-link">Trello</a><!--
                             --><h3>HTML</h3><!--
                             --><p class="description heavy-indent">
-                            Actions are a way to control your browsers, e.g. simulate user interactions like
-                            clicking elements, open urls, filling out input fields, etc.
+                            This reporter makes beautiful (more or less) html reports. Basically everything you see in your console, when testing your html, packaged up as html. Yep, this kind of an inception-ish thingy.
                             </p><!--
-                            --><a href="/docs/actions.html" class="doc-link heavy-indent">Docs</a><!--
+                            --><a href="../docs/html.html" class="doc-link">Docs</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-reporter-html" class="doc-link">Source</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-reporter-html/issues" class="doc-link">Issues</a><!--
+                            --><a href="https://trello.com/b/OU9sxdtw/dalek-reporter-html" class="doc-link">Trello</a><!--
 
                             --><h3>jUnit XML</h3><!--
                             --><p class="description heavy-indent">
-                            Actions are a way to control your browsers, e.g. simulate user interactions like
-                            clicking elements, open urls, filling out input fields, etc.
+                            All you weirdo JAVArinos, Jenkins CI lovers &amp; all you poor people who work in the so called "Enterprise", here is your reporter. It does what its name promises, writing super verbose testreports in a jUnit XML compatible file.
                             </p><!--
-                            --><a href="/docs/actions.html" class="doc-link heavy-indent">Docs</a><!--
+                            --><a href="../docs/junit.html" class="doc-link">Docs</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-reporter-junit" class="doc-link">Source</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-reporter-junit/issues" class="doc-link">Issues</a><!--
+                            --><a href="https://trello.com/b/dKvjVE0x/dalek-reporter-junit" class="doc-link">Trello</a><!--
 
                             --><h3>JSON</h3><!--
                             --><p class="description heavy-indent">
-                            Actions are a way to control your browsers, e.g. simulate user interactions like
-                            clicking elements, open urls, filling out input fields, etc.
+                            To make parsing of Daleks testresults for other tools easier, there is a JSON reporter available. The Reporter can output the test results to a file in form of the Dalek JSON testprotocol.
                             </p><!--
-                            --><a href="/docs/actions.html" class="doc-link heavy-indent">Docs</a><!--
+                            --><a href="../docs/json.html" class="doc-link">Docs</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-reporter-json" class="doc-link">Source</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-reporter-json/issues" class="doc-link">Issues</a><!--
+                            --><a href="https://trello.com/b/wpindMWl/dalek-reporter-json" class="doc-link">Trello</a><!--
 
                         --></div><!--
 
@@ -133,25 +155,18 @@
 
                             --><h3>Webdriver</h3><!--
                             --><p class="description heavy-indent">
-                            Actions are a way to control your browsers, e.g. simulate user interactions like
-                            clicking elements, open urls, filling out input fields, etc.
+                            DalekJS loves standards, so the basic driver that ships with Dalek is based on the Webdriver standard (you can find the specification <a href="http://www.w3.org/TR/webdriver/" target="_blank">here</a>). That means, when using this driver, Dalek is able to communicate with every endpoint that implements the <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol" target="_blank">JSON-Wire protocol</a>. Hurrah!
                             </p><!--
-                            --><a href="/docs/actions.html" class="doc-link heavy-indent">Docs</a><!--
+                            --><a href="../docs/actions.html" class="doc-link">Docs</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-internal-webdriver" class="doc-link">Source</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-internal-webdriver/issues" class="doc-link">Issues</a><!--
+                            --><a href="https://trello.com/b/DvMQWBMg/dalek-internal-webdriver" class="doc-link">Trello</a><!--
 
                             --><h3>Selenium</h3><!--
-                            --><p class="description heavy-indent">
-                            Actions are a way to control your browsers, e.g. simulate user interactions like
-                            clicking elements, open urls, filling out input fields, etc.
-                            </p><!--
-                            --><a href="/docs/actions.html" class="doc-link heavy-indent">Docs</a><!--
+                            --><p class="description"><strong style="color: red; font-Family: 'Londrina solid'; font-size: 24px">TBA.</strong></p><!--
 
                             --><h3>Sauce</h3><!--
-                            --><p class="description heavy-indent">
-                            Actions are a way to control your browsers, e.g. simulate user interactions like
-                            clicking elements, open urls, filling out input fields, etc.
-                            </p><!--
-                            --><a href="/docs/actions.html" class="doc-link heavy-indent">Docs</a><!--
-
+                            --><p class="description"><strong style="color: red; font-Family: 'Londrina solid'; font-size: 24px">TBA.</strong></p><!--
                         --></div><!--
 
                         Command Line Interface
@@ -159,32 +174,65 @@
                             --><a class="nav-helper" data-name="cli"></a><!--
                             --><h2>Command Line Interface</h2><!--
                             --><p class="description">
-                            Actions are a way to control your browsers, e.g. simulate user interactions like
-                            clicking elements, open urls, filling out input fields, etc.
+                            The command line interface is your interface to the world of DalekJS. This is the way to run your tests. There might be a web interface to Dalek in the future, but as long as there is not, you have to deal with this; But hey, this isn't difficult &amp; I know you can do it!
                             </p><!--
-                            --><a href="/docs/actions.html" class="doc-link">Docs</a><!--
+                            --><a href="../docs/cli.html" class="doc-link">Docs</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-cli" class="doc-link">Source</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-cli/issues" class="doc-link">Issues</a><!--
+                            --><a href="https://trello.com/b/QhNY6vGU/dalek-cli" class="doc-link">Trello</a><!--
+                        --></div><!--
+
+                        Grunt
+                        --><div class="grid__item one-whole"><!--
+                            --><a class="nav-helper" data-name="grunt"></a><!--
+                            --><h2>Grunt integration</h2><!--
+                            --><p class="description">
+                            If you are as addicted to build &amp; test your stuff with the help of Grunt as I am, well, then I hope that it makes you as happy as me that there is a grunt task for DalekJS already available.
+                            </p><!--
+                            --><a href="../docs/grunt.html" class="doc-link">Docs</a><!--
+                            --><a href="https://github.com/dalekjs/grunt-dalekjs" class="doc-link">Source</a><!--
+                            --><a href="https://github.com/dalekjs/grunt-dalekjs/issues" class="doc-link">Issues</a><!--
+                            --><a href="https://trello.com/b/990zkp2s/grunt-dalekjs" class="doc-link">Trello</a><!--
+                        --></div><!--
+
+                        Yeoman
+                        --><div class="grid__item one-whole"><!--
+                            --><a class="nav-helper" data-name="yeoman"></a><!--
+                            --><h2>Yeoman integration</h2><!--
+                            --><p class="description">
+                            Yo Yeoman folks, I know you hate repetitive tasks as much as I do, so here is your yeoman generator. It basically does everything for you, well, except testing your application...
+                            </p><!--
+                            --><a href="../docs/yeoman.html" class="doc-link">Docs</a><!--
+                            --><a href="https://github.com/dalekjs/generator-dalekjs" class="doc-link">Source</a><!--
+                            --><a href="https://github.com/dalekjs/generator-dalekjs/issues" class="doc-link">Issues</a><!--
+                            --><a href="https://trello.com/b/lzbTqOvZ/generator-dalekjs" class="doc-link">Trello</a><!--
+                        --></div><!--
+
+                        Configuring DalekJS
+                        --><div class="grid__item one-whole"><!--
+                            --><a class="nav-helper" data-name="config"></a><!--
+                            --><h2>Configuration</h2><!--
+                            --><p class="description">
+                            Dalek comes with some sane defaults, but sometimes, it needs to be tweaked to suit your needs.
+                            </p><!--
+                            --><a href="../docs/config.html" class="doc-link">Docs</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-internal-config" class="doc-link">Source</a><!--
+                            --><a href="https://github.com/dalekjs/dalek-internal-config/issues" class="doc-link">Issues</a><!--
+                            --><a href="https://trello.com/b/TdYnOoKW/dalek-internal-config" class="doc-link">Trello</a><!--
                         --></div><!--
 
                         Extending DalekJS
                         --><div class="grid__item one-whole"><!--
                             --><a class="nav-helper" data-name="extending"></a><!--
                             --><h2>Extending DalekJS</h2><!--
-                            --><p class="description">
-                            Actions are a way to control your browsers, e.g. simulate user interactions like
-                            clicking elements, open urls, filling out input fields, etc.
-                            </p><!--
-                            --><a href="/docs/actions.html" class="doc-link">Docs</a><!--
+                            --><p class="description"><strong style="color: red; font-Family: 'Londrina solid'; font-size: 24px">TBA.</strong></p><!--
                         --></div><!--
 
                         Debugging
                         --><div class="grid__item one-whole"><!--
                             --><a class="nav-helper" data-name="debugging"></a><!--
                             --><h2>Debugging</h2><!--
-                            --><p class="description">
-                            Actions are a way to control your browsers, e.g. simulate user interactions like
-                            clicking elements, open urls, filling out input fields, etc.
-                            </p><!--
-                            --><a href="/docs/actions.html" class="doc-link">Docs</a><!--
+                            --><p class="description"><strong style="color: red; font-Family: 'Londrina solid'; font-size: 24px">TBA.</strong></p><!--
                         --></div><!--
 
                     --></div><!--

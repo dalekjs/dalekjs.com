@@ -105,18 +105,32 @@
 <!--                -->}
 <!--                -->};<!--
                     --></code></pre><!--
-                            --><p class="description">Okay commandline cowboys &amp; cowgirls, it is time to write our first test!<br/>And, because I don't know your pages &amp; sites, I think we should test something we all know, yes it is time to penetrate our old friend Google again! In this test, we will verify that the &lt;title&gt; element from Googles homepage has the correct value.<br/>The test we need to write, to make this happen, looks like this:</p><!--
+                            --><p class="description">Now, lets save this file as 'my_first_test.js' in a folder called 'test'. This one is a good example of a basic testcase. Everything you wrapped in that object literals called `module.exports` is a testsuite in daleks eyes, it can contain hundreds od hundreds of single test functions, like the one that we created, callled `Page title is correct`. Every of those functions gets an argument injected, which we typically call `test`, this `test` variable is your interface to Daleks functions. So what does this test do? You might have guessed, that it opens a webpage, Google in our example, and after the browser has finished loading, we `assert` that the `title` of the page is `Google`. The second argument of that `is` method than gives you the space for a custom message, this one is there that you can easily identify your failing tests later on, when you have dozents of them up and running. Finally, to tell Dalek that this is everything we would like to check within that particular test, we call the `done` method &amp; yes, that is it, your first test is ready, hurrah!</p><!--
                         --></div><!--
 
                         Run your tests
                         --><div class="grid__item one-whole"><!--
                             --><a class="nav-helper" data-name="runtests"></a><!--
                             --><h2>Run your tests</h2><!--
+                        --><p class="description">So long so good, we learned why Dalek is awesome, installed dalek, we wrote our first test &amp; now it is time to really get some timey-wimey action started. Go back to our new friend, the command line, go back to your project folder &amp; simply type:</p><!--
+                    --><pre class="dalek-shell cmd-output"><code><!--
+                    --><span class="token shell-icon">$</span> <span class="token shell-dalek">dalek</span> <span class="token shell-npm">test/my_first_test.js</span></pre></code><!--
+                    --><p class="description">Awesome, now just hit return &amp; experience the Dalek magic for the first time. It all worked well, if you end up with some output like this:</p><!--
+                    --><pre class="dalek-shell cmd-output"><code><!--
+                    --><span class="token shell-rt">Running tests</span>
+<!--                --><span class="token shell-rt">Running Browser:</span> <span class="token shell-browser">Phantomjs</span>
+<!--                --><span class="token shell-rt">RUNNING TEST -</span> <span class="token shell-tt">"Page title is correct"</span>
+<!--                --><span class="token shell-action">▶ OPEN http://google.com</span>
+<!--                --><span class="token shell-sg">✔</span> <span class="token shell-rt">TITLE It has title</span>
+<!--                --><span class="token shell-sg">✔</span> <span class="token shell-rt">1 Assertions run</span>
+<!--                --><span class="token shell-sg">✔</span> <span class="token shell-rt">TEST - <span class="token shell-tt">"Page title is correct"</span> SUCCEEDED</span>
+<!--                --><span class="token shell-suc">1/1 assertions passed. Elapsed Time: 2 sec</span><!--
+-->                 </pre></code><!--
                         --></div><!--
 
                         Add user interactions
                         --><div class="grid__item one-whole"><!--
-                            --><a class="nav-helper" data-name="userinteractions"></a><!--
+                            --><a class="nav-helper" data-name="userinteraction"></a><!--
                             --><h2>Add user interactions</h2><!--
                         --></div><!--
 
