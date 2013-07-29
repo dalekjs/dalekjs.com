@@ -75,6 +75,11 @@ module.exports = function(grunt) {
       build: ['build', 'temp']
     },
 
+    // lint
+    jshint: {
+      all: ['js/main.js']
+    },
+
     // JS min
     uglify: {
       compress: {
@@ -129,8 +134,26 @@ module.exports = function(grunt) {
         files: {
           'build/index.html': 'build/index.html',
           'build/404.html': 'build/404.html',
-          'build/pages/*.html': 'build/pages/*.html',
-          'build/docs/*.html': 'build/docs/*.html'
+          'build/pages/documentation.html': 'build/pages/documentation.html',
+          'build/pages/faq.html': 'build/pages/faq.html',
+          'build/pages/getStarted.html': 'build/pages/getStarted.html',
+          'build/pages/merch.html': 'build/pages/merch.html',
+          'build/pages/support.html': 'build/pages/support.html',
+          'build/docs/actions.html': 'build/docs/actions.html',
+          'build/docs/assertions.html': 'build/docs/assertions.html',
+          'build/docs/chrome.html': 'build/docs/chrome.html',
+          'build/docs/cli.html': 'build/docs/cli.html',
+          'build/docs/config.html': 'build/docs/config.html',
+          'build/docs/console.html': 'build/docs/console.html',
+          'build/docs/drivernative.html': 'build/docs/drivernative.html',
+          'build/docs/firefox.html': 'build/docs/firefox.html',
+          'build/docs/internetexplorer.html': 'build/docs/internetexplorer.html',
+          'build/docs/phantomjs.html': 'build/docs/phantomjs.html',
+          'build/docs/reporter.html': 'build/docs/reporter.html',
+          'build/docs/test.html': 'build/docs/test.html',
+          'build/docs/testsuite.html': 'build/docs/testsuite.html',
+          'build/docs/timer.html': 'build/docs/timer.html',
+          'build/docs/webdriver.html': 'build/docs/webdriver.html'
         }
       }
     },
@@ -171,6 +194,10 @@ module.exports = function(grunt) {
       },
       html: {
         files: ['**/*.html']
+      },
+      scripts: {
+        files: ['js/*.js'],
+        tasks: ['jshint']
       },
       scss: {
         files: ['css/**/*.scss'],
@@ -220,6 +247,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-compress');
@@ -231,6 +259,6 @@ module.exports = function(grunt) {
 
   // Default
   grunt.registerTask('default', ['connect', 'watch']);
-  grunt.registerTask('build', ['clean', 'sass', 'cssmin', 'uglify', 'templates', 'copy', 'rev', 'usemin', 'htmlmin', 'compress']);
+  grunt.registerTask('build', ['clean', 'jshint', 'sass', 'cssmin', 'uglify', 'templates', 'copy', 'rev', 'usemin', 'htmlmin', 'compress']);
 
 };

@@ -17,7 +17,8 @@
     "grunt-contrib-sass": "~0.4.1",
     "grunt-rev": "~0.1.0",
     "grunt-usemin": "~0.1.11",
-    "handlebars": "~1.0.12"
+    "handlebars": "~1.0.12",
+    "grunt-contrib-jshint": "~0.6.0"
   },
   "repository": {
     "type": "git",
