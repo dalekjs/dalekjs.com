@@ -1,7 +1,7 @@
 h1 {
   color: rgb(223, 3, 3);
   font-family: 'Londrina Solid', cursive;
-  font-size: 120px;
+  font-size: 116px;
 }
 
 h2 {
@@ -13,21 +13,15 @@ h3 {
   margin-top: 20px;
 }
 
-@media screen and (max-width: 47em) {
-	h1 {
-	  font-size: 90px;
-	}
-}
-
-@media screen and (max-width: 44em) {
-	h1 {
-	  font-size: 90px;
-	}
-}
-
 @media all and (max-width: 1000px) and (min-width: 800px) {
 	h1 {
-	  font-size: 80px;
+	  font-size: 78px;
+	}
+}
+
+@media all and (max-width: 800px) and (min-width: 600px) {
+	h1 {
+	  font-size: 70px;
 	}
 }
 

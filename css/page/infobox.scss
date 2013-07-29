@@ -4,6 +4,7 @@
   background: rgb(66,102,162);
   font-family: $font;
   margin-bottom: 40px;
+  margin-top: 20px;
   padding: $base-line-height;
 
   .catchy {
@@ -22,4 +23,18 @@
     margin-left: 25px;
   }
 
+}
+
+@media all and (max-width: 820px) and (min-width: 720px) {
+  .info-box {
+    width: 85%;
+    margin-left: 5%;
+  }
+}
+
+@media all and (max-width: 720px) {
+  .info-box {
+    width: 85%;
+    margin-left: 10%;
+  }
 }

@@ -9,10 +9,33 @@
 }
 
 .doc-link {
-  font-family: 'Oswald';
-  margin-left: 12px;
+  font-family: 'Londrina Solid' !important;
+  margin-left: 20px;
   color: $color-red;
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
+}
+
+@media all and (max-width: 800px) and (min-width: 600px) {
+  .description {
+    font-size: 16px;
+  }
+
+  .doc-link {
+    font-size: 22px;
+  }
+
+}
+
+@media all and (max-width: 600px) {
+  .description {
+    font-size: 12px;
+  }
+
+  .doc-link {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
 }

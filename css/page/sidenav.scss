@@ -42,7 +42,29 @@
 	}
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 800px) and (min-width: 720px) {
+	.sidenav {
+		li {
+			background-color: #000;
+			font-family: $font;
+			font-size: 18px;
+			border-bottom: 1px #fff solid;
+			padding-right: 10px;
+		}
+
+		li a {
+			margin-left: 0;
+		}
+	}
+
+	#sidenav {
+		width: 130px;
+		height: 80%;
+	}
+
+}
+
+@media all and (max-width: 720px) {
 	#sidenav {
 		display: none;
 	}

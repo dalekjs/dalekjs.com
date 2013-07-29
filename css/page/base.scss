@@ -47,10 +47,10 @@ pre {
 	position: absolute;
 	z-index: 1;
 	overflow: hidden;
-	height: 90%;
+	height: 80%;
 	left: 250px;
 	top: 90px;
-	width: 87%;
+	width: 82%;
 }
 
 #scroller {
@@ -67,14 +67,18 @@ pre {
 }
 
 
-@media all and (max-width: 1200px) and (min-width: 1000px) {
+@media all and (max-width: 1400px) and (min-width: 1000px) {
 	.wrapper {
 		width: 900px;
 	}
 
+	.wrapper.centered {
+		max-width: 800px;
+	}
+
 	#content {
-		width: 75%;
-		height: 82%;
+		width: 80%;
+		height: 80%;
 	}
 
 	#scroller {
@@ -84,7 +88,11 @@ pre {
 
 @media all and (max-width: 1000px) and (min-width: 800px) {
 	.wrapper {
-		width: 800px;
+		max-width: 700px;
+	}
+
+	.wrapper.centered {
+		max-width: 688px;
 	}
 
 	#content {
@@ -97,8 +105,37 @@ pre {
 	}
 }
 
-@media all and (max-width: 800px) and (min-width: 600px) {
+@media all and (max-width: 800px) and (min-width: 720px) {
 	.wrapper {
+		width: 750px;
+	}
+
+	.wrapper.centered {
+		width: 620px;
+	}
+
+	#content {
+		width: 80%;
+		height: 75%;
+		left: 110px;
+	}
+
+	#scroller {
+		width: 95%;
+	}
+
+	code, kbd, pre, samp {
+		font-size: 0.8em;
+	}
+
+}
+
+@media all and (max-width: 720px) and (min-width: 600px) {
+	.wrapper {
+		width: auto;
+	}
+
+	.wrapper.centered {
 		width: auto;
 	}
 
@@ -112,9 +149,29 @@ pre {
 	#scroller {
 		width: 93%;
 	}
+
+	code, kbd, pre, samp {
+		font-size: 0.8em;
+	}
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 770px) and (min-height: 820px) {
+	#content {
+		height: 85%;
+	}
+}
+
+@media all and (max-width: 770px) and (max-height: 820px) {
+	#content {
+		height: 75%;
+	}
+}
+
+@media all and (max-width: 600px) and (min-width: 481px) {
+	.wrapper.centered {
+		width: 85%;
+	}
+
 	.wrapper {
 		width: auto;
 	}
@@ -129,4 +186,42 @@ pre {
 	#scroller {
 		width: 93%;
 	}
+
+	code, kbd, pre, samp {
+		font-size: 0.7em;
+	}
+}
+
+@media all and (max-width: 480px) {
+
+	.wrapper.centered {
+		width: 90%;
+	}
+
+	#content {
+		position: static;
+		height: 90%;
+		width: 87%;
+		overflow: auto !important;
+	}
+
+	#scroller {
+		position: static;
+		width: 97%;
+	}
+
+	#footer {
+		position: static;
+	}
+
+	code, kbd, pre, samp {
+		font-size: 0.6em;
+	}
+}
+
+a {
+    color: magenta;
+    font-family: $font;
+    font-size: 20px;
+    text-decoration: none;
 }

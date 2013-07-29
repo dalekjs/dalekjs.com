@@ -1,5 +1,8 @@
 .code {
   min-height: 280px;
+  max-width: 490px;
+  padding-left: 0px;
+  margin-left: -6px;
 }
 
 .cmd-output {
@@ -15,17 +18,10 @@
   color: red;
 }
 
-.code-intro {
-  margin-bottom: 10px;
-}
-
-.video-intro {
-  margin-bottom: 40px;
-}
-
 .code-intro ul, .video-intro ul {
   font-family: $font;
-  font-size: 28px;
+  font-size: 26px;
+  padding-right: 10px;
 
   > li {
     list-style: disc;
@@ -34,9 +30,9 @@
 
 .video {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 ratio */
+  padding-bottom: 42.25%; /* 16:9 ratio */
   height: 0;
-  left: 10px;
+  left: 130px;
 }
 
 .video__frame {
@@ -108,4 +104,57 @@
   background-color: lime;
   @extend .own-shell;
   text-shadow: none;
+}
+
+
+@media all and (max-width: 1415px) {
+  .code {
+    padding-left: 24px;
+    margin-left: 0px;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .code {
+    max-width: 420px;
+    padding-left: 24px;
+    margin-left: 0px;
+  }
+
+  .video {
+    left: 80px;
+  }
+}
+
+@media all and (max-width: 600px) and (min-width: 481px) {
+
+  .video {
+    left: 10px;
+  }
+
+  .code {
+    min-height: 180px;
+    padding-left: 24px;
+    margin-left: 0px;
+  }
+
+}
+
+
+@media all and (max-width: 480px) {
+
+  .video {
+    left: 10px;
+  }
+
+  .code {
+    min-height: 120px;
+    padding-left: 24px;
+    margin-left: 0px;
+  }
+
+  .video__frame {
+    max-width: 90% !important;
+  }
+
 }
