@@ -29,7 +29,7 @@
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Tuesday, July 30th, 2013, 7:36:11 PM"><!--
+    <body data-buildtime="Tuesday, July 30th, 2013, 7:48:22 PM"><!--
 
         --><div class="grid"><!--
 
@@ -55,7 +55,58 @@
                         --><option  value="../pages/merch.html">Merch</option><!--
                     --></select><!--
                 --></nav><!--
-            --></header><div class="grid__item one-whole"><div class="grid__item one-whole"><div class="grid__item one-whole"></div></div></div><!--
+            --></header><div class="grid__item one-whole"><div class="grid__item one-whole"><h1 class="topic">JUnit</h1><p> The jUnit reporter can produce a jUnit compatible file with the results of your testrun,
+ this reporter enables you to use daleks testresults within a CI environment like Jenkins.</p>
+
+<p> The reporter can be installed with the following command:</p>
+
+<p> <code>bash
+ $ npm install dalek-reporter-junit --save-dev
+ </code></p>
+
+<p> The file will follow the jUnit XML format:</p>
+
+<p> <pre><code class="language-markup">
+ &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+ &lt;resource name=&quot;DalekJSTest&quot;&gt;
+     &lt;testsuite start=&quot;1375125067&quot; name=&quot;Click - DalekJS guinea pig [Phantomjs]&quot; end=&quot;1375125067&quot; totalTests=&quot;1&quot;&gt;
+         &lt;testcase start=&quot;1375125067&quot; name=&quot;Can click a select option (OK, jQuery style, no message)&quot; end=&quot;1375125067&quot; result=&quot;pass&quot;&gt;
+             &lt;variation start=&quot;1375125067&quot; name=&quot;val&quot; end=&quot;1375125067&quot;&gt;
+                 &lt;severity&gt;pass&lt;/severity&gt;
+                 &lt;description&gt;&amp;lt;![CDATA[David is the favourite]]&amp;gt;&lt;/description&gt;
+                 &lt;resource&gt;DalekJSTest&lt;/resource&gt;
+             &lt;/variation&gt;
+             &lt;variation start=&quot;1375125067&quot; name=&quot;val&quot; end=&quot;1375125067&quot;&gt;
+                 &lt;severity&gt;pass&lt;/severity&gt;
+                 &lt;description&gt;&amp;lt;![CDATA[Matt is now my favourite, bow ties are cool]]&amp;gt;&lt;/description&gt;
+                 &lt;resource&gt;DalekJSTest&lt;/resource&gt;
+             &lt;/variation&gt;
+         &lt;/testcase&gt;
+     &lt;/testsuite&gt;
+  &lt;/resource&gt;
+ </code></pre></p>
+
+<p> By default the file will be written to <code>report/dalek.xml</code>,
+ you can change this by adding a config option to the your Dalekfile</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;junit-reporter&quot;: {
+   &quot;dest&quot;: &quot;your/folder/your_file.xml&quot;
+ }
+ </code></pre></p>
+
+<p> If you would like to use the reporter (in addition to the std. console reporter),
+ you can start dalek with a special command line argument</p>
+
+<p> <code>bash
+ $ dalek your_test.js -r console,junit
+ </code></p>
+
+<p> or you can add it to your Dalekfile</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;reporter&quot;: [&quot;console&quot;, &quot;junit&quot;]
+ </code></pre></p></div></div></div><!--
 
             Footer
             --><footer id="footer" class="grid__item one-whole footer"><!--
