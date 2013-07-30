@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>DalekJS - Automated cross browser testing with JavaScript</title>
-        <meta name="description" content="DalekJS - Exterminate all the bugs">
+        <title>DalekJS - Documentation - Actions</title>
+        <meta name="description" content="DalekJS - Documentation - Actions">
         <meta name="viewport" content="width=device-width">
 
         <!-- icon-ish stuff -->
@@ -16,23 +16,20 @@
         <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
         <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
 
-        <link rel="dns-prefetch" href="//dalekjs.github.io">
+        <link rel="dns-prefetch" href="//dalekjs.com">
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="dns-prefetch" href="//themes.googleusercontent.com">
-        <link rel="dns-prefetch" href="//player.vimeo.com">
-        <link rel="dns-prefetch" href="//a.vimeocdn.com">
-        <link rel="dns-prefetch" href="//b.vimeocdn.com">
         <link rel="dns-prefetch" href="//www.google-analytics.com">
 
         <!-- build:css ../css/main.css -->
+        <link rel="stylesheet" href="../bower_components/prism/prism-funky.css">
         <link rel="stylesheet" href="../css/style.min.css">
-        <link rel="stylesheet" href="../css/prism.css">
         <!-- endbuild -->
 
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Monday, July 22nd, 2013, 6:15:43 PM"><!--
+    <body data-buildtime="Tuesday, July 30th, 2013, 9:13:13 PM"><!--
 
         --><div class="grid"><!--
 
@@ -41,24 +38,28 @@
                     desktop menue
                     --><ul class="nav nav--fit nav--block"><!--
                         --><li><a href="../index.html">DALEKJS</a></li><!--
-                        --><li><a href="../pages/getStarted.html" class="active">Get started</a></li><!--
-                        --><li><a href="../pages/documentation.html">Documentation</a></li><!--
-                        --><li><a href="../pages/support.html">Support</a></li><!--
-                        --><li><a href="../pages/faq.html">FAQ</a></li><!--
-                        --><li><a href="../pages/merch.html">Merch</a></li><!--
+                        --><li><a  href="../pages/getStarted.html">Get started</a></li><!--
+                        --><li><a class="active" href="../pages/documentation.html">Documentation</a></li><!--
+                        --><li><a  href="../pages/support.html">Support</a></li><!--
+                        --><li><a  href="../pages/faq.html">FAQ</a></li><!--
+                        --><li><a  href="../pages/merch.html">Merch</a></li><!--
                     --></ul><!--
 
                     mobile menue
                     --><select onchange="if (this.value) window.location.href = this.value;"><!--
                         --><option value="../index.html">DALEKJS</option><!--
-                        --><option selected value="../pages/getStarted.html">Get started</option><!--
-                        --><option value="../pages/documentation.html">Documentation</option><!--
-                        --><option value="../pages/support.html">Support</option><!--
-                        --><option value="../pages/faq.html">FAQ</option><!--
-                        --><option value="../pages/merch.html">Merch</option><!--
+                        --><option  value="../pages/getStarted.html">Get started</option><!--
+                        --><option selected value="../pages/documentation.html">Documentation</option><!--
+                        --><option  value="../pages/support.html">Support</option><!--
+                        --><option  value="../pages/faq.html">FAQ</option><!--
+                        --><option  value="../pages/merch.html">Merch</option><!--
                     --></select><!--
                 --></nav><!--
-            --></header><div class="grid__item one-whole"><div class="grid__item one-quarter sidenav"><ul><li class="nav-chain"><a href="#meth-chain">chain</a></li><li class="nav-end"><a href="#meth-end">end</a></li><li class="nav-resourceExists"><a href="#meth-resourceExists">resourceExists</a></li><li class="nav-numberOfElements"><a href="#meth-numberOfElements">numberOfElements</a></li><li class="nav-numberOfVisibleElements"><a href="#meth-numberOfVisibleElements">numberOfVisibleElements</a></li><li class="nav-val"><a href="#meth-val">val</a></li><li class="nav-exists"><a href="#meth-exists">exists</a></li><li class="nav-doesntExist"><a href="#meth-doesntExist">doesntExist</a></li></ul></div><div class="grid__item three-quarters"><h1 class="topic">Assertions</h1><a name="meth-chain"></a><h2 class="method"> .chain</h2><p> Starts assertion chaining</p><a name="meth-end"></a><h2 class="method"> .end</h2><p> Ends an assertion chain</p><a name="meth-resourceExists"></a><h2 class="method"> .resourceExists</h2><p> Asserts that a given ressource does exist in the environment.</p><a name="meth-numberOfElements"></a><h2 class="method"> .numberOfElements</h2><p> Asserts that a given element appears n times on the page.</p>
+            --></header><div class="grid__item one-whole"><div class="grid__item one-quarter sidenav" id="sidenav"><ul><li class="nav-meth-chain"><a href="#meth-chain">chain</a></li><li class="nav-meth-end"><a href="#meth-end">end</a></li><li class="nav-meth-resourceExists"><a href="#meth-resourceExists">resourceExists</a></li><li class="nav-meth-numberOfElements"><a href="#meth-numberOfElements">numberOfElements</a></li><li class="nav-meth-numberOfVisibleElements"><a href="#meth-numberOfVisibleElements">numberOfVisibleElements</a></li><li class="nav-meth-val"><a href="#meth-val">val</a></li><li class="nav-meth-exists"><a href="#meth-exists">exists</a></li><li class="nav-meth-doesntExist"><a href="#meth-doesntExist">doesntExist</a></li></ul></div><div class="grid__item three-quarters" id="content"><div class="grid__item one-whole" id="scroller"><h1 class="topic">Assertions</h1><p> Assertions check if the assumptions you made about a website are correct.
+ Assetions might check if the title of a page is as expected,
+ if an element has the expected text,
+ if your mobile website version only displays a certian amount of elements
+ and many more...</p><a class="nav-helper" data-name="meth-chain"></a><h2 class="method"> .chain</h2><p> Starts assertion chaining</p><a class="nav-helper" data-name="meth-end"></a><h2 class="method"> .end</h2><p> Ends an assertion chain</p><a class="nav-helper" data-name="meth-resourceExists"></a><h2 class="method"> .resourceExists</h2><p> Asserts that a given ressource does exist in the environment.</p><a class="nav-helper" data-name="meth-numberOfElements"></a><h2 class="method"> .numberOfElements</h2><p> Asserts that a given element appears n times on the page.</p>
 
 <p> Given this portion of html, you would like to assure that all of these elements
  are ending up in your rendered markup on your page.</p>
@@ -136,7 +137,7 @@
 <p> <pre><code class="language-javascript">
  test.numberOfElements(&#39;#blog-overview .teaser&#39;)
      .are([0,2,4], &#39;Teaser count is not an even number between 1 and 6&#39;)
- </code></pre></p><a name="meth-numberOfVisibleElements"></a><h2 class="method"> .numberOfVisibleElements</h2><p> Asserts that a given element is visible n times in the current viewport.</p>
+ </code></pre></p><a class="nav-helper" data-name="meth-numberOfVisibleElements"></a><h2 class="method"> .numberOfVisibleElements</h2><p> Asserts that a given element is visible n times in the current viewport.</p>
 
 <p> Given this portion of html, you would like to assure that all of these elements
  are ending up in your rendered markup on your page.</p>
@@ -214,7 +215,7 @@
 <p> <pre><code class="language-javascript">
  test.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;)
      .are.not([0,2,4], &#39;Teaser count is not an even number between 1 and 6&#39;)
- </code></pre></p><a name="meth-val"></a><h2 class="method"> .val</h2><p> Asserts that a given form field has the provided value.</p>
+ </code></pre></p><a class="nav-helper" data-name="meth-val"></a><h2 class="method"> .val</h2><p> Asserts that a given form field has the provided value.</p>
 
 <p> Given this portion of html, we would like to get the information which option element
  is currently selected.</p>
@@ -265,7 +266,7 @@
    .is.not(&#39;Klingons&#39;, &#39;Different fandom bro&#39;)
    // yep, multiple mentions are allowed
    .are([&#39;Daleks&#39;, &#39;Cyberman&#39;, &#39;The master&#39;], &#39;All of them are cool&#39;);
- </code></pre></p><a name="meth-exists"></a><h2 class="method"> .exists</h2><p> Asserts that an element matching the provided selector expression exists in remote DOM environment.</p>
+ </code></pre></p><a class="nav-helper" data-name="meth-exists"></a><h2 class="method"> .exists</h2><p> Asserts that an element matching the provided selector expression exists in remote DOM environment.</p>
 
 <p> <pre><code class="language-markup">
  &lt;body&gt;
@@ -276,7 +277,7 @@
 <p> <pre><code class="language-javascript">
  test
    .exists(&#39;#so-lonely&#39;, &#39;The loneliest element in the universe exists&#39;)
- </code></pre></p><a name="meth-doesntExist"></a><h2 class="method"> .doesntExist</h2><p> Asserts that an element matching the provided selector expression doesn&#39;t exists within the remote DOM environment.</p>
+ </code></pre></p><a class="nav-helper" data-name="meth-doesntExist"></a><h2 class="method"> .doesntExist</h2><p> Asserts that an element matching the provided selector expression doesn&#39;t exists within the remote DOM environment.</p>
 
 <p> <pre><code class="language-markup">
  &lt;body&gt;
@@ -287,10 +288,10 @@
 <p> <pre><code class="language-javascript">
  test
    .doesntExist(&#39;#the-master&#39;, &#39;The master element has not been seen&#39;)
- </code></pre></p></div><!--
+ </code></pre></p></div></div></div></div><!--
 
             Footer
-            --><footer class="grid__item one-whole footer"><!--
+            --><footer id="footer" class="grid__item one-whole footer"><!--
                 --><span class="footer__author">DalekJS created by <a class="footer__link" href="https://github.com/asciidisco">Sebastian Golasch</a></span><!--
                 --><span class="footer__author">Logo by <a class="footer__link" href="http://www.redbubble.com/people/scottbarker">Scott Barker</a></span><!--
                 --><span class="footer__author">Browser icons by <a class="footer__link" href="https://github.com/substack">Substack</a></span><!--
@@ -306,9 +307,11 @@
           ga('send', 'pageview');
         </script>
         <!-- build:js ../js/main.js -->
-        <script src="../js/vendor/jquery-1.9.1.min.js"></script>
-        <script src="../js/vendor/jquery.inviewport.js"></script>
-        <script src="../js/prism.js"></script>
+        <script src="../bower_components/jquery/jquery.js"></script>
+        <script src="../bower_components/in-viewport/in-viewport.js"></script>
+        <script src="../bower_components/fastclick/lib/fastclick.js"></script>
+        <script src="../bower_components/iscroll/build/iscroll.js"></script>
+        <script src="../bower_components/prism/prism.js"></script>
         <script src="../js/main.js"></script>
         <!-- endbuild -->
     </body>
