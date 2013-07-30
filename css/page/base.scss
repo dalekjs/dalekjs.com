@@ -67,7 +67,7 @@ pre {
 }
 
 
-@media all and (max-width: 1400px) and (min-width: 1000px) {
+@media all and (max-width: 1400px) and (min-width: 1200px) {
 	.wrapper {
 		width: 900px;
 	}
@@ -84,6 +84,25 @@ pre {
 	#scroller {
 		width: 93%;
 	}
+}
+
+@media all and (max-width: 1200px) and (min-width: 1000px) {
+    .wrapper {
+        width: 900px;
+    }
+
+    .wrapper.centered {
+        max-width: 800px;
+    }
+
+    #content {
+        width: 70%;
+        height: 80%;
+    }
+
+    #scroller {
+        width: 90%;
+    }
 }
 
 @media all and (max-width: 1000px) and (min-width: 800px) {
@@ -217,6 +236,21 @@ pre {
 	code, kbd, pre, samp {
 		font-size: 0.6em;
 	}
+}
+
+
+@media all and (min-height: 320px) and (max-height: 820px) {
+    #content {
+        height: 80%;
+    }
+
+    #scroller {
+        width: 80%;
+    }
+
+    #sidenav {
+        height: 80% !important;
+    }
 }
 
 a {
