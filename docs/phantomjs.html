@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>DalekJS - Automated cross browser testing with JavaScript</title>
-        <meta name="description" content="DalekJS - Exterminate all the bugs">
+        <title>DalekJS - Documentation - Browser - PhantomJS</title>
+        <meta name="description" content="DalekJS - Documentation - Browser - PhantomJS">
         <meta name="viewport" content="width=device-width">
 
         <!-- icon-ish stuff -->
@@ -16,23 +16,20 @@
         <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
         <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
 
-        <link rel="dns-prefetch" href="//dalekjs.github.io">
+        <link rel="dns-prefetch" href="//dalekjs.com">
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="dns-prefetch" href="//themes.googleusercontent.com">
-        <link rel="dns-prefetch" href="//player.vimeo.com">
-        <link rel="dns-prefetch" href="//a.vimeocdn.com">
-        <link rel="dns-prefetch" href="//b.vimeocdn.com">
         <link rel="dns-prefetch" href="//www.google-analytics.com">
 
         <!-- build:css ../css/main.css -->
+        <link rel="stylesheet" href="../bower_components/prism/prism-funky.css">
         <link rel="stylesheet" href="../css/style.min.css">
-        <link rel="stylesheet" href="../css/prism.css">
         <!-- endbuild -->
 
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Monday, July 22nd, 2013, 6:07:02 PM"><!--
+    <body data-buildtime="Thursday, August 1st, 2013, 4:48:57 PM"><!--
 
         --><div class="grid"><!--
 
@@ -41,27 +38,43 @@
                     desktop menue
                     --><ul class="nav nav--fit nav--block"><!--
                         --><li><a href="../index.html">DALEKJS</a></li><!--
-                        --><li><a href="../pages/getStarted.html" class="active">Get started</a></li><!--
-                        --><li><a href="../pages/documentation.html">Documentation</a></li><!--
-                        --><li><a href="../pages/support.html">Support</a></li><!--
-                        --><li><a href="../pages/faq.html">FAQ</a></li><!--
-                        --><li><a href="../pages/merch.html">Merch</a></li><!--
+                        --><li><a  href="../pages/getStarted.html">Get started</a></li><!--
+                        --><li><a class="active" href="../pages/documentation.html">Documentation</a></li><!--
+                        --><li><a  href="../pages/support.html">Support</a></li><!--
+                        --><li><a  href="../pages/faq.html">FAQ</a></li><!--
+                        --><li><a  href="../pages/merch.html">Merch</a></li><!--
                     --></ul><!--
 
                     mobile menue
                     --><select onchange="if (this.value) window.location.href = this.value;"><!--
                         --><option value="../index.html">DALEKJS</option><!--
-                        --><option selected value="../pages/getStarted.html">Get started</option><!--
-                        --><option value="../pages/documentation.html">Documentation</option><!--
-                        --><option value="../pages/support.html">Support</option><!--
-                        --><option value="../pages/faq.html">FAQ</option><!--
-                        --><option value="../pages/merch.html">Merch</option><!--
+                        --><option  value="../pages/getStarted.html">Get started</option><!--
+                        --><option selected value="../pages/documentation.html">Documentation</option><!--
+                        --><option  value="../pages/support.html">Support</option><!--
+                        --><option  value="../pages/faq.html">FAQ</option><!--
+                        --><option  value="../pages/merch.html">Merch</option><!--
                     --></select><!--
                 --></nav><!--
-            --></header><div class="grid__item one-whole"><div class="grid__item one-quarter sidenav"><ul></ul></div><div class="grid__item three-quarters"><h1 class="topic">PhantomJS</h1><p> PhantomJS Driver base class</p></div><!--
+            --></header><div class="grid__item one-whole"><div class="grid__item one-whole"><h1 class="topic">PhantomJS</h1><p> This module is a browser plugin for <a href="//github.com/dalekjs/dalek">DalekJS</a>.
+ It provides a browser launcher as well the PhantomJS browser itself.</p>
+
+<p> The browser plugin comes bundled with the DalekJS base framework.</p>
+
+<p> You can use the browser plugin beside others (it is the default)
+ by adding a config option to the your Dalekfile:</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;browsers&quot;: [&quot;phantomjs&quot;, &quot;chrome&quot;]
+ </code></pre></p>
+
+<p> Or you can tell Dalek that it should test in this &amp; another browser via the command line:</p>
+
+<p> <pre><code class="language-bash">
+ $ dalek mytest.js -b phantomjs,chrome
+ </code></pre></p></div></div></div><!--
 
             Footer
-            --><footer class="grid__item one-whole footer"><!--
+            --><footer  class="grid__item one-whole footer"><!--
                 --><span class="footer__author">DalekJS created by <a class="footer__link" href="https://github.com/asciidisco">Sebastian Golasch</a></span><!--
                 --><span class="footer__author">Logo by <a class="footer__link" href="http://www.redbubble.com/people/scottbarker">Scott Barker</a></span><!--
                 --><span class="footer__author">Browser icons by <a class="footer__link" href="https://github.com/substack">Substack</a></span><!--
@@ -77,9 +90,11 @@
           ga('send', 'pageview');
         </script>
         <!-- build:js ../js/main.js -->
-        <script src="../js/vendor/jquery-1.9.1.min.js"></script>
-        <script src="../js/vendor/jquery.inviewport.js"></script>
-        <script src="../js/prism.js"></script>
+        <script src="../bower_components/jquery/jquery.js"></script>
+        <script src="../bower_components/in-viewport/in-viewport.js"></script>
+        <script src="../bower_components/fastclick/lib/fastclick.js"></script>
+        <script src="../bower_components/iscroll/build/iscroll.js"></script>
+        <script src="../bower_components/prism/prism.js"></script>
         <script src="../js/main.js"></script>
         <!-- endbuild -->
     </body>
