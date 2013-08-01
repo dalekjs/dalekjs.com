@@ -33,12 +33,36 @@
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     </head>
-    <body><!--
+<body><!--
 
         --><div class="grid"><!--
 
+            --><header class="grid__item one-whole"><!--
+                --><nav role="select"><!--
+                    desktop menue
+                    --><ul class="nav nav--fit nav--block"><!--
+                        --><li><a href="index.html" class="active">DALEKJS</a></li><!--
+                        --><li><a href="pages/getStarted.html">Get started</a></li><!--
+                        --><li><a href="pages/documentation.html">Documentation</a></li><!--
+                        --><li><a href="pages/support.html">Support</a></li><!--
+                        --><li><a href="pages/faq.html">FAQ</a></li><!--
+                        --><li><a href="pages/merch.html">Merch</a></li><!--
+                    --></ul><!--
+
+                    mobile menue
+                    --><select onchange="if (this.value) window.location.href = this.value;"><!--
+                        --><option value="index.html">DALEKJS</option><!--
+                        --><option value="pages/getStarted.html">Get started</option><!--
+                        --><option value="pages/documentation.html">Documentation</option><!--
+                        --><option value="pages/support.html">Support</option><!--
+                        --><option value="pages/faq.html">FAQ</option><!--
+                        --><option value="pages/merch.html">Merch</option><!--
+                    --></select><!--
+                --></nav><!--
+            --></header><!--
+
             Content wrapper
-            --><div class="wrapper"><!--
+            --><div class="wrapper centered"><!--
 
             Teaser
             --><div class="grid__item one-whole"><!--
@@ -53,15 +77,152 @@
                     --><div class="grid__item one-quarter"><img class="browser-logo" src="img/firefox.png"/></div><!--
                     --><div class="grid__item one-quarter"><img class="browser-logo" src="img/lemmling_Cartoon_ghost.png"/></div><!--
                 --></div><!--
-                --><div class="grid__item one-half palm-one-whole"><img src="img/logo.png"/></div><!--
+                --><div class="grid__item one-half palm-one-whole" style="text-align: center"><img src="img/logo.png"/></div><!--
             --></div><!--
 
-            --><div class="grid__item one-whole"><!--
-            --><h1>I'll be there for you on the 1st of August</h1><!--
+            --><div class="grid__item one-whole info-box"><!--
+                --><p class="catchy">DalekJS is an open source UI testing tool written in JavaScript, it will:</p><!--
+                --><ul class="feature-list"><!--
+                    --><li>launch &amp; automate your browser</li><!--
+                    --><li>fill &amp; submit forms</li><!--
+                    --><li>click &amp; follow links</li><!--
+                    --><li>capture screenshots</li><!--
+                    --><li>run your functional tests</li><!--
+                    --><li>... and it works on Windows, Linux &amp; Mac</li><!--
+                --></ul><!--
             --></div><!--
-        --></div><!--
-    --></div>
-    <script>
+
+            --><div class="grid__item one-whole code-intro" id="code-intro"><!--
+                --><h2>Quickstart</h2><!--
+                --><ul class="grid__item one-third palm-one-whole"><!--
+                    --><li class="active-entry">Create a package.json</li><!--
+                    --><li>Install DalekJS</li><!--
+                    --><li>Write your first test</li><!--
+                    --><li>Run this beast!</li><!--
+                --></ul><!--
+
+                Package my json
+                --><div class="grid__item two-thirds palm-one-whole stage code"><!--
+                    --><pre class="code-thingie"><code class="language-javascript"><!--
+                    -->{
+<!--                -->  "name": "myCssTardis",
+<!--                -->  "description": "Is awesome",
+<!--                -->  "version": "0.0.2"
+<!--                -->}<!--
+                    --></code></pre><!--
+                --></div><!--
+
+                How to start from the console
+                --><div class="grid__item two-thirds palm-one-whole stage hidden code"><!--
+                        --><pre class="dalek-shell"><code><!--
+                        --><span class="token shell-icon">$</span> <span class="token shell-npm">npm install</span> <span class="token shell-dalek">dalek-cli</span> <span class="token shell-npm">-g</span>
+<!--                    --><span class="token shell-icon">$</span> <span class="token shell-npm">npm install</span> <span class="token shell-dalek">dalekjs</span> <span class="token shell-npm">--save-dev</span><!--
+                    --></pre></code><!--
+                --></div><!--
+
+                Simple test example
+                --><div class="grid__item two-thirds palm-one-whole stage code hidden"><!--
+                    --><pre class="code-thingie"><code class="language-javascript"><!--
+                    -->module.exports = {
+<!--                -->'Page title is correct': function (test) {
+<!--                -->  test
+<!--                -->    .open('http://google.com')
+<!--                -->    .assert.title().is('Google', 'It has title')
+<!--                -->    .done();
+<!--                -->}
+<!--                -->};<!--
+                    --></code></pre><!--
+
+                Dalek on Console
+                --></div><!--
+                --><div class="grid__item two-thirds palm-one-whole stage hidden code"><!--
+                    --><pre class="dalek-shell cmd-output"><code><!--
+                    --><span class="token shell-icon">$</span> <span class="token shell-dalek">dalek</span> <span class="token shell-npm">test/*.js</span>
+<!--                --><span class="token shell-rt">Running tests</span>
+<!--                --><span class="token shell-rt">Running Browser:</span> <span class="token shell-browser">Phantomjs</span>
+<!--                --><span class="token shell-rt">RUNNING TEST -</span> <span class="token shell-tt">"Page title is correct"</span>
+<!--                --><span class="token shell-action">▶ OPEN http://google.com</span>
+<!--                --><span class="token shell-sg">✔</span> <span class="token shell-rt">TITLE It has title</span>
+<!--                --><span class="token shell-sg">✔</span> <span class="token shell-rt">1 Assertions run</span>
+<!--                --><span class="token shell-sg">✔</span> <span class="token shell-rt">TEST - <span class="token shell-tt">"Page title is correct"</span> SUCCEEDED</span>
+<!--                --><span class="token shell-suc">1/1 assertions passed. Elapsed Time: 2 sec</span><!--
+-->                 </pre></code><!--
+                --></div><!--
+            --></div><!--
+
+
+            Look ma
+             --><div class="grid__item one-whole video-intro" id="video-intro"><!--
+                --><h2>Look´ma</h2><!--
+                --><ul class="grid__item one-fifth palm-one-whole"><!--
+                    --><li class="active-entry">Intro</li><!--
+                    --><li>@FrontTrends</li><!--
+                    --><li>@ScotlandJS</li><!--
+                --></ul><!--
+                --><div class="grid__item four-fifths palm-one-whole stage video"><!--
+                    --><iframe class="video__frame" src="http://player.vimeo.com/video/71466029" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe><!--
+                --></div><!--
+                --><div class="grid__item four-fifths palm-one-whole stage video hidden"><!--
+                    --><iframe class="video__frame" src="http://player.vimeo.com/video/67050198" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe><!--
+                --></div><!--
+                --><div class="grid__item four-fifths palm-one-whole stage video hidden"><!--
+                    --><iframe class="video__frame" src="http://player.vimeo.com/video/68703493" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe><!--
+                --></div><!--
+            --></div><!--
+
+
+            Get in touch
+            --><div class="grid__item one-whole contact"><!--
+                --><h2>Get in touch</h2><!--
+                --><div class="grid__item one-eighth palm-one-quarter"><!--
+                    --><a href="http://twitter.com/dalekjs"><img class="contact__icon" src="img/twitter_bird.svg"/></a><!--
+                --></div><!--
+                --><div class="grid__item one-quarter palm-three-quarters"><!--
+                    --><a href="http://twitter.com/dalekjs" class="contact__text">Twitter</a><!--
+                --></div><!--
+                --><div class="grid__item one-eighth palm-one-quarter"><!--
+                    --><img class="contact__icon" src="img/heart.svg"/><!--
+                --></div><!--
+                --><div class="grid__item four-eighths palm-three-quarters"><!--
+                    --><p class="contact__text longtext">#dalekjs on freenode</p><!--
+                --></div><!--
+                --><div class="grid__item one-eighth palm-one-quarter"><!--
+                    --><a href="https://github.com/dalekjs"><img class="contact__icon" src="img/github.svg"/></a><!--
+                --></div><!--
+                --><div class="grid__item one-quarter palm-three-quarters"><!--
+                    --><a href="https://github.com/dalekjs" class="contact__text">GitHub</a><!--
+                --></div><!--
+                --><div class="grid__item one-eighth palm-one-quarter"><!--
+                    --><a href="http://stackoverflow.com/questions/tagged/dalekjs"><img class="contact__icon" src="img/stackoverflow.svg"/></a><!--
+                --></div><!--
+                --><div class="grid__item four-eighths palm-three-quarters"><!--
+                    --><a href="http://stackoverflow.com/dalekjs" class="contact__text">Stackoverflow</a><!--
+                --></div><!--
+                --><div class="grid__item one-eighth palm-one-quarter"><!--
+                    --><a href="mailto:dalekjs@asciidisco.com"><img class="contact__icon" src="img/email.svg"/></a><!--
+                --></div><!--
+                --><div class="grid__item one-quarter palm-three-quarters"><!--
+                    --><a href="mailto:dalekjs@asciidisco.com" class="contact__text">Mail</a><!--
+                --></div><!--
+                --><div class="grid__item one-eighth palm-one-quarter"><!--
+                    --><a href="https://groups.google.com/forum/#!forum/dalekjs">
+                    <img class="contact__icon" src="img/google_talk.svg"/></a><!--
+                --></div><!--
+                --><div class="grid__item one-quarter palm-three-quarters"><!--
+                    --><a href="https://groups.google.com/forum/#!forum/dalekjs" class="contact__text">Googlegroup</a><!--
+                --></div><!--
+            --></div><!--
+
+         --></div><!--
+
+            Footer
+            --><footer class="grid__item one-whole footer"><!--
+                --><span class="footer__author">DalekJS created by <a class="footer__link" href="https://github.com/asciidisco">Sebastian Golasch</a></span><!--
+                --><span class="footer__author">Logo by <a class="footer__link" href="http://www.redbubble.com/people/scottbarker">Scott Barker</a></span><!--
+                --><span class="footer__author">Browser icons by <a class="footer__link" href="https://github.com/substack">Substack</a></span><!--
+            --></footer><!--
+    --></div><!--
+    --><script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -70,13 +231,13 @@
       ga('create', 'UA-42520123-1', 'dalekjs.com');
       ga('send', 'pageview');
     </script>
-	<!-- build:js js/main.js -->
-	<script src="bower_components/jquery/jquery.js"></script>
+    <!-- build:js js/main.js -->
+    <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/in-viewport/in-viewport.js"></script>
     <script src="bower_components/fastclick/lib/fastclick.js"></script>
     <script src="bower_components/iscroll/build/iscroll.js"></script>
-	<script src="bower_components/prism/prism.js"></script>
-	<script src="js/main.js"></script>
-	<!-- endbuild -->
+    <script src="bower_components/prism/prism.js"></script>
+    <script src="js/main.js"></script>
+    <!-- endbuild -->
     </body>
 </html>
