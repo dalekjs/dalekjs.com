@@ -29,7 +29,7 @@
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Monday, July 29th, 2013, 10:28:13 PM"><!--
+    <body data-buildtime="Thursday, August 1st, 2013, 2:34:37 PM"><!--
 
         --><div class="grid"><!--
 
@@ -55,10 +55,38 @@
                         --><option  value="../pages/merch.html">Merch</option><!--
                     --></select><!--
                 --></nav><!--
-            --></header><div class="grid__item one-whole"><div class="grid__item one-quarter sidenav" id="sidenav"><ul></ul></div><div class="grid__item three-quarters" id="content"><div class="grid__item one-whole" id="scroller"><h1 class="topic">html</h1><p> Html reporter</p></div></div></div><!--
+            --></header><div class="grid__item one-whole"><div class="grid__item one-whole"><h1 class="topic">html</h1><p> The HTML reporter can produce a set of HTML files with the results of your testrun.</p>
+
+<p> The reporter can be installed with the following command:</p>
+
+<p> <pre><code class="language-bash">
+ $ npm install dalek-reporter-html --save-dev
+ </code></pre></p>
+
+<p> By default the files will be written to the <code>report/dalek/</code> folder,
+ you can change this by adding a config option to the your Dalekfile</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;html-reporter&quot;: {
+   &quot;dest&quot;: &quot;your/folder&quot;
+ }
+ </code></pre></p>
+
+<p> If you would like to use the reporter (in addition to the std. console reporter),
+ you can start dalek with a special command line argument</p>
+
+<p> <pre><code class="language-bash">
+ $ dalek your_test.js -r console,html
+ </code></pre></p>
+
+<p> or you can add it to your Dalekfile</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;reporter&quot;: [&quot;console&quot;, &quot;html&quot;]
+ </code></pre></p></div></div></div><!--
 
             Footer
-            --><footer id="footer" class="grid__item one-whole footer"><!--
+            --><footer  class="grid__item one-whole footer"><!--
                 --><span class="footer__author">DalekJS created by <a class="footer__link" href="https://github.com/asciidisco">Sebastian Golasch</a></span><!--
                 --><span class="footer__author">Logo by <a class="footer__link" href="http://www.redbubble.com/people/scottbarker">Scott Barker</a></span><!--
                 --><span class="footer__author">Browser icons by <a class="footer__link" href="https://github.com/substack">Substack</a></span><!--
