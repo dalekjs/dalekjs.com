@@ -76,6 +76,12 @@ if (document.getElementById('content') && matches) {
         click: true
      });
 
+    //weird, but helps
+    setTimeout(function () {
+        scroller.refresh();
+        sideScroller.refresh();
+    }, 750);
+
     var scrolltoHash = window.location.hash.replace('#', '');
 
     var $scrollToElm = $('a[data-name="' + scrolltoHash + '"]');
