@@ -67,7 +67,7 @@
 <p> You can use the browser plugin by adding a config option to the your Dalekfile</p>
 
 <p> <pre><code class="language-javascript">
- &quot;browsers&quot;: [&quot;firefox&quot;]
+ "browsers": ["firefox"]
  </code></pre></p>
 
 <p> Or you can tell Dalek that it should test in this browser via the command line:</p>
@@ -77,20 +77,20 @@
  </code></pre></p>
 
 <p> Because of the availability of the Firefox Marionette testing framework,
- Dalek atm. can only drive the Firefox Aurora Debug builds.</p>
+ Dalek can only drive the Firefox Aurora Debug builds at the moment.</p>
 
 <p> You also have to add the location of the browser executable to you Dalekfile,
- because Dalek isn&#39;t capable of finding the executable yet on its own.</p>
+ because Dalek isn't capable of finding the executable yet on its own.</p>
 
 <p> <pre><code class="language-javascript">
- &quot;browsers&quot;: [{
-   &quot;firefox&quot;: {
-     &quot;path&quot;: &quot;~/Apps/FirefoxAuroraDebug.app/&quot;
+ "browsers": [{
+   "firefox": {
+     "path": "~/Apps/FirefoxAuroraDebug.app/"
    }
  }]
  </code></pre></p>
 
-<p> The Firefox plugin only implements a subset of Daleks Assertions &amp; Actions, so if you run into any bugs,
+<p> The Firefox plugin only implements a subset of Dalek’s Assertions &amp; Actions, so if you run into any bugs,
  the issue is most probably related to missing commands.</p></div></div></div><!--
 
             Footer
