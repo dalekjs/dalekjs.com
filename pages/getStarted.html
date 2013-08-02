@@ -27,28 +27,28 @@
                             --><a class="nav-helper" data-name="selenium"></a><!--
                             --><h2>This ain't Selenium</h2><!--
                             --><p class="description">
-                            Before we get to the interesting stuff, installation, APIs and all this important things,
+                            Before we get to the interesting stuff, installation, APIs and all these important things,
                             please take 5 minutes, grab a nice cup of coffee or tea &amp; let me tell you
                             why I started this massive pile of code in the first place.<br/><br />
 
                             Back in December 2012, I was working on a few web apps (you could call them single page apps,
-                            if you feel buzzwordy), for a yet unrelease big web plattform. For the first time in my career, I had the oppurtunity to work with a testing team, people who would test the things that I've programmed 8 to 10 hours a day. And yes, they tested, they tested the hell out of my code, spotted bugs I had never encountered, even if I would have been really keen on testing my stuff (I wasn't, and by the way, if that reads like a christmas carol, it's just you - it was mid July when I wrote this).<br/>
+                            if you feel buzzwordy), for a yet unreleased big web platform. For the first time in my career, I had the opportunity to work with a testing team, people who would test the things that I've programmed 8 to 10 hours a day. And yes, they tested, they tested the hell out of my code, spotted bugs I had never encountered, even if I would have been really keen on testing my stuff (I wasn't, and by the way, if that reads like a christmas carol, it's just you - it was mid July when I wrote this).<br/>
 
                             But week after week, the applications changed, and the code changed, and the code produced side effects, and sometimes, some old really well tested feature broke.
-                            Nobody noticed until some of our "friendly test users" (or even worse, stakeholders) reported an issue. Ambarassing, a shame, an affront to my (Klingon like) programmer honor, but hey, we all heard of this testing framework Selenium, right?! Some tool that promises to make us stop worry about this &amp; instead lets us write an automated testcase once, and magically replaying it everytime we want. Maybe after every commit, maybe every night, we didn't care as
+                            Nobody noticed until some of our "friendly test users" (or even worse, stakeholders) reported an issue. Embarassing, a shame, an affront to my (Klingon like) programmer honor, but hey, we all heard of this testing framework Selenium, right?! Some tool that promises to make us stop worry about this &amp; instead lets us write an automated testcase once, and magically replaying it everytime we want. Maybe after every commit, maybe every night, we didn't care as
                             long as our CI server greets us with a green light every morning, everything should be fine.
-                            So our testers began writing tests, in Java, because that was the language they we're taught to do so back in the days in university. And yes, we had tests, 100, 200, 300, ... and so on. In the end, they had written around 500 to 600 tests. We ran them twice a day, against Chrome &amp; before the end of sprint, we ran them in various other browsers, too.<br/><br/>
+                            So our testers began writing tests, in Java, because that was the language that we're taught to do so back in the days in university. And yes, we had tests, 100, 200, 300, ... and so on. In the end, they had written around 500 to 600 tests. We ran them twice a day, against Chrome &amp; before the end of sprint, we ran them in various other browsers, too.<br/><br/>
                             They worked, they worked by the time they were written &amp; they mostly stopped working when we changed something in our existing codebase (agile development FTW!). So what needed to be done, when we changed our code, behaviour, markup, whatever of an already tested feature?
                             Our testers needed to change the tests accordingly. So we were 8 developers and 2 testers in our team, naturally, they couldn't keep up with the changes, the CI Servers always showed us failing tests (you stop worrying about the "build failed" mails after some months, believe me),
                             basically our complete test automation suite was useless (oh, jUnit, I kinda miss your 300 lines long stacktraces, when a &lt;h1&gt; tag was missing *sniff*).<br />
                             So, we as a group (6 JavaScript devs/2 Web Designers/2 Testers) decided that we developers should change the Selenium tests when we change the underlying codebase, and yes we tried (have you ever heard the joke about the 6 javascript devs trying to change Java code, written by two "non programmers", no?, good, because it isn't funny at all).
                             In the end we kinda gave up, too much time &amp; effort spend on writing the tests, we needed to speed up with feature implementations &amp; the shame came back (Oh, I felt so dishonored).<br/><br/>
                             The process we've been through made me thinking, how should such a tool represent itself to the developers, how can it be "a nobrainer" for web developers, for the people who build what you see in the internetz, the frontend devs, for everyone?!
-                            I came to the conclusion that only JavaScript can be considered as a "common knowledge programming language" in web land.<br/>Also the setup process for running the tools that ran the selenium tests (Java jrde*whatever, Maven, Ant, jUnit, Eclipse, etc.) was a major pain point in my opinion, I wan't it to be as easy as installing a tool via npm.<br/>
+                            I came to the conclusion that only JavaScript can be considered as a "common knowledge programming language" in web land.<br/>Also the setup process for running the tools that ran the Selenium tests (Java jrde*whatever, Maven, Ant, jUnit, Eclipse, etc.) was a major pain point in my opinion, I wan't it to be as easy as installing a tool via npm.<br/>
                             So my dear reader, here we are now, introducing a new testing tool for your Webpages, one that hopefully makes you love testing, one that holds your hand instead of pushing you away, one that makes you wanna contribute to it...<br/><br/>
                             Okay, just one more thing, <cite>DalekJS was born in battle, full of blood &amp; anger</cite> and therefore is buggy as hell &amp; not ready for production yet.<br/>
                             Only you can make it better, report bugs as you never ever reported before, send pull requests that will make me sleepless merging them, discuss in the mailing list about what you wan't.
-                            This aint selenium, this is DalekJS, this is your tool.
+                            This aint Selenium, this is DalekJS, this is your tool.
                             </p><!--
                         --></div><!--
 
@@ -57,19 +57,19 @@
                             --><a class="nav-helper" data-name="install"></a><!--
                             --><h2>Installation</h2><!--
                             --><p class="description">
-                            Daleks installation is pretty forward, just make sure you have Node.js installed. If you don't have Node installed, just go to <a href="http://nodejs.org/" target="_blank">nodejs.org</a> &amp; follow the instructions of the graphical installer.<br /><br />
-                            With node there comes some handy package management tool called `npm`.
+                            Dalek's installation is pretty forward, just make sure you have Node.js installed. If you don't have Node installed, just go to <a href="http://nodejs.org/" target="_blank">nodejs.org</a> &amp; follow the instructions of the graphical installer.<br /><br />
+                            With node comes a handy package management tool called `npm`.
                             You can verify, if the installation succeeded when you open your command line &amp; type
                             <pre class="dalek-shell"><code><span class="token shell-icon">$</span> <span class="token shell-npm">npm</span> <span class="token shell-npm">--version</span></code></pre>
                             <span class="description">then you should see some output like this</span>
                             <pre class="dalek-shell"><code><span class="token shell-icon">$</span> <span class="token shell-icon" style="color: #fff">1.1.62</span></code></pre>
                             <span class="description">where the version number depends on your installed version of Node.</span><br /><br />
                             <span class="description">If that worked, you should be able to install DalekJS.<br/>
-                            Dalek is splitted up in a few different parts, to get it working initially, you first have to install the "Dalek Command Line Tools", this is as easy as typing</span>
+                            Dalek is split up in a few different parts, to get it working initially, you first have to install the "Dalek Command Line Tools", this is as easy as typing</span>
                             <pre class="dalek-shell"><code><span class="token shell-icon">$</span> <span class="token shell-npm">npm install</span> <span class="token shell-dalek">dalek-cli</span> <span class="token shell-npm">-g</span></code></pre><span class="description"> in your command line.<br /> Verify that the installation worked by checking with</span><pre class="dalek-shell"><code><span class="token shell-icon">$</span> <span class="token shell-dalek">dalek</span> <span class="token shell-npm">-v</span></code></pre><span class="description">You should see something like this</span><pre class="dalek-shell"><code><span class="token shell-icon">$</span> <span class="token shell-icon" style="color: #fff">DalekJS CLI Tools Version: 0.0.1</span>
 <!--
                             --><span class="token shell-icon" style="color: #fff">  Brought to you with love by: Sebastian Golasch (@asciidisco) 2013</span></code></pre><!--
-                            --><span class="description">Awesome, you`re one step closer to the finish line, next up, you need to add a <strong>package.json</strong> file to your projects root directory, if you haven't one already. You can start with the bare minimum of that file, which should look something like this:</span><!--
+                            --><span class="description">Awesome, you're one step closer to the finish line, next up, you need to add a <strong>package.json</strong> file to your projects root directory, if you haven't one already. You can start with the bare minimum of that file, which should look something like this:</span><!--
                             --><pre class="code-thingie"><code class="language-javascript"><!--
                     -->{
 <!--                -->  "name": "myCssTardis",
@@ -105,7 +105,7 @@
 <!--                -->}
 <!--                -->};<!--
                     --></code></pre><!--
-                            --><p class="description">Now, lets save this file as 'my_first_test.js' in a folder called 'test'. This one is a good example of a basic testcase. Everything you wrapped in that object literals called `module.exports` is a testsuite in daleks eyes, it can contain hundreds od hundreds of single test functions, like the one that we created, callled `Page title is correct`. Every of those functions gets an argument injected, which we typically call `test`, this `test` variable is your interface to Daleks functions. So what does this test do? You might have guessed, that it opens a webpage, Google in our example, and after the browser has finished loading, we `assert` that the `title` of the page is `Google`. The second argument of that `is` method than gives you the space for a custom message, this one is there that you can easily identify your failing tests later on, when you have dozents of them up and running. Finally, to tell Dalek that this is everything we would like to check within that particular test, we call the `done` method &amp; yes, that is it, your first test is ready, hurrah!</p><!--
+                            --><p class="description">Now, lets save this file as 'my_first_test.js' in a folder called 'test'. This one is a good example of a basic testcase. Everything you wrapped in that object literals called `module.exports` is a testsuite in daleks eyes, it can contain hundreds od hundreds of single test functions, like the one that we created, callled `Page title is correct`. Every of those functions gets an argument injected, which we typically call `test`, this `test` variable is your interface to Dalek's functions. So what does this test do? You might have guessed, that it opens a webpage, Google in our example, and after the browser has finished loading, we `assert` that the `title` of the page is `Google`. The second argument of that `is` method than gives you the space for a custom message, this one is there that you can easily identify your failing tests later on, when you have dozents of them up and running. Finally, to tell Dalek that this is everything we would like to check within that particular test, we call the `done` method &amp; yes, that is it, your first test is ready, hurrah!</p><!--
                         --></div><!--
 
                         Run your tests
@@ -153,3 +153,4 @@
                  --></div><!--
         Footer
                 -->{{> "assets/footer.html"}}
+
