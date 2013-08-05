@@ -31,10 +31,7 @@
                             please take 5 minutes, grab a nice cup of coffee or tea &amp; let me tell you
                             why I started this massive pile of code in the first place.<br/><br />
 
-                            Back in December 2012, I was working on a few web apps (you could call them single page apps,
-<<<<<<< HEAD
-
-                            if you feel buzzwordy), for a yet unreleased big web platform. For the first time in my career, I had the opportunity to work with a testing team, people who would test the things that I've programmed 8 to 10 hours a day. And yes, they tested, they tested the hell out of my code, spotted bugs I had never encountered, even if I would have been really keen on testing my stuff (I wasn't, and by the way, if that reads like a christmas carol, it's just you - it was mid July when I wrote this).<br/>
+                            Back in December 2012, I was working on a few web apps (you could call them single page apps, if you feel buzzwordy), for a yet unreleased big web platform. For the first time in my career, I had the opportunity to work with a testing team, people who would test the things that I've programmed 8 to 10 hours a day. And yes, they tested, they tested the hell out of my code, spotted bugs I had never encountered, even if I would have been really keen on testing my stuff (I wasn't, and by the way, if that reads like a christmas carol, it's just you - it was mid July when I wrote this).<br/>
 
                             But week after week, the applications changed, and the code changed, and the code produced side effects, and sometimes, some old really well tested feature broke.
                             Nobody noticed until some of our "friendly test users" (or even worse, stakeholders) reported an issue. Embarassing, a shame, an affront to my (Klingon like) programmer honor, but hey, we all heard of this testing framework Selenium, right?! Some tool that promises to make us stop worry about this &amp; instead lets us write an automated testcase once, and magically replaying it everytime we want. Maybe after every commit, maybe every night, we didn't care as
@@ -107,22 +104,14 @@
 <!--                -->}
 <!--                -->};<!--
                     --></code></pre><!--
-<<<<<<< HEAD
                             --><p class="description">Now, lets save this file as 'my_first_test.js' in a folder called 'test'. This one is a good example of a basic testcase. Everything you wrapped in that object literals called `module.exports` is a testsuite in daleks eyes, it can contain hundreds od hundreds of single test functions, like the one that we created, callled `Page title is correct`. Every of those functions gets an argument injected, which we typically call `test`, this `test` variable is your interface to Dalek's functions. So what does this test do? You might have guessed, that it opens a webpage, Google in our example, and after the browser has finished loading, we `assert` that the `title` of the page is `Google`. The second argument of that `is` method than gives you the space for a custom message, this one is there that you can easily identify your failing tests later on, when you have dozents of them up and running. Finally, to tell Dalek that this is everything we would like to check within that particular test, we call the `done` method &amp; yes, that is it, your first test is ready, hurrah!</p><!--
-=======
-                            --><p class="description">Now, lets save this file as 'my_first_test.js' in a folder called 'test'. This one is a good example of a basic testc ase. Everything you wrapped in that object literals called `module.exports` is a test suite in Dalek’s eyes, it can contain hundreds of hundreds of single test functions, like the one that we created, called `Page title is correct`. Every of those functions gets an argument injected, which we typically call `test`, this `test` variable is your interface to Dalek’s functions. So what does this test do? You might have guessed, that it opens a webpage, Google in our example, and after the browser has finished loading, we `assert` that the `title` of the page is `Google`. The second argument of that `is` method than gives you the space for a custom message, this one is there that you can easily identify your failing tests later on, when you have dozens of them up and running. Finally, to tell Dalek that this is everything we would like to check within that particular test, we call the `done` method &amp; yes, that is it, your first test is ready, hurrah!</p><!--
->>>>>>> a4c3898d9b9b5a08cbb57825427b68d73fc0535c
                         --></div><!--
 
                         Run your tests
                         --><div class="grid__item one-whole"><!--
                             --><a class="nav-helper" data-name="runtests"></a><!--
                             --><h2>Run your tests</h2><!--
-<<<<<<< HEAD
                         --><p class="description">So far so good, we learned why Dalek is awesome, installed dalek, we wrote our first test &amp; now it is time to really get some timey-wimey action started. Go back to our new friend, the command line, go back to your project folder &amp; simply type:</p><!--
-=======
-                        --><p class="description">So long so good, we learned why Dalek is awesome, installed Dalek, we wrote our first test &amp; now it is time to really get some timey-wimey action started. Go back to our new friend, the command line, go back to your project folder &amp; simply type:</p><!--
->>>>>>> a4c3898d9b9b5a08cbb57825427b68d73fc0535c
                     --><pre class="dalek-shell cmd-output"><code><!--
                     --><span class="token shell-icon">$</span> <span class="token shell-dalek">dalek</span> <span class="token shell-npm">test/my_first_test.js</span></pre></code><!--
                     --><p class="description">Awesome, now just hit return &amp; experience the Dalek magic for the first time. It all worked well, if you end up with some output like this:</p><!--
