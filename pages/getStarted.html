@@ -25,13 +25,14 @@
                         Prelude
                         --><div class="grid__item one-whole"><!--
                             --><a class="nav-helper" data-name="selenium"></a><!--
-                            --><h2>This ain't Selenium</h2><!--
+                            --><h2>This ain’t Selenium</h2><!--
                             --><p class="description">
                             Before we get to the interesting stuff, installation, APIs and all these important things,
                             please take 5 minutes, grab a nice cup of coffee or tea &amp; let me tell you
                             why I started this massive pile of code in the first place.<br/><br />
 
                             Back in December 2012, I was working on a few web apps (you could call them single page apps,
+<<<<<<< HEAD
 
                             if you feel buzzwordy), for a yet unreleased big web platform. For the first time in my career, I had the opportunity to work with a testing team, people who would test the things that I've programmed 8 to 10 hours a day. And yes, they tested, they tested the hell out of my code, spotted bugs I had never encountered, even if I would have been really keen on testing my stuff (I wasn't, and by the way, if that reads like a christmas carol, it's just you - it was mid July when I wrote this).<br/>
 
@@ -78,11 +79,11 @@
 <!--                -->  "version": "0.0.2"
 <!--                -->}<!--
                     --></code></pre><!--
-                        --><span class="description">Hah, you "nodyfied" project &amp; I guess, now that you learned to love the commandline, you would really like to go back &amp; hack!? Great, than the next step is something for you, we install the dalek base framwork &amp; all its dependencies with a one liner that looks like this:</span><!--
+                        --><span class="description">Hah, you "nodyfied" project &amp; I guess, now that you learned to love the command line, you would really like to go back &amp; hack!? Great, than the next step is something for you, we install the Dalek base framework &amp; all its dependencies with a one liner that looks like this:</span><!--
                         --><pre class="dalek-shell"><code><!--
 <!--                    --><span class="token shell-icon">$</span> <span class="token shell-npm">npm install</span> <span class="token shell-dalek">dalekjs</span> <span class="token shell-npm">--save</span><!--
                             --></pre></code><!--
-                            --><span class="description">Guess what?! That was it. You installed DalekJS you old commandline hero, if you wan't to verify, that the local installation worked, you can, again, ask Dalek in which version it is running, because now, it will also tell you the version number of your local Dalek installation:</span><!--
+                            --><span class="description">Guess what?! That was it. You installed DalekJS you old command line hero, if you want to verify, that the local installation worked, you can, again, ask Dalek in which version it is running, because now, it will also tell you the version number of your local Dalek installation:</span><!--
                            --><pre class="dalek-shell"><code><span class="token shell-icon">$</span> <span class="token shell-dalek">dalek</span> <span class="token shell-npm">-v</span></code></pre><span class="description">You should see something like this</span><pre class="dalek-shell"><code><span class="token shell-icon">$</span> <span class="token shell-icon" style="color: #fff">DalekJS CLI Tools Version: 0.0.1</span>
 <!--
                             --><span class="token shell-icon" style="color: #fff">  DalekJS local install: 0.0.1</span>
@@ -95,7 +96,7 @@
                         --><div class="grid__item one-whole"><!--
                             --><a class="nav-helper" data-name="firsttest"></a><!--
                             --><h2>Write your first test</h2><!--
-                            --><p class="description">Okay commandline cowboys &amp; cowgirls, it is time to write our first test!<br/>And, because I don't know your pages &amp; sites, I think we should test something we all know, yes it is time to penetrate our old friend Google again! In this test, we will verify that the &lt;title&gt; element from Googles homepage has the correct value.<br/>The test we need to write, to make this happen, looks like this:</p><!--
+                            --><p class="description">Okay command line cowboys &amp; cowgirls, it is time to write our first test!<br/>And, because I don't know your pages &amp; sites, I think we should test something we all know, yes it is time to use our old friend Google again! In this test, we will verify that the &lt;title&gt; element from Google’s homepage has the correct value.<br/>The test we need to write, to make this happen, looks like this:</p><!--
                     --><pre class="code-thingie"><code class="language-javascript"><!--
                     -->module.exports = {
 <!--                -->'Page title is correct': function (test) {
@@ -106,14 +107,22 @@
 <!--                -->}
 <!--                -->};<!--
                     --></code></pre><!--
+<<<<<<< HEAD
                             --><p class="description">Now, lets save this file as 'my_first_test.js' in a folder called 'test'. This one is a good example of a basic testcase. Everything you wrapped in that object literals called `module.exports` is a testsuite in daleks eyes, it can contain hundreds od hundreds of single test functions, like the one that we created, callled `Page title is correct`. Every of those functions gets an argument injected, which we typically call `test`, this `test` variable is your interface to Dalek's functions. So what does this test do? You might have guessed, that it opens a webpage, Google in our example, and after the browser has finished loading, we `assert` that the `title` of the page is `Google`. The second argument of that `is` method than gives you the space for a custom message, this one is there that you can easily identify your failing tests later on, when you have dozents of them up and running. Finally, to tell Dalek that this is everything we would like to check within that particular test, we call the `done` method &amp; yes, that is it, your first test is ready, hurrah!</p><!--
+=======
+                            --><p class="description">Now, lets save this file as 'my_first_test.js' in a folder called 'test'. This one is a good example of a basic testc ase. Everything you wrapped in that object literals called `module.exports` is a test suite in Dalek’s eyes, it can contain hundreds of hundreds of single test functions, like the one that we created, called `Page title is correct`. Every of those functions gets an argument injected, which we typically call `test`, this `test` variable is your interface to Dalek’s functions. So what does this test do? You might have guessed, that it opens a webpage, Google in our example, and after the browser has finished loading, we `assert` that the `title` of the page is `Google`. The second argument of that `is` method than gives you the space for a custom message, this one is there that you can easily identify your failing tests later on, when you have dozens of them up and running. Finally, to tell Dalek that this is everything we would like to check within that particular test, we call the `done` method &amp; yes, that is it, your first test is ready, hurrah!</p><!--
+>>>>>>> a4c3898d9b9b5a08cbb57825427b68d73fc0535c
                         --></div><!--
 
                         Run your tests
                         --><div class="grid__item one-whole"><!--
                             --><a class="nav-helper" data-name="runtests"></a><!--
                             --><h2>Run your tests</h2><!--
+<<<<<<< HEAD
                         --><p class="description">So far so good, we learned why Dalek is awesome, installed dalek, we wrote our first test &amp; now it is time to really get some timey-wimey action started. Go back to our new friend, the command line, go back to your project folder &amp; simply type:</p><!--
+=======
+                        --><p class="description">So long so good, we learned why Dalek is awesome, installed Dalek, we wrote our first test &amp; now it is time to really get some timey-wimey action started. Go back to our new friend, the command line, go back to your project folder &amp; simply type:</p><!--
+>>>>>>> a4c3898d9b9b5a08cbb57825427b68d73fc0535c
                     --><pre class="dalek-shell cmd-output"><code><!--
                     --><span class="token shell-icon">$</span> <span class="token shell-dalek">dalek</span> <span class="token shell-npm">test/my_first_test.js</span></pre></code><!--
                     --><p class="description">Awesome, now just hit return &amp; experience the Dalek magic for the first time. It all worked well, if you end up with some output like this:</p><!--

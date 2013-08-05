@@ -55,7 +55,7 @@
                         --><option  value="../pages/merch.html">Merch</option><!--
                     --></select><!--
                 --></nav><!--
-            --></header><div class="grid__item one-whole"><div class="grid__item one-quarter sidenav" id="sidenav"><ul></ul></div><div class="grid__item three-quarters" id="content"><div class="grid__item one-whole" id="scroller"><h1 class="topic">JSON</h1><p> The JSON reporter can produce a file with the results of your testrun.</p>
+            --></header><div class="grid__item one-whole"><div class="grid__item one-quarter sidenav" id="sidenav"><ul></ul></div><div class="grid__item three-quarters" id="content"><div class="grid__item one-whole" id="scroller"><h1 class="topic">JSON</h1><p> The JSON reporter can produce a file with the results of your test run.</p>
 
 <p> The reporter can be installed with the following command:
  <code>
@@ -67,42 +67,42 @@
 
 <p> <pre><code class="language-javascript">
  {
-   &quot;tests&quot;: [
+   "tests": [
          {
-           &quot;id&quot;: &quot;test806&quot;,
-           &quot;name&quot;: &quot;Can get !url (OK, TDD style, message, chained)&quot;,
-           &quot;browser&quot;: &quot;Chrome&quot;,
-           &quot;status&quot;: true,
-           &quot;passedAssertions&quot;: 1,
-           &quot;failedAssertions&quot;: 0,
-           &quot;actions&quot;: [
+           "id": "test806",
+           "name": "Can get !url (OK, TDD style, message, chained)",
+           "browser": "Chrome",
+           "status": true,
+           "passedAssertions": 1,
+           "failedAssertions": 0,
+           "actions": [
                {
-                   &quot;value&quot;: &quot;http://localhost:5000/index.html&quot;,
-                   &quot;type&quot;: &quot;open&quot;,
-                   &quot;uuid&quot;: &quot;6ea84fc0-58bf-4e1f-bb9c-f035c6e6fae2&quot;,
-                   &quot;kind&quot;: &quot;action&quot;,
-                   &quot;isAction&quot;: true
+                   "value": "http://localhost:5000/index.html",
+                   "type": "open",
+                   "uuid": "6ea84fc0-58bf-4e1f-bb9c-f035c6e6fae2",
+                   "kind": "action",
+                   "isAction": true
                },
                {
-                   &quot;success&quot;: true,
-                   &quot;expected&quot;: &quot;http://localhost:5000/guinea.html&quot;,
-                   &quot;value&quot;: &quot;http://localhost:5000/index.html&quot;,
-                   &quot;message&quot;: &quot;Url is not whatever&quot;,
-                   &quot;type&quot;: &quot;url&quot;,
-                   &quot;kind&quot;: &quot;assertion&quot;,
-                   &quot;isAssertion&quot;: true
+                   "success": true,
+                   "expected": "http://localhost:5000/guinea.html",
+                   "value": "http://localhost:5000/index.html",
+                   "message": "Url is not whatever",
+                   "type": "url",
+                   "kind": "assertion",
+                   "isAssertion": true
                }
            ]
        }
    ],
-   &quot;elapsedTime&quot;: {
-       &quot;minutes&quot;: 1,
-       &quot;seconds&quot;: 43.328535046
+   "elapsedTime": {
+       "minutes": 1,
+       "seconds": 43.328535046
    },
-   &quot;status&quot;: true,
-   &quot;assertions&quot;: 1,
-   &quot;assertionsFailed&quot;: 0,
-   &quot;assertionsPassed&quot;: 1
+   "status": true,
+   "assertions": 1,
+   "assertionsFailed": 0,
+   "assertionsPassed": 1
  }
  </code></pre></p>
 
@@ -110,8 +110,8 @@
  you can change this by adding a config option to the your Dalekfile</p>
 
 <p> <pre><code class="language-javascript">
- &quot;json-reporter&quot;: {
-   &quot;dest&quot;: &quot;your/folder/your_file.json&quot;
+ "json-reporter": {
+   "dest": "your/folder/your_file.json"
  }
  </code></pre></p></div></div></div><!--
 

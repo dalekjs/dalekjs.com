@@ -204,7 +204,7 @@ module.exports = function(grunt) {
       },
       scss: {
         files: ['css/**/*.scss'],
-        tasks: ['sass:dist'],
+        tasks: ['sass:dist']
       }
     },
 
@@ -261,7 +261,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-usemin');
 
   // Default
-  grunt.registerTask('default', ['connect', 'watch']);
+  grunt.registerTask('default', ['connect', 'sass', 'cssmin', 'watch']);
   grunt.registerTask('build', ['clean', 'jshint', 'sass', 'cssmin', 'uglify', 'templates', 'copy', 'rev', 'usemin', 'htmlmin', 'compress']);
 
 };
