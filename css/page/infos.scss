@@ -18,9 +18,16 @@
   color: red;
 }
 
-.code-intro ul, .video-intro ul {
+.code-intro ul {
   font-family: $font;
-  font-size: 26px;
+  font-size: 26px;	
+}
+.video-intro ul {
+	font-size: 22px;
+}
+.code-intro ul, .video-intro ul {
+//  font-family: $font;
+//  font-size: 26px;
   padding-right: 10px;
 
   > li {
@@ -65,7 +72,8 @@
 }
 
 .token.shell-icon {
-  color: purple;
+//  color: purple;
+	color: #fff;
   @extend .own-shell;
 }
 

@@ -2,23 +2,23 @@
 .info-box {
   border-radius: 15px;
   background: rgb(66,102,162);
-  font-family: $font;
+//  font-family: $font-readable;
   margin-bottom: 40px;
   margin-top: 20px;
   padding: $base-line-height;
 
   .catchy {
     color: #fff;
-    font-size: 32px;
+    font-size: 24px;
     line-height: 1.2;
   }
 
   .feature-list {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .feature-list li {
-    color: yellow;
+    color: #fff;
     list-style-type: disc;
     margin-left: 25px;
   }

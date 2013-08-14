@@ -10,7 +10,7 @@
 
 	li {
 		background-color: #000;
-		font-family: $font;
+		font-family: $font-readable;
 		font-size: 22px;
 		border-bottom: 1px #fff solid;
 		padding-right: 10px;
@@ -46,7 +46,7 @@
 	.sidenav {
 		li {
 			background-color: #000;
-			font-family: $font;
+//			font-family: $font-readable;
 			font-size: 18px;
 			border-bottom: 1px #fff solid;
 			padding-right: 10px;

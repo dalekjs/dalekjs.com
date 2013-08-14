@@ -1,8 +1,8 @@
 .footer {
   margin: 75px 0 0 0;
-  font-family: $font;
+//  font-family: $font;
   font-size: 20px;
-  background: lime;
+  background: $nav-bg-color;
   text-align: center;
 }
 
@@ -13,7 +13,7 @@
 
 .footer__link {
   text-decoration: none;
-  color: yellow;
+  color: #fff;
 }
 
 @media only screen and (max-width: $lap-start) {
