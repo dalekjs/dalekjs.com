@@ -29,7 +29,7 @@
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Thursday, August 15th, 2013, 10:13:49 AM"><!--
+    <body data-buildtime="Thursday, August 15th, 2013, 10:15:56 AM"><!--
 
         --><div class="grid"><!--
 
@@ -55,7 +55,7 @@
                         --><option  value="../pages/merch.html">Merch</option><!--
                     --></select><!--
                 --></nav><!--
-            --></header><div class="grid__item one-whole"><div class="grid__item one-quarter sidenav" id="sidenav"><ul><li class="nav-meth-query"><a href="#meth-query">query</a></li><li class="nav-meth-$"><a href="#meth-$">$</a></li><li class="nav-meth-toFrame"><a href="#meth-toFrame">toFrame</a></li><li class="nav-meth-toParent"><a href="#meth-toParent">toParent</a></li><li class="nav-meth-toWindow"><a href="#meth-toWindow">toWindow</a></li><li class="nav-meth-toParentWindow"><a href="#meth-toParentWindow">toParentWindow</a></li><li class="nav-meth-screenshot"><a href="#meth-screenshot">screenshot</a></li><li class="nav-meth-wait"><a href="#meth-wait">wait</a></li><li class="nav-meth-reload"><a href="#meth-reload">reload</a></li><li class="nav-meth-forward"><a href="#meth-forward">forward</a></li><li class="nav-meth-back"><a href="#meth-back">back</a></li><li class="nav-meth-click"><a href="#meth-click">click</a></li><li class="nav-meth-submit"><a href="#meth-submit">submit</a></li><li class="nav-meth-open"><a href="#meth-open">open</a></li><li class="nav-meth-type"><a href="#meth-type">type</a></li><li class="nav-meth-answer"><a href="#meth-answer">answer</a></li><li class="nav-meth-accept"><a href="#meth-accept">accept</a></li><li class="nav-meth-dismiss"><a href="#meth-dismiss">dismiss</a></li><li class="nav-meth-resize"><a href="#meth-resize">resize</a></li><li class="nav-meth-maximize"><a href="#meth-maximize">maximize</a></li><li class="nav-meth-setCookie"><a href="#meth-setCookie">setCookie</a></li><li class="nav-meth-waitForElement"><a href="#meth-waitForElement">waitForElement</a></li><li class="nav-meth-setValue"><a href="#meth-setValue">setValue</a></li></ul></div><div class="grid__item three-quarters" id="content"><div class="grid__item one-whole" id="scroller"><h1 class="topic">Actions</h1><p> Actions are a way to control your browsers, e.g. simulate user interactions
+            --></header><div class="grid__item one-whole"><div class="grid__item one-quarter sidenav" id="sidenav"><ul><li class="nav-meth-query"><a href="#meth-query">query</a></li><li class="nav-meth-$"><a href="#meth-$">$</a></li><li class="nav-meth-toFrame"><a href="#meth-toFrame">toFrame</a></li><li class="nav-meth-toParent"><a href="#meth-toParent">toParent</a></li><li class="nav-meth-toWindow"><a href="#meth-toWindow">toWindow</a></li><li class="nav-meth-toParentWindow"><a href="#meth-toParentWindow">toParentWindow</a></li><li class="nav-meth-screenshot"><a href="#meth-screenshot">screenshot</a></li><li class="nav-meth-wait"><a href="#meth-wait">wait</a></li><li class="nav-meth-reload"><a href="#meth-reload">reload</a></li><li class="nav-meth-forward"><a href="#meth-forward">forward</a></li><li class="nav-meth-back"><a href="#meth-back">back</a></li><li class="nav-meth-click"><a href="#meth-click">click</a></li><li class="nav-meth-submit"><a href="#meth-submit">submit</a></li><li class="nav-meth-open"><a href="#meth-open">open</a></li><li class="nav-meth-type"><a href="#meth-type">type</a></li><li class="nav-meth-sendKeys"><a href="#meth-sendKeys">sendKeys</a></li><li class="nav-meth-answer"><a href="#meth-answer">answer</a></li><li class="nav-meth-accept"><a href="#meth-accept">accept</a></li><li class="nav-meth-dismiss"><a href="#meth-dismiss">dismiss</a></li><li class="nav-meth-resize"><a href="#meth-resize">resize</a></li><li class="nav-meth-maximize"><a href="#meth-maximize">maximize</a></li><li class="nav-meth-setCookie"><a href="#meth-setCookie">setCookie</a></li><li class="nav-meth-waitForElement"><a href="#meth-waitForElement">waitForElement</a></li><li class="nav-meth-setValue"><a href="#meth-setValue">setValue</a></li></ul></div><div class="grid__item three-quarters" id="content"><div class="grid__item one-whole" id="scroller"><h1 class="topic">Actions</h1><p> Actions are a way to control your browsers, e.g. simulate user interactions
  like clicking elements, open urls, filling out input fields, etc.</p><a class="nav-helper" data-name="meth-query"></a><h2 class="method"> .query</h2><p> It can be really cumbersome to repeat selectors all over when performing
  multiple actions or assertions on the same element(s).
  When you use the query method (or its alias $), you&#39;re able to specify a
@@ -318,7 +318,14 @@ test.open(&#39;http://home.dalek.com&#39;)
  .assert.val(&#39;#truth&#39;, &#39;out THERE is&#39;, &#39;Text has been set&#39;)
  .done();
 </code></pre>
-You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/session/:sessionId/element/:id/value">here</a> to read up on special keys and unicodes for them (note that a code of U+EXXX is actually written in code as \uEXXX).</li></ul><a class="nav-helper" data-name="meth-answer"></a><h2 class="method"> .answer</h2><p> Types a text into the text inout field of a prompt dialog.
+You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/session/:sessionId/element/:id/value">here</a> to read up on special keys and unicodes for them (note that a code of U+EXXX is actually written in code as \uEXXX).</li></ul><a class="nav-helper" data-name="meth-sendKeys"></a><h2 class="method"> .sendKeys</h2><p> This acts just like .type() with a key difference.  This action can be used on non-input elements (useful for test site wide keyboard shortcuts and the like).  So assumeing we have a keyboard shortcut that display an alert box, we could test that with something like this:</p>
+
+<p> <pre><code class="language-javascript">
+ test.open(&#39;http://home.dalek.com&#39;)
+     .sendKeys(&#39;body&#39;, &#39;\uE00C&#39;)
+     .assert.dialogText(&#39;press the escape key give this alert text&#39;)
+     .done();
+ </code></pre></p><a class="nav-helper" data-name="meth-answer"></a><h2 class="method"> .answer</h2><p> Types a text into the text inout field of a prompt dialog.
  Like you would do when using your keyboard.</p>
 
 <p> <pre><code class="language-markup">
