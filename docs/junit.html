@@ -60,13 +60,13 @@
 
 <p> The reporter can be installed with the following command:</p>
 
-<p> <pre><code class="language-bash">
+<pre><code class="language-bash">
  $ npm install dalek-reporter-junit --save-dev
- </code></pre></p>
+ </code></pre>
 
 <p> The file will follow the jUnit XML format:</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;?xml version="1.0" encoding="utf-8"?&gt;
  &lt;resource name="DalekJSTest"&gt;
      &lt;testsuite start="1375125067" name="Click - DalekJS guinea pig [Phantomjs]" end="1375125067" totalTests="1"&gt;
@@ -84,29 +84,29 @@
          &lt;/testcase&gt;
      &lt;/testsuite&gt;
   &lt;/resource&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> By default the file will be written to <code>report/dalek.xml</code>,
  you can change this by adding a config option to the your Dalekfile</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  "junit-reporter": {
    "dest": "your/folder/your_file.xml"
  }
- </code></pre></p>
+ </code></pre>
 
 <p> If you would like to use the reporter (in addition to the std. console reporter),
  you can start Dalek with a special command line argument</p>
 
-<p> <pre><code class="language-bash">
+<pre><code class="language-bash">
  $ dalek your_test.js -r console,junit
- </code></pre></p>
+ </code></pre>
 
 <p> or you can add it to your Dalekfile</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  "reporter": ["console", "junit"]
- </code></pre></p></div></div></div><!--
+ </code></pre></div></div></div><!--
 
             Footer
             --><footer  class="grid__item one-whole footer"><!--

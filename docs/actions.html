@@ -63,18 +63,18 @@
 
 <p> So, instead of writing this:</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test.open('http://doctorwhotv.co.uk/')
      .assert.text('#nav').is('Navigation')
      .assert.visible('#nav')
      .assert.attr('#nav', 'data-nav', 'true')
      .click('#nav')
      .done();
- </code></pre></p>
+ </code></pre>
 
 <p> you can write this:</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test.open('http://doctorwhotv.co.uk/')
      .query('#nav')
        .assert.text().is('Navigation')
@@ -83,7 +83,7 @@
        .click()
      .end()
      .done();
- </code></pre></p>
+ </code></pre>
 
 <p> Always make sure, you terminate it with the <a href="end">assertions.html#meth-end</a> method!</p><a class="nav-helper" data-name="meth-$"></a><h2 class="method"> .$</h2><p> Alias of query</p><a class="nav-helper" data-name="meth-toFrame"></a><h2 class="method"> .toFrame</h2><p> Switches to an iframe context</p>
 
@@ -94,29 +94,29 @@
 
 <p> If you want to get back to the parent’s context, you have to use the <a href="#meth-toParent">toParent</a> method.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;iframe id="login" src="/login.html"/&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test.open('http://adomain.withiframe.com')
     .assert.title().is('Title of a page that embeds an iframe')
     .toiframe('#login')
       .assert.title().is('Title of a page that can be embedded as an iframe')
     .toParent()
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-toParent"></a><h2 class="method"> .toParent</h2><p> Switches back to the parent page context when the test context has been
+ </code></pre><a class="nav-helper" data-name="meth-toParent"></a><h2 class="method"> .toParent</h2><p> Switches back to the parent page context when the test context has been
  switched to an iframe context.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;iframe id="login" src="/login.html"/&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test.open('http://adomain.withiframe.com')
     .assert.title().is('Title of a page that embeds an iframe')
     .toiframe('#login')
@@ -124,7 +124,7 @@
     .toParent()
     .assert.title().is('Title of a page that embeds an iframe')
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-toWindow"></a><h2 class="method"> .toWindow</h2><p> Switches to a different window context</p>
+ </code></pre><a class="nav-helper" data-name="meth-toWindow"></a><h2 class="method"> .toWindow</h2><p> Switches to a different window context</p>
 
 <p> Sometimes you encounter situations, where you need to access an iframe.
  You can access such frames with this method, but be aware of the fact, that the complete test context
@@ -133,29 +133,29 @@
 
 <p> If you want to get back to the parent’s context, you have to use the <a href="#meth-toParentWindow">toParentWindow</a> method.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;a onclick="window.open('http://google.com','goog','width=480, height=300')"&gt;Open Google&lt;/a&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test.open('http://adomain.com')
     .assert.title().is('Title of a page that can open a pop-up window')
     .toWindow('goog')
       .assert.title().is('Google')
     .toParentWindow()
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-toParentWindow"></a><h2 class="method"> .toParentWindow</h2><p> Switches back to the parent window context when the test context has been
+ </code></pre><a class="nav-helper" data-name="meth-toParentWindow"></a><h2 class="method"> .toParentWindow</h2><p> Switches back to the parent window context when the test context has been
  switched to a different window context.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;a onclick="window.open('http://google.com','goog','width=480, height=300')"&gt;Open Google&lt;/a&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test.open('http://adomain.com')
     .assert.title().is('Title of a page that can open a popup window')
     .toWindow('goog')
@@ -163,7 +163,7 @@
     .toParentWindow()
     .assert.title().is('Title of a page that can open a popup window')
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-screenshot"></a><h2 class="method"> .screenshot</h2><p> Take a screenshot of the current page.</p>
+ </code></pre><a class="nav-helper" data-name="meth-screenshot"></a><h2 class="method"> .screenshot</h2><p> Take a screenshot of the current page.</p>
 
 <p> The pathname argument takes some placeholders that will be replaced
  Placeholder:</p>
@@ -187,12 +187,12 @@ test.screenshot('my/page/in_time/:timestamp/homepage');
 test.screenshot('my/page/in_time/:date/homepage');
 // creates 'my/page/at/12_24_2013_14_55_23/homepage.png'
 test.screenshot('my/page/in_time/:datetime/homepage');
-</code></pre></p></li></ul><a class="nav-helper" data-name="meth-wait"></a><h2 class="method"> .wait</h2><p> Pause steps suite execution for a given amount of time, and optionally execute a step on done.</p>
+</code></pre></li></ul><a class="nav-helper" data-name="meth-wait"></a><h2 class="method"> .wait</h2><p> Pause steps suite execution for a given amount of time, and optionally execute a step on done.</p>
 
 <p> This makes sense for example, if you have a ticker which scrolls every ten seconds
  and you want to assure that the visible content changes every ten seconds.</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test.open('http://myticker.org')
    .assert.visible('.ticker-element:first-child', 'First ticker element is visible')
    .wait(10000)
@@ -203,7 +203,7 @@ test.screenshot('my/page/in_time/:datetime/homepage');
  </code></pre>
  If no timeout argument is given, a default of 5 seconds will be used.</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test.open('http://myticker.org')
    .assert.visible('.ticker-element:first-child', 'First ticker element is visible')
    .wait()
@@ -211,19 +211,19 @@ test.screenshot('my/page/in_time/:datetime/homepage');
    .wait()
    .assert.visible('.ticker-element:last-child', 'Third ticker element is visible')
    .done();
- </code></pre></p><a class="nav-helper" data-name="meth-reload"></a><h2 class="method"> .reload</h2><p> Reloads current page location.</p>
+ </code></pre><a class="nav-helper" data-name="meth-reload"></a><h2 class="method"> .reload</h2><p> Reloads current page location.</p>
 
 <p> This is basically the same as hitting F5/refresh in your browser.</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test.open('http://google.com')
    .reload()
    .done();
- </code></pre></p><a class="nav-helper" data-name="meth-forward"></a><h2 class="method"> .forward</h2><p> Moves a step forward in browser’s history.</p>
+ </code></pre><a class="nav-helper" data-name="meth-forward"></a><h2 class="method"> .forward</h2><p> Moves a step forward in browser’s history.</p>
 
 <p> This is basically the same as hitting the forward button in your browser.</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test.open('http://google.com')
    .open('https://github.com')
    .assert.url.is('https://github.com/', 'We are at GitHub')
@@ -232,11 +232,11 @@ test.screenshot('my/page/in_time/:datetime/homepage');
    .forward()
    .assert.url.is('https://github.com/', 'Back at GitHub! Timetravel FTW')
    .done();
- </code></pre></p><a class="nav-helper" data-name="meth-back"></a><h2 class="method"> .back</h2><p> Moves back a step in browser’s history.</p>
+ </code></pre><a class="nav-helper" data-name="meth-back"></a><h2 class="method"> .back</h2><p> Moves back a step in browser’s history.</p>
 
 <p> This is basically the same as hitting the back button in your browser</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test.open('http://google.com')
    .open('https://github.com')
    .assert.url.is('https://github.com/', 'We are at GitHub')
@@ -245,12 +245,12 @@ test.screenshot('my/page/in_time/:datetime/homepage');
    .forward()
    .assert.url.is('https://github.com/', 'Back at GitHub! Timetravel FTW');
    .done();
- </code></pre></p><a class="nav-helper" data-name="meth-click"></a><h2 class="method"> .click</h2><p> Performs a click on the element matching the provided selector expression.</p>
+ </code></pre><a class="nav-helper" data-name="meth-click"></a><h2 class="method"> .click</h2><p> Performs a click on the element matching the provided selector expression.</p>
 
 <p> If we take Daleks homepage (the one you’re probably visiting right now),
  the HTML looks something like this (it does not really, but hey, lets assume this for a second).</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;nav&gt;
    &lt;ul&gt;
      &lt;li&gt;&lt;a id="homeapge" href="/index.html"&gt;DalekJS&lt;/a&gt;&lt;/li&gt;
@@ -258,96 +258,96 @@ test.screenshot('my/page/in_time/:datetime/homepage');
      &lt;li&gt;&lt;a id="faq" href="/faq.html"&gt;F.A.Q&lt;/a&gt;&lt;/li&gt;
    &lt;/ul&gt;
  &lt;/nav&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test.open('http://dalekjs.com')
      .click('#faq')
      .assert.title().is('DalekJS - Frequently asked questions', 'What the F.A.Q.')
      .done();
- </code></pre></p>
+ </code></pre>
 
 <p> By default, this performs a left click.
  In the future it might become the ability to also execute a "right button" click.</p><a class="nav-helper" data-name="meth-submit"></a><h2 class="method"> .submit</h2><p> Submits a form.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;form id="skaaro" action="skaaro.php" method="GET"&gt;
    &lt;input type="hidden" name="intheshadows" value="itis"/&gt;
    &lt;input type="text" name="truth" id="truth" value=""/&gt;
  &lt;/form&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test.open('http://home.dalek.com')
      .type('#truth', 'out there is')
      .submit('#skaaro')
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-open"></a><h2 class="method"> .open</h2><p> Performs a HTTP request for opening a given location. You can forge GET, POST, PUT, DELETE and HEAD requests.</p>
+ </code></pre><a class="nav-helper" data-name="meth-open"></a><h2 class="method"> .open</h2><p> Performs a HTTP request for opening a given location. You can forge GET, POST, PUT, DELETE and HEAD requests.</p>
 
 <p> Basically the same as typing a location into your browsers URL bar and
  hitting return.</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test.open('http://dalekjs.com')
      .assert.url().is('http://dalekjs.com', 'DalekJS I'm in you')
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-type"></a><h2 class="method"> .type</h2><p> Types a text into an input field or text area.
+ </code></pre><a class="nav-helper" data-name="meth-type"></a><h2 class="method"> .type</h2><p> Types a text into an input field or text area.
  And yes, it really types, character for character, like you would
  do when using your keyboard.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;form id="skaaro" action="skaaro.php" method="GET"&gt;
    &lt;input type="hidden" name="intheshadows" value="itis"/&gt;
    &lt;input type="text" name="truth" id="truth" value=""/&gt;
  &lt;/form&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test.open('http://home.dalek.com')
      .type('#truth', 'out there is')
      .assert.val('#truth', 'out there is', 'Text has been set')
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-answer"></a><h2 class="method"> .answer</h2><p> Types a text into the text input field of a prompt dialog.
+ </code></pre><a class="nav-helper" data-name="meth-answer"></a><h2 class="method"> .answer</h2><p> Types a text into the text input field of a prompt dialog.
  Like you would do when using your keyboard.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;a id="aquestion" onclick="this.innerText = window.prompt('Your favorite companion:')"&gt;????&lt;/a&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test.open('http://adomain.com')
      .click('#aquestion')
      .answer('Rose')
      .assert.text('#aquestion').is('Rose', 'Awesome she was!')
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-accept"></a><h2 class="method"> .accept</h2><p> Accepts an alert/prompt/confirm dialog. This is basically the same actions as when
+ </code></pre><a class="nav-helper" data-name="meth-accept"></a><h2 class="method"> .accept</h2><p> Accepts an alert/prompt/confirm dialog. This is basically the same actions as when
  you are clicking "Ok" or hitting return in one of that dialogs.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;a id="attentione" onclick="window.alert('Alonsy!')"&gt;ALERT!ALERT!&lt;/a&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test.open('http://adomain.com')
      // alert appears
      .click('#attentione')
      // alert is gone
      .accept()
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-dismiss"></a><h2 class="method"> .dismiss</h2><p> Dismisses an prompt/confirm dialog. This is basically the same actions as when
+ </code></pre><a class="nav-helper" data-name="meth-dismiss"></a><h2 class="method"> .dismiss</h2><p> Dismisses an prompt/confirm dialog. This is basically the same actions as when
  you are clicking cancel in one of that dialogs.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;a id="nonono" onclick="(this.innerText = window.confirm('No classic doctors in the 50th?') ? 'Buh!' : ':(') "&gt;What!&lt;/a&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test.open('http://adomain.com')
      // prompt appears
      .click('#nonono')
@@ -355,15 +355,15 @@ test.screenshot('my/page/in_time/:datetime/homepage');
      .dismiss()
      .assert.text('#nonono').is(':(', 'So sad')
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-resize"></a><h2 class="method"> .resize</h2><p> Resizes the browser window to a set of given dimensions (in px).
+ </code></pre><a class="nav-helper" data-name="meth-resize"></a><h2 class="method"> .resize</h2><p> Resizes the browser window to a set of given dimensions (in px).
  The default configuration of Dalek opening pages is a width of 1280px
  and a height of 1024px. You can specify your own default in the configuration.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;span id="magicspan"&gt;The span in the fireplace&lt;/span&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> <code></code>`css
  #magicspan {
@@ -376,19 +376,19 @@ test.screenshot('my/page/in_time/:datetime/homepage');
  }
  <code></code>`</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test.open('http://adomain.com')
      .assert.visible('#magicspan', 'Big screen, visible span')
      .resize({width: 400, height: 500})
      .assert.notVisible('#magicspan', 'Small screen, no visible span magic!')
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-maximize"></a><h2 class="method"> .maximize</h2><p> Maximizes the browser window.</p>
+ </code></pre><a class="nav-helper" data-name="meth-maximize"></a><h2 class="method"> .maximize</h2><p> Maximizes the browser window.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;span id="magicspan"&gt;The span in the fireplace&lt;/span&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> <code></code>`css
  #magicspan {
@@ -401,29 +401,29 @@ test.screenshot('my/page/in_time/:datetime/homepage');
  }
  <code></code>`</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test.open('http://adomain.com')
      .resize({width: 400, height: 500})
      .assert.notVisible('#magicspan', 'Small screen, no visible span magic!')
      .maximize()
      .assert.visible('#magicspan', 'Big screen, visible span')
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-setCookie"></a><h2 class="method"> .setCookie</h2><p> Sets a cookie.
+ </code></pre><a class="nav-helper" data-name="meth-setCookie"></a><h2 class="method"> .setCookie</h2><p> Sets a cookie.
  More configuration options will be implemented in the future,
  by now, you can only set a cookie with a specific name and contents.
  This will be a domain wide set cookie.</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test.open('http://adomain.com')
       .setCookie('my_cookie_name', 'my=content')
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-waitForElement"></a><h2 class="method"> .waitForElement</h2><p> Waits until an element matching the provided
+ </code></pre><a class="nav-helper" data-name="meth-waitForElement"></a><h2 class="method"> .waitForElement</h2><p> Waits until an element matching the provided
  selector expression exists in remote DOM to process any next step.</p>
 
 <p> Lets assume we have a ticker that loads its contents via Ajax,
  and appends new elements, when the call has been successfully answered:</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test.open('http://myticker.org')
    .assert.text('.ticker-element:first-child', 'First!', 'First ticker element is visible')
    // now we load the next ticker element, defsult timeout is 5 seconds
@@ -433,17 +433,17 @@ test.screenshot('my/page/in_time/:datetime/homepage');
    .waitForElement('.ticker-element:last-child', 10000)
    .assert.text('.ticker-element:last-child', 'Me, third one!', 'Third ticker element is visible')
    .done();
- </code></pre></p><a class="nav-helper" data-name="meth-setValue"></a><h2 class="method"> .setValue</h2><p> Fills the fields of a form with given values.</p>
+ </code></pre><a class="nav-helper" data-name="meth-setValue"></a><h2 class="method"> .setValue</h2><p> Fills the fields of a form with given values.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;input type="hidden" value="not really a value" id="ijustwannahaveavalue"/&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test.open('http://dalekjs.com')
      .setValue('#ijustwannahaveavalue', 'a value')
      .title().is('DalekJS - Frequently asked questions', 'What the F.A.Q.');
- </code></pre></p></div></div></div></div><!--
+ </code></pre></div></div></div></div><!--
 
             Footer
             --><footer id="footer" class="grid__item one-whole footer"><!--
