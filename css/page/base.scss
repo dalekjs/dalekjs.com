@@ -1,25 +1,18 @@
 body {
 	background-color: #fff;
 	font-family: $font-readable;
-
-/*
-background-image: -webkit-linear-gradient(bottom, rgb(242,242,239) 14%, rgb(255,255,255) 74%, rgb(255,255,255) 87%);
-
-	background-image: -o-linear-gradient(bottom, rgb(242,242,239) 14%, rgb(255,255,255) 74%, rgb(255,255,255) 87%);
-	background-image: -moz-linear-gradient(bottom, rgb(242,242,239) 14%, rgb(255,255,255) 74%, rgb(255,255,255) 87%);
-	background-image: linear-gradient(to top, rgb(242,242,239) 14%, rgb(255,255,255) 74%, rgb(255,255,255) 87%);
-
-*/
 }
 
-// ul, li {
-//   list-style-type: none;
-// }
-
-//ul, pre, code {
 ul, pre, code {
   margin: 0;
   padding: 0;
+}
+
+a {
+    color: $color-red;
+    font-family: $font-readable;
+//    font-size: 20px;
+    text-decoration: none;
 }
 
 pre {
@@ -28,7 +21,7 @@ pre {
 }
 
 .quote {
-  font-family: 'Londrina Solid', cursive;
+  font-family: $font;
   font-size: 40px;
   line-height: 35px;
   margin-bottom: 20px;
@@ -251,9 +244,3 @@ pre {
     }
 }
 
-a {
-    color: $color-red;
-    font-family: $font-readable;
-//    font-size: 20px;
-    text-decoration: none;
-}
