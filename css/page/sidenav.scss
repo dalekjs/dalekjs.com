@@ -10,16 +10,18 @@
 
 	li {
 		background-color: #000;
-		font-family: $font-readable;
-		font-size: 22px;
+//		font-family: $font-readable;
 		border-bottom: 1px #fff solid;
 		padding-right: 10px;
 	}
 
 	li a {
-		margin-left: 10px;
+		font-size: 18px;
+		padding: 5px 5px 5px 10px;
+		//margin-left: 10px;
 		color: $nav-font-color;
 		text-decoration: none;
+		display: block;
 	}
 
 	li.active a{
