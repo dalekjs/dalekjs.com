@@ -1,6 +1,6 @@
 //.description, .api-body {
 .api-body {
-  font-family: 'Oswald';
+  //font-family: 'Oswald';
 }
 
 .description {
@@ -10,7 +10,7 @@
 }
 
 .doc-link {
-  font-family: 'Londrina Solid' !important;
+  font-family: $font;
   margin-left: 20px;
   color: $color-red;
   font-size: 24px;
