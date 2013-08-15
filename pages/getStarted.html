@@ -104,7 +104,11 @@
 <!--                -->}
 <!--                -->};<!--
                     --></code></pre><!--
-                            --><p class="description">Now, lets save this file as 'my_first_test.js' in a folder called 'test'. This one is a good example of a basic testcase. Everything you wrapped in that object literals called `module.exports` is a testsuite in daleks eyes, it can contain hundreds od hundreds of single test functions, like the one that we created, callled `Page title is correct`. Every of those functions gets an argument injected, which we typically call `test`, this `test` variable is your interface to Dalek's functions. So what does this test do? You might have guessed, that it opens a webpage, Google in our example, and after the browser has finished loading, we `assert` that the `title` of the page is `Google`. The second argument of that `is` method than gives you the space for a custom message, this one is there that you can easily identify your failing tests later on, when you have dozents of them up and running. Finally, to tell Dalek that this is everything we would like to check within that particular test, we call the `done` method &amp; yes, that is it, your first test is ready, hurrah!</p><!--
+                            --><p class="description">Now, lets save this file as 'my_first_test.js' in a folder called 'test'. Everything wrapped in the object literal called `module.exports` is a test suite. It can contain hundreds of single test functions just like the one that we created. Each test function gets an argument, conventionally called `test`. This `test` variable is your interface to Dalek's functions.<br /><br/>
+
+                            So what does this test do? It's quite simple really!<br /><br/>
+
+                            It opens a browser (PhantomJS by default), points to Google, and after the browser has finished loading, we `assert` that the `title` of the page is `Google`. The second argument of the `is` method allows you to label your tests. This makes it easy to identify which are failing. Finally, to tell Dalek that we are done with this test, we call the `done` method. That is it, your first test is ready! Hurrah!</p><!--
                         --></div><!--
 
                         Run your tests
