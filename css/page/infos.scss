@@ -9,10 +9,6 @@
 	max-width: 470px;
 }
 
-.code-intro li, .video-intro li {
-  cursor: pointer;
-}
-
 .code-intro .active-entry, .video-intro .active-entry{
   cursor: default;
   color: red;
@@ -28,10 +24,29 @@
 .code-intro ul, .video-intro ul {
 //  font-family: $font;
 //  font-size: 26px;
-  padding-right: 10px;
+	padding: 0;
 
   > li {
-    list-style: disc;
+	list-style-type: none;
+  	cursor: pointer;
+	&:before {
+		content: "";
+		display: inline-block;
+		border: 8px solid transparent;
+		border-left-color: #000;
+		margin-right: 2px;
+	}
+	&:hover, &:focus {
+		color: darken(red,20);
+		&:before {
+			border-left-color: darken(red,20);
+		}
+	}
+	&.active-entry {
+		&:before {
+			border-left-color: red;
+		}
+	}
   }
 }
 
