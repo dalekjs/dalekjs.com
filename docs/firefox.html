@@ -29,7 +29,7 @@
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Thursday, August 1st, 2013, 4:28:57 PM"><!--
+    <body data-buildtime="Friday, August 16th, 2013, 3:50:41 PM"><!--
 
         --><div class="grid"><!--
 
@@ -67,7 +67,7 @@
 <p> You can use the browser plugin by adding a config option to the your Dalekfile</p>
 
 <p> <pre><code class="language-javascript">
- "browsers": ["firefox"]
+ &quot;browsers&quot;: [&quot;firefox&quot;]
  </code></pre></p>
 
 <p> Or you can tell Dalek that it should test in this browser via the command line:</p>
@@ -77,21 +77,28 @@
  </code></pre></p>
 
 <p> Because of the availability of the Firefox Marionette testing framework,
- Dalek can only drive the Firefox Aurora Debug builds at the moment.</p>
+ Dalek atm. can only drive the Firefox Nightly Debug builds.
+ Also, some weird change that the Mozillians have done to the testing framework,
+ the latest browser version dalek supports atm. is version 24, and to be exactly,
+ the version from the 18th of June.</p>
 
-<p> You also have to add the location of the browser executable to you Dalekfile,
- because Dalek isn't capable of finding the executable yet on its own.</p>
+<p> You can get the browser here <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/2013/06/2013-06-18-mozilla-central-debug/">http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/2013/06/2013-06-18-mozilla-central-debug/</a></p>
+
+<p> Dalek looks for the browser in the std. installation directory, if you installed the
+ browser in a different place, you can add the location of the browser executable to you Dalekfile,
+ because Dalek isn&#39;t capable of finding the executable yet on its own.</p>
 
 <p> <pre><code class="language-javascript">
- "browsers": [{
-   "firefox": {
-     "path": "~/Apps/FirefoxAuroraDebug.app/"
+ &quot;browsers&quot;: [{
+   &quot;firefox&quot;: {
+     &quot;path&quot;: &quot;~/Apps/FirefoxNightlyDebug.app/Contents/MacOS/firefox-bin&quot;
    }
  }]
  </code></pre></p>
 
-<p> The Firefox plugin only implements a subset of Dalek’s Assertions &amp; Actions, so if you run into any bugs,
- the issue is most probably related to missing commands.</p></div></div></div><!--
+<p> The Firefox plugin only implements a subset of Daleks Assertions &amp; Actions, so if you run into any bugs,
+ the issue is most probably related to missing commands.
+ Please report any issues you find, Thank you :)</p></div></div></div><!--
 
             Footer
             --><footer  class="grid__item one-whole footer"><!--
