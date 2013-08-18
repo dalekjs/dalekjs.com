@@ -8,14 +8,10 @@
                 Sidebar nav
                 --><div class="grid__item one-quarter sidenav" id="sidenav"><!--
                     --><ul><!--
-                        --><li class="active nav-tba"><a href="#tba">TBA</a></li><!--
-                        --><!--li class="nav-assertions"><a href="#assertions">Assertions</a></li--><!--
-                        --><!--li class="nav-browsers"><a href="#browsers">Browsers</a></li--><!--
-                        --><!--li class="nav-reports"><a href="#reports">Reports</a></li--><!--
-                        --><!--li class="nav-drivers"><a href="#drivers">Drivers</a></li--><!--
-                        --><!--li class="nav-cli"><a href="#cli">CLI</a></li--><!--
-                        --><!--li class="nav-extending"><a href="#extending">Extending</a></li--><!--
-                        --><!--li class="nav-debugging"><a href="#debugging">Debugging</a></li--><!--
+                        --><li class="nav-selenium"><a href="#selenium">Selenium</a></li><!--
+                        --><li class="nav-ci"><a href="#ci">CI</a></li><!--
+                        --><li class="nav-coffeescript"><a href="#coffeescript">Coffeescript</a></li><!--
+                        --><li class="nav-casperjs"><a href="#casperjs">CasperJS</a></li><!--
                     --></ul><!--
                 --></div><!--
 
@@ -26,7 +22,54 @@
                     Page title
                     --><div class="grid__item one-whole" id="scroller"><!--
                         --><h1>F.A.Q.</h1><!--
-                        --><p class="description"><strong style="color: red; font-Family: 'Londrina solid'; font-size: 24px">TBA.</strong></p><!--
+
+                        Selenium
+                        --><div class="grid__item one-whole"><!--
+                            --><a class="nav-helper" data-name="selenium"></a><!--
+                            --><h2>Does DalekJS depend on Selenium?</h2><!--
+                            --><p class="description">Short answer: No.
+                            Dalek uses the Webdriver specifications, the JSON-Wire protocol to communicate with the browsers it utilitizes, when applicaple. The Webdriver specification evolved out of the Selenium procject &amp; then got submitted as a draft to the W3C. So, in some ways, Daleks existance would not be possible without the work the Selenium project has done so far.
+                            But Daleks only dependency is Node, no need to install Java or download the Selenium.jar file.
+                            </p><!--
+                        --></div><!--
+
+                        Continous Integration
+                        --><div class="grid__item one-whole"><!--
+                            --><a class="nav-helper" data-name="ci"></a><!--
+                            --><h2>How do I use DalekJS in my CI env?</h2><!--
+                            --><p class="description">
+                            Dalek was developed with Continous Integration systems in mind. Basically there should be no problem with any CI system that is able to execute shell commands, but Dalek has been tested
+                            <h3>Travis CI</h3>
+                            <p class="description">Running tests with Travis is as easy as stealing sweets from a baby.<br/>A basic .travis.yml to enable Dalek in your Travis install looks like this:
+                            <pre><code></code></pre>
+                             <p class="description">Daleks <a href="https://github.com/dalekjs/guineapig">guineapig</a> project itself gets testes with Travis, if you are lazy, you can use this as a boilerplate.</p>
+                            </p>
+                            <h3>drone.io</h3>
+                            <p class="description">If you think Travis was an easy one, than drone.io is like CI for dummies. Just add these 3 lines to your run configuration and be happy.
+                            <pre><code></code></pre>
+                            <p class="description">To see dalek@drone.io in action, please check the <a href="https://github.com/dalekjs/guineapig">guineapig</a> project.</p>
+                            </p>
+                            <h3>Jenkins</h3>
+                            <p class="description">To make all the enterprise lovers happy (No, I don't mean Start Trek fans here), Dalek can output its testresults in jUnit format, using the dalek-reporter-junit. A more detailed setup guide will follow soon.</p>
+                            </p><!--
+                        --></div><!--
+
+                        Coffeescript
+                        --><div class="grid__item one-whole"><!--
+                            --><a class="nav-helper" data-name="coffeescript"></a><!--
+                            --><h2>Can I write my tests in Coffeescript?</h2><!--
+                            --><p class="description">Sure. As the lovely ghosts of PhantomJS &amp; CasperJS showed us, people like to write Coffeescript for some reason. All you need to get your coffee brewing at the correct temperature is to indicate that you would like to run Coffeescript instead of JavaScript</p><!--
+                            --><pre class="dalek-shell cmd-output"><code><!--
+                            --><span class="token shell-icon">$</span> <span class="token shell-dalek">dalek</span> <span class="token shell-npm">test/my_first_test.coffee</span></pre></code><!--
+                        --></div><!--
+
+                        CasperJS
+                        --><div class="grid__item one-whole"><!--
+                            --><a class="nav-helper" data-name="casperjs"></a><!--
+                            --><h2>Should I ditch CasperJS &amp; switch to Dalek?</h2><!--
+                            --><p class="description">Not yet &amp; depending on your needs, maybe never. CasperJS is a beautiful &amp; mature tool, that does way more than just allow you to write tests. I peronally see it more like a nice API/abstraction layer for PhantomJS with a testing API on top of it. Btw.: Without Casper, Dalek wouldn't exist. The first draft of DalekJS used  </p><!--
+                        --></div><!--
+
                     --></div><!--
                 --></div><!--
         Footer

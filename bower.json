@@ -11,6 +11,7 @@
     "in-viewport": "~0.3.0",
     "iscroll": "~5.0.4",
     "fastclick": "~0.6.8",
-    "inuit.css": "~5.0.0"
+    "inuit.css": "~5.0.0",
+    "prism": "latest"
   }
 }
