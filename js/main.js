@@ -68,12 +68,14 @@ if (document.getElementById('content') && matches) {
         scrollbars: true,
         mouseWheel: true,
         interactiveScrollbars: true,
-        click: true
+        click: true,
+        preventDefault: false
      });
 
     var sideScroller = new IScroll('#sidenav', {
         mouseWheel: true,
-        click: true
+        click: true,
+        preventDefault: false
      });
 
     //weird, but helps
