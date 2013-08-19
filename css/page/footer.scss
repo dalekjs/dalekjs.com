@@ -10,7 +10,7 @@
   margin: 75px 0 0 0;
   font-family: $font;
   font-size: 20px;
-  background: lime;
+  background: rgb(66,102,162);
   text-align: center;
 }
 
@@ -20,6 +20,7 @@
 }
 
 .footer__link {
+  font-family: $font;
   text-decoration: none;
   color: yellow;
 }

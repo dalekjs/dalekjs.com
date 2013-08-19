@@ -70,7 +70,7 @@
      .assert.attr(&#39;#nav&#39;, &#39;data-nav&#39;, &#39;true&#39;)
      .click(&#39;#nav&#39;)
      .done();
- </code></pre></p>
+ </code></pre>
 
 <p> you can write this:</p>
 
@@ -83,7 +83,7 @@
        .click()
      .end()
      .done();
- </code></pre></p>
+ </code></pre>
 
 <p> Always make sure, you terminate it with the <a href="end">assertions.html#meth-end</a> method!</p><a class="nav-helper" data-name="meth-$"></a><h2 class="method"> .$</h2><p> Alias of query</p><a class="nav-helper" data-name="meth-toFrame"></a><h2 class="method"> .toFrame</h2><p> Switches to an iFrame context</p>
 
@@ -94,11 +94,11 @@
 
 <p> If you wan&#39;t to get back to the parents context, you have to use the <a href="#meth-toParent">toParent</a> method.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;iframe id=&quot;login&quot; src=&quot;/login.html&quot;/&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> <pre><code class="language-javascript">
   test.open(&#39;http://adomain.withiframe.com&#39;)
@@ -110,11 +110,11 @@
  </code></pre></p><a class="nav-helper" data-name="meth-toParent"></a><h2 class="method"> .toParent</h2><p> Switches back to the parent page context when the test context has been
  switched to an iFrame context</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;iframe id=&quot;login&quot; src=&quot;/login.html&quot;/&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> <pre><code class="language-javascript">
   test.open(&#39;http://adomain.withiframe.com&#39;)
@@ -124,7 +124,7 @@
     .toParent()
     .assert.title().is(&#39;Title of a page that embeds an iframe&#39;)
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-toWindow"></a><h2 class="method"> .toWindow</h2><p> Switches to a different window context</p>
+ </code></pre><a class="nav-helper" data-name="meth-toWindow"></a><h2 class="method"> .toWindow</h2><p> Switches to a different window context</p>
 
 <p> Sometimes you encounter situations, where you need to access a .
  You can access such frames with this mehtod, but be aware of the fact, that the complete test context
@@ -133,11 +133,11 @@
 
 <p> If you want to get back to the parents context, you have to use the <a href="#meth-toParentWindow">toParentWindow</a> method.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;a onclick=&quot;window.open(&#39;http://google.com&#39;,&#39;goog&#39;,&#39;width=480, height=300&#39;)&quot;&gt;Open Google&lt;/a&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> <pre><code class="language-javascript">
   test.open(&#39;http://adomain.com&#39;)
@@ -149,11 +149,11 @@
  </code></pre></p><a class="nav-helper" data-name="meth-toParentWindow"></a><h2 class="method"> .toParentWindow</h2><p> Switches back to the parent windoe context when the test context has been
  switched to a different windoe context</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;a onclick=&quot;window.open(&#39;http://google.com&#39;,&#39;goog&#39;,&#39;width=480, height=300&#39;)&quot;&gt;Open Google&lt;/a&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> <pre><code class="language-javascript">
   test.open(&#39;http://adomain.com&#39;)
@@ -163,7 +163,7 @@
     .toParentWindow()
     .assert.title().is(&#39;Title of a page that can open a popup window&#39;)
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-screenshot"></a><h2 class="method"> .screenshot</h2><p> Take a screenshot of the current page.</p>
+ </code></pre><a class="nav-helper" data-name="meth-screenshot"></a><h2 class="method"> .screenshot</h2><p> Take a screenshot of the current page.</p>
 
 <p> The pathname argument takes some placeholders that will be replaced
  Placeholder:</p>
@@ -211,7 +211,7 @@ test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
    .wait()
    .assert.visible(&#39;.ticker-element:last-child&#39;, &#39;Third ticker element is visible&#39;)
    .done();
- </code></pre></p><a class="nav-helper" data-name="meth-reload"></a><h2 class="method"> .reload</h2><p> Reloads current page location.</p>
+ </code></pre><a class="nav-helper" data-name="meth-reload"></a><h2 class="method"> .reload</h2><p> Reloads current page location.</p>
 
 <p> This is basically the same as hitting F5/refresh in your browser</p>
 
@@ -245,12 +245,12 @@ test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
    .forward()
    .assert.url.is(&#39;https://github.com/&#39;, &#39;Back at GitHub! Timetravel FTW&#39;);
    .done();
- </code></pre></p><a class="nav-helper" data-name="meth-click"></a><h2 class="method"> .click</h2><p> Performs a click on the element matching the provided selector expression.</p>
+ </code></pre><a class="nav-helper" data-name="meth-click"></a><h2 class="method"> .click</h2><p> Performs a click on the element matching the provided selector expression.</p>
 
 <p> If we take Daleks homepage (the one you&#39;re probably visiting right now),
  the HTML looks something like this (it does not really, but hey, lets assume this for a second)</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;nav&gt;
    &lt;ul&gt;
      &lt;li&gt;&lt;a id=&quot;homeapge&quot; href=&quot;/index.html&quot;&gt;DalekJS&lt;/a&gt;&lt;/li&gt;
@@ -258,14 +258,14 @@ test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
      &lt;li&gt;&lt;a id=&quot;faq&quot; href=&quot;/faq.html&quot;&gt;F.A.Q&lt;/a&gt;&lt;/li&gt;
    &lt;/ul&gt;
  &lt;/nav&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> <pre><code class="language-javascript">
  test.open(&#39;http://dalekjs.com&#39;)
      .click(&#39;#faq&#39;)
      .assert.title().is(&#39;DalekJS - Frequently asked questions&#39;, &#39;What the F.A.Q.&#39;)
      .done();
- </code></pre></p>
+ </code></pre>
 
 <p> By default, this performs a left click.
  In the future it might become the ability to also execute a &quot;right button&quot; click.</p><a class="nav-helper" data-name="meth-submit"></a><h2 class="method"> .submit</h2><p> Submits a form.</p>
@@ -275,7 +275,7 @@ test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
    &lt;input type=&quot;hidden&quot; name=&quot;intheshadows&quot; value=&quot;itis&quot;/&gt;
    &lt;input type=&quot;text&quot; name=&quot;truth&quot; id=&quot;truth&quot; value=&quot;&quot;/&gt;
  &lt;/form&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> <pre><code class="language-javascript">
  test.open(&#39;http://home.dalek.com&#39;)
@@ -292,7 +292,7 @@ test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
  test.open(&#39;http://dalekjs.com&#39;)
      .assert.url().is(&#39;http://dalekjs.com&#39;, &#39;DalekJS I&#39;m in you&#39;)
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-type"></a><h2 class="method"> .type</h2><p> Types a text into an input field or text area.
+ </code></pre><a class="nav-helper" data-name="meth-type"></a><h2 class="method"> .type</h2><p> Types a text into an input field or text area.
  And yes, it really types, character for character, like you would
  do when using your keyboard.</p>
 
@@ -301,7 +301,7 @@ test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
    &lt;input type=&quot;hidden&quot; name=&quot;intheshadows&quot; value=&quot;itis&quot;/&gt;
    &lt;input type=&quot;text&quot; name=&quot;truth&quot; id=&quot;truth&quot; value=&quot;&quot;/&gt;
  &lt;/form&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> <pre><code class="language-javascript">
  test.open(&#39;http://home.dalek.com&#39;)
@@ -328,11 +328,11 @@ You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/se
  </code></pre></p><a class="nav-helper" data-name="meth-answer"></a><h2 class="method"> .answer</h2><p> Types a text into the text inout field of a prompt dialog.
  Like you would do when using your keyboard.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;a id=&quot;aquestion&quot; onclick=&quot;this.innerText = window.prompt(&#39;Your favourite companion:&#39;)&quot;&gt;????&lt;/a&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> <pre><code class="language-javascript">
   test.open(&#39;http://adomain.com&#39;)
@@ -343,11 +343,11 @@ You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/se
  </code></pre></p><a class="nav-helper" data-name="meth-accept"></a><h2 class="method"> .accept</h2><p> Accepts an alert/prompt/confirm dialog. This is basically the same actions as when
  you are clicking okay or hitting return in one of that dialogs.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;a id=&quot;attentione&quot; onclick=&quot;window.alert(&#39;Alonsy!&#39;)&quot;&gt;ALERT!ALERT!&lt;/a&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> <pre><code class="language-javascript">
   test.open(&#39;http://adomain.com&#39;)
@@ -356,14 +356,14 @@ You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/se
      // alert is gone
      .accept()
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-dismiss"></a><h2 class="method"> .dismiss</h2><p> Dismisses an prompt/confirm dialog. This is basically the same actions as when
+ </code></pre><a class="nav-helper" data-name="meth-dismiss"></a><h2 class="method"> .dismiss</h2><p> Dismisses an prompt/confirm dialog. This is basically the same actions as when
  you are clicking cancel in one of that dialogs.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;a id=&quot;nonono&quot; onclick=&quot;(this.innerText = window.confirm(&#39;No classic doctors in the 50th?&#39;) ? &#39;Buh!&#39; : &#39;:(&#39;) &quot;&gt;What!&lt;/a&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> <pre><code class="language-javascript">
   test.open(&#39;http://adomain.com&#39;)
@@ -377,11 +377,11 @@ You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/se
  The default configuration of dalek opening pages is a width of 1280px
  and a height of 1024px. You can specify your own default in the configuration.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;span id=&quot;magicspan&quot;&gt;The span in the fireplace&lt;/span&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> <code></code>`css
  #magicspan {
@@ -400,13 +400,13 @@ You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/se
      .resize({width: 400, height: 500})
      .assert.notVisible(&#39;#magicspan&#39;, &#39;Small screen, no visible span magic!&#39;)
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-maximize"></a><h2 class="method"> .maximize</h2><p> Maximizes the browser window.</p>
+ </code></pre><a class="nav-helper" data-name="meth-maximize"></a><h2 class="method"> .maximize</h2><p> Maximizes the browser window.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;div&gt;
    &lt;span id=&quot;magicspan&quot;&gt;The span in the fireplace&lt;/span&gt;
  &lt;/div&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> <code></code>`css
  #magicspan {
@@ -426,7 +426,7 @@ You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/se
      .maximize()
      .assert.visible(&#39;#magicspan&#39;, &#39;Big screen, visible span&#39;)
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-setCookie"></a><h2 class="method"> .setCookie</h2><p> Sets a cookie.
+ </code></pre><a class="nav-helper" data-name="meth-setCookie"></a><h2 class="method"> .setCookie</h2><p> Sets a cookie.
  More configuration options will be implemented in the future,
  by now, you can only set a cookie with a specific name and contents.
  This will be a domain wide set cookie.</p>
@@ -435,7 +435,7 @@ You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/se
   test.open(&#39;http://adomain.com&#39;)
       .setCookie(&#39;my_cookie_name&#39;, &#39;my=content&#39;)
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-waitForElement"></a><h2 class="method"> .waitForElement</h2><p> Waits until an element matching the provided
+ </code></pre><a class="nav-helper" data-name="meth-waitForElement"></a><h2 class="method"> .waitForElement</h2><p> Waits until an element matching the provided
  selector expression exists in remote DOM to process any next step.</p>
 
 <p> Lets assume we have a ticker that loads its contents via AJAX,
@@ -451,7 +451,7 @@ You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/se
    .waitForElement(&#39;.ticker-element:last-child&#39;, 10000)
    .assert.text(&#39;.ticker-element:last-child&#39;, &#39;Me, third one!&#39;, &#39;Third ticker element is visible&#39;)
    .done();
- </code></pre></p><a class="nav-helper" data-name="meth-setValue"></a><h2 class="method"> .setValue</h2><p> Fills the fields of a form with given values.</p>
+ </code></pre><a class="nav-helper" data-name="meth-setValue"></a><h2 class="method"> .setValue</h2><p> Fills the fields of a form with given values.</p>
 
 <p> <pre><code class="language-markup">
  &lt;input type=&quot;hidden&quot; value=&quot;not really a value&quot; id=&quot;ijustwannahaveavalue&quot;/&gt;
@@ -462,7 +462,6 @@ You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/se
      .setValue(&#39;#ijustwannahaveavalue&#39;, &#39;a value&#39;)
      .title().is(&#39;DalekJS - Frequently asked questions&#39;, &#39;What the F.A.Q.&#39;);
  </code></pre></p></div></div></div></div><!--
-
             Footer
             --><footer id="footer" class="grid__item one-whole footer"><!--
                 --><span class="footer__author">DalekJS created by <a class="footer__link" href="https://github.com/asciidisco">Sebastian Golasch</a></span><!--

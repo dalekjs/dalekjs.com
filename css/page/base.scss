@@ -1,27 +1,18 @@
 body {
-	background-image: linear-gradient(bottom, rgb(242,242,239) 14%, rgb(255,255,255) 74%, rgb(255,255,255) 87%);
-	background-image: -o-linear-gradient(bottom, rgb(242,242,239) 14%, rgb(255,255,255) 74%, rgb(255,255,255) 87%);
-	background-image: -moz-linear-gradient(bottom, rgb(242,242,239) 14%, rgb(255,255,255) 74%, rgb(255,255,255) 87%);
-	background-image: -webkit-linear-gradient(bottom, rgb(242,242,239) 14%, rgb(255,255,255) 74%, rgb(255,255,255) 87%);
-	background-image: -ms-linear-gradient(bottom, rgb(242,242,239) 14%, rgb(255,255,255) 74%, rgb(255,255,255) 87%);
-
-	background-image: -webkit-gradient(
-	  linear,
-	  left bottom,
-	  left top,
-	  color-stop(0.14, rgb(242,242,239)),
-	  color-stop(0.74, rgb(255,255,255)),
-	  color-stop(0.87, rgb(255,255,255))
-	);
-}
-
-ul, li {
-  list-style-type: none;
+	background-color: #fff;
+	font-family: $font-readable;
 }
 
 ul, pre, code {
   margin: 0;
   padding: 0;
+}
+
+a {
+    color: $color-red;
+    font-family: $font-readable;
+//    font-size: 20px;
+    text-decoration: none;
 }
 
 pre {
@@ -30,7 +21,7 @@ pre {
 }
 
 .quote {
-  font-family: 'Londrina Solid', cursive;
+  font-family: $font;
   font-size: 40px;
   line-height: 35px;
   margin-bottom: 20px;
@@ -253,9 +244,3 @@ pre {
     }
 }
 
-a {
-    color: magenta;
-    font-family: $font;
-    font-size: 20px;
-    text-decoration: none;
-}

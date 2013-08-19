@@ -112,7 +112,8 @@
          .end()
      .end()
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-numberOfElements"></a><h2 class="method"> .numberOfElements</h2><p> Asserts that a given element appears n times on the page.</p>
+ </code></pre>
+<a class="nav-helper" data-name="meth-numberOfElements"></a><h2 class="method"> .numberOfElements</h2><p> Asserts that a given element appears n times on the page.</p>
 
 <p> Given this portion of html, you would like to assure that all of these elements
  are ending up in your rendered markup on your page.</p>
@@ -124,14 +125,14 @@
    &lt;article class=&quot;teaser&quot;&gt;&lt;/article&gt;
    &lt;article class=&quot;teaser&quot;&gt;&lt;/article&gt;
  &lt;/section&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> The simple solution is to check if all these elements are present</p>
 
 <p> <pre><code class="language-javascript">
  test.numberOfElements(&#39;#blog-overview .teaser&#39;, 4, &#39;4 blog teasers are present&#39;)
  </code></pre>
- The alternate syntax for this is:</p>
+<p> The alternate syntax for this is:</p>
 
 <p> <pre><code class="language-javascript">
  test.numberOfElements(&#39;#blog-overview .teaser&#39;)
@@ -188,14 +189,13 @@
    &lt;article class=&quot;teaser&quot;&gt;&lt;/article&gt;
    &lt;article class=&quot;teaser&quot;&gt;&lt;/article&gt;
  &lt;/section&gt;
- </code></pre></p>
-
+ </code></pre>
 <p> The simple solution is to check if all these elements are visible</p>
 
 <p> <pre><code class="language-javascript">
  test.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;, 4, &#39;4 blog teasers are visible&#39;)
  </code></pre>
- The alternate syntax for this is:</p>
+<p> The alternate syntax for this is:</p>
 
 <p> <pre><code class="language-javascript">
  test.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;)
@@ -253,9 +253,9 @@
      &lt;option value=&quot;11&quot;&gt;Smith&lt;/option&gt;
    &lt;/select&gt;
  &lt;/form&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test
    .val(&#39;#the-doctors&#39;, 10, &#39;David is the favourite&#39;)
    // lets change the favourite by selection the last option
@@ -273,7 +273,7 @@
  &lt;input id=&quot;fav-enemy&quot; name=&quot;fav-enemy&quot; type=&quot;text&quot; value=&quot;Daleks&quot; /&gt;
  </code></pre></p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test
    .val(&#39;#fav-enemy&#39;, &#39;Daleks&#39;, &#39;Daleks are so cute&#39;)
    // lets change the favourite by typing smth. new
@@ -285,26 +285,29 @@
  &lt;div id=&quot;superColoredElement&quot;&gt;Rose&lt;/div&gt;
  </code></pre></p>
 
-<p> <pre><code class="language-css">
+<pre><code class="language-css">
  #superColoredElement {
    background-color: rgba(255, 0, 0, 1);
    color: rgba(0, 128, 0, 1);
  }
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://unicorns.rainbows.io&#39;)
     .assert.css(&#39;#superColoredElement&#39;, &#39;background-color&#39;, &#39;rgba(255, 0, 0, 1)&#39;)
     .assert.css(&#39;#superColoredElement&#39;, &#39;color&#39;, &#39;rgba(0, 128, 0, 1)&#39;)
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-width"></a><h2 class="method"> .width</h2><p> Checks the actual width of an element.</p>
+ </code></pre>
+ <a class="nav-helper" data-name="meth-width"></a>
+ <h2 class="method"> .width</h2>
+ <p> Checks the actual width of an element.</p>
 
 <p> <pre><code class="language-markup">
    &lt;div id=&quot;fixed-dimensions&quot; style=&quot;width: 100px&quot;&gt;&lt;/div&gt;
  </code></pre></p>
 
-<p> <code></code>`javascript
+<pre><code class="language-javascript">
   test
     .open(&#39;http://localhost:5000/index.html&#39;)
     // all true, all pixel
@@ -324,7 +327,7 @@
    &lt;div id=&quot;fixed-dimensions&quot; style=&quot;height: 100px&quot;&gt;&lt;/div&gt;
  </code></pre></p>
 
-<p> <code></code>`javascript
+<pre><code class="language-markup">
   test
     .open(&#39;http://localhost:5000/index.html&#39;)
     // all true, all pixel
@@ -338,7 +341,9 @@
     .assert.height(&#39;#fixed-dimensions&#39;).is.between([90, 110])
     .done();</p>
 
-<p> <code></code>`</p><a class="nav-helper" data-name="meth-selected"></a><h2 class="method"> .selected</h2><p> Determine if an &lt;option&gt; element, or an &lt;input&gt; element of type checkbox or radio is currently selected.</p>
+<a class="nav-helper" data-name="meth-selected"></a>
+<h2 class="method"> .selected</h2>
+<p> Determine if an &lt;option&gt; element, or an &lt;input&gt; element of type checkbox or radio is currently selected.</p>
 
 <p> <pre><code class="language-markup">
  &lt;input type=&quot;checkbox&quot; id=&quot;unchecked_checkbox&quot; name=&quot;unchecked_checkbox&quot;/&gt;
@@ -348,25 +353,28 @@
    &lt;option selected value=&quot;10&quot;&gt;Tennant&lt;/option&gt;
    &lt;option value=&quot;11&quot;&gt;Smith&lt;/option&gt;
  &lt;/select&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> Checking radio and checkboxes:</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://selectables.org&#39;)
     .assert.selected(&#39;#checked_checkbox&#39;)
     .done();
- </code></pre></p>
+ </code></pre>
 
 <p> Checking option elements:</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://selectables.org&#39;)
     .assert.selected(&#39;#select_elm option:nth-child(2)&#39;)
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-notSelected"></a><h2 class="method"> .notSelected</h2><p> Determine if an &lt;option&gt; element, or an &lt;input&gt; element of type checkbox or radio is currently not selected.</p>
+ </code></pre>
+ <a class="nav-helper" data-name="meth-notSelected"></a>
+ <h2 class="method"> .notSelected</h2>
+ <p> Determine if an &lt;option&gt; element, or an &lt;input&gt; element of type checkbox or radio is currently not selected.</p>
 
 <p> <pre><code class="language-markup">
  &lt;input type=&quot;checkbox&quot; id=&quot;unchecked_checkbox&quot; name=&quot;unchecked_checkbox&quot;/&gt;
@@ -376,198 +384,231 @@
    &lt;option selected value=&quot;10&quot;&gt;Tennant&lt;/option&gt;
    &lt;option value=&quot;11&quot;&gt;Smith&lt;/option&gt;
  &lt;/select&gt;
- </code></pre></p>
+ </code></pre>
 
 <p> Checking radio and checkboxes:</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://selectables.org&#39;)
     .assert.notSelected(&#39;#unchecked_checkbox&#39;)
     .done();
- </code></pre></p>
+ </code></pre>
 
 <p> Checking option elements:</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://selectables.org&#39;)
     .assert.notSelected(&#39;#select_elm option:last-child&#39;)
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-enabled"></a><h2 class="method"> .enabled</h2><p> Determine if an element is currently enabled.</p>
+ </code></pre>
+ <a class="nav-helper" data-name="meth-enabled"></a>
+ <h2 class="method"> .enabled</h2>
+ <p> Determine if an element is currently enabled.</p>
 
 <p> <pre><code class="language-markup">
  &lt;input id=&quot;onmars&quot; type=&quot;text&quot; size=&quot;50&quot; name=&quot;onmars&quot; placeholder=&quot;State your name, rank and intention!&quot;&gt;&lt;/input&gt;
  </code></pre></p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test
    .open(&#39;http://doctor.thedoctor.com/doctor&#39;)
    .assert.enabled(&#39;#onmars&#39;, &#39;Is enabled!&#39;)
    .done();
- </code></pre></p><a class="nav-helper" data-name="meth-disabled"></a><h2 class="method"> .disabled</h2><p> Determine if an element is currently disabled.</p>
+ </code></pre>
+ <a class="nav-helper" data-name="meth-disabled"></a>
+ <h2 class="method"> .disabled</h2>
+ <p> Determine if an element is currently disabled.</p>
 
 <p> <pre><code class="language-markup">
  &lt;input disabled id=&quot;onearth&quot; type=&quot;text&quot; size=&quot;50&quot; name=&quot;onearth&quot; placeholder=&quot;State your name, rank and intention!&quot;&gt;&lt;/input&gt;
  </code></pre></p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test
    .open(&#39;http://doctor.thedoctor.com/doctor&#39;)
    .assert.disabled(&#39;#onearth&#39;, &#39;Is disabled!&#39;)
    .done();
- </code></pre></p><a class="nav-helper" data-name="meth-cookie"></a><h2 class="method"> .cookie</h2><p> Checks the contents of a cookie.</p>
+ </code></pre>
+ <a class="nav-helper" data-name="meth-cookie"></a>
+ <h2 class="method"> .cookie</h2>
+ <p> Checks the contents of a cookie.</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://cookiejar.io/not_your_mothers_javascript.html&#39;)
     .setCookie(&#39;atestcookie&#39;, &#39;foobar=baz&#39;)
     .assert.cookie(&#39;atestcookie&#39;, &#39;foobar=baz&#39;)
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-exists"></a><h2 class="method"> .exists</h2><p> Asserts that an element matching the provided selector expression exists in remote DOM environment.</p>
+ </code></pre>
+ <a class="nav-helper" data-name="meth-exists"></a>
+ <h2 class="method"> .exists</h2>
+ <p> Asserts that an element matching the provided selector expression exists in remote DOM environment.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;body&gt;
    &lt;p id=&quot;so-lonely&quot;&gt;Last of the timelords&lt;/p&gt;
  &lt;/body&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test
    .open(&#39;http://doctor.thedoctor.com/doctor&#39;)
    .assert.exists(&#39;#so-lonely&#39;, &#39;The loneliest element in the universe exists&#39;)
    .done()
  </code></pre></p><a class="nav-helper" data-name="meth-doesntExist"></a><h2 class="method"> .doesntExist</h2><p> Asserts that an element matching the provided selector expression doesn&#39;t exists within the remote DOM environment.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;body&gt;
    &lt;p id=&quot;so-lonely&quot;&gt;Last of the timelords&lt;/p&gt;
  &lt;/body&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
  test
    .open(&#39;http://doctor.thedoctor.com/doctor&#39;)
    .doesntExist(&#39;#the-master&#39;, &#39;The master element has not been seen&#39;)
    .done();
- </code></pre></p><a class="nav-helper" data-name="meth-notVisible"></a><h2 class="method"> .notVisible</h2><p> Asserts that the element matching the provided selector expression is not visible.</p>
+ </code></pre>
+ <a class="nav-helper" data-name="meth-notVisible"></a>
+ <h2 class="method"> .notVisible</h2>
+ <p> Asserts that the element matching the provided selector expression is not visible.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;body&gt;
    &lt;h1 style=&quot;display: none&quot;&gt;Me? So hidden...&lt;/h1&gt;
    &lt;h2&gt;Me? So in viewport...&lt;/h2&gt;
  &lt;/body&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://allyourviewportsbelongto.us&#39;)
     .assert.notVisible(&#39;h1&#39;, &#39;Element is not visible&#39;)
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-visible"></a><h2 class="method"> .visible</h2><p> Asserts that the element matching the provided selector expression is visible.</p>
+ </code></pre>
+ <a class="nav-helper" data-name="meth-visible"></a>
+ <h2 class="method"> .visible</h2>
+ <p> Asserts that the element matching the provided selector expression is visible.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;body&gt;
    &lt;h1&gt;Me? So in viewport...&lt;/h1&gt;
  &lt;/body&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://allyourviewportsbelongto.us&#39;)
     .assert.visible(&#39;h1&#39;, &#39;Element is visible&#39;)
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-doesntHaveText"></a><h2 class="method"> .doesntHaveText</h2><p> Asserts that given text does not exist in the provided selector.</p>
+ </code></pre>
+ <a class="nav-helper" data-name="meth-doesntHaveText"></a>
+ <h2 class="method"> .doesntHaveText</h2>
+ <p> Asserts that given text does not exist in the provided selector.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;body&gt;
    &lt;h1&gt;This is a casperjs sandbox&lt;/h1&gt;
  &lt;/body&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://dalekjs.com/guineapig/&#39;)
     .assert.doesntHaveText(&#39;h1&#39;, &#39;This page is a Dalek sandbox&#39;, &#39;It´s a sandbox!&#39;)
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-dialogDoesntHaveText"></a><h2 class="method"> .dialogDoesntHaveText</h2><p> Asserts that given text does not exist in the current alert/prompt/confirm dialog.</p>
+ </code></pre>
+ <a class="nav-helper" data-name="meth-dialogDoesntHaveText"></a>
+ <h2 class="method"> .dialogDoesntHaveText</h2>
+ <p> Asserts that given text does not exist in the current alert/prompt/confirm dialog.</p>
 
 <p> <pre><code class="language-markup">
  &lt;a href=&quot;#&quot; id=&quot;alert_confirm&quot; onclick=&quot;confirm(&#39;Confirm me!&#39;)&quot;&gt;I make confirm&lt;/a&gt;
  </code></pre></p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://skaaro.com/index.html&#39;)
     .click(&#39;#alert_confirm&#39;)
     .assert.dialogDoesntHaveText(&#39;I am an alert&#39;)
     .accept()
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-text"></a><h2 class="method"> .text</h2><p> Asserts that given text does exist in the provided selector.</p>
+ </code></pre>
+ <a class="nav-helper" data-name="meth-text"></a>
+ <h2 class="method"> .text</h2>
+ <p> Asserts that given text does exist in the provided selector.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;body&gt;
    &lt;h1&gt;This is a Dalek sandbox&lt;/h1&gt;
  &lt;/body&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://dalekjs.com/guineapig/&#39;)
     .assert.text(&#39;h1&#39;, &#39;This page is a Dalek sandbox&#39;, &#39;Exterminate!&#39;)
     .done();
- </code></pre></p>
+ </code></pre>
 
 <p> of course, text works also with the assertion helpers is() and not()</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://dalekjs.com/guineapig/&#39;)
     .assert.text(&#39;h1&#39;).is(&#39;This page is a Dalek sandbox&#39;, &#39;Exterminate!&#39;)
     .done();
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://dalekjs.com/guineapig/&#39;)
     .assert.text(&#39;h1&#39;).is.not(&#39;This page is a CasperJS sandbox&#39;, &#39;Exterminate!&#39;)
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-dialogText"></a><h2 class="method"> .dialogText</h2><p> Asserts that given alertText does exist in the provided alert/confirm or prompt dialog.</p>
+ </code></pre>
+ <a class="nav-helper" data-name="meth-dialogText"></a>
+ <h2 class="method"> .dialogText</h2>
+ <p> Asserts that given alertText does exist in the provided alert/confirm or prompt dialog.</p>
 
 <p> <pre><code class="language-markup">
  &lt;a href=&quot;#&quot; id=&quot;alert&quot; onclick=&quot;alert(&#39;I am an alert&#39;)&quot;&gt;I make alerts!&lt;/a&gt;
  </code></pre></p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://skaaro.com/index.html&#39;)
     .click(&#39;#alert_confirm&#39;)
     .assert.dialogText(&#39;I am an alert&#39;)
     .accept()
     .done();
- </code></pre></p>
+ </code></pre>
 
 <p> of course, text works also with the assertion helpers is() and not()</p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://dalekjs.com/guineapig/&#39;)
     .assert.dialogText().is(&#39;I am an alert&#39;, &#39;Exterminate!&#39;)
     .done();
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://dalekjs.com/guineapig/&#39;)
     .assert.dialogText().is.not(&#39;I am an prompt&#39;, &#39;Exterminate!&#39;)
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-title"></a><h2 class="method"> .title</h2><p> Asserts that the page title is as expected.</p>
+ </code></pre>
+ <a class="nav-helper" data-name="meth-title"></a>
+ <h2 class="method"> .title</h2>
+ <p> Asserts that the page title is as expected.</p>
 
 <p> <pre><code class="language-javascript">
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
      .title(&#39;Doctor Who TV&#39;, &#39;Not your daleks tv&#39;)
      .done();
- </code></pre></p>
+ </code></pre>
 
 <p> Yep, using assertion helpers is also possible:</p>
 
@@ -575,7 +616,7 @@
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
      .title().is(&#39;Doctor Who TV&#39;, &#39;Not your daleks tv&#39;)
      .done();
- </code></pre></p>
+ </code></pre>
 
 <p> and the not() helper is available too:</p>
 
@@ -589,13 +630,16 @@
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
      .doesntHaveTitle(&#39;Dalek Emperor TV&#39;, &#39;Not your daleks tv&#39;)
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-url"></a><h2 class="method"> .url</h2><p> Asserts that the pages url is as expected.</p>
+ </code></pre>
+ <a class="nav-helper" data-name="meth-url"></a>
+ <h2 class="method"> .url</h2>
+ <p> Asserts that the pages url is as expected.</p>
 
 <p> <pre><code class="language-javascript">
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
      .url(&#39;http://doctorwhotv.co.uk/&#39;, &#39;Url is as expected&#39;)
      .done();
- </code></pre></p>
+ </code></pre>
 
 <p> You can also check if the protocol changend,
  nice to see when you open github with http instead of https</p>
@@ -604,7 +648,7 @@
    test.open(&#39;http://github.com&#39;)
      .url(&#39;https://github.com/&#39;, &#39;Changed prototcols&#39;)
      .done();
- </code></pre></p>
+ </code></pre>
 
 <p> Yep, using assertion helpersx is also possible:</p>
 
@@ -612,7 +656,7 @@
    test.open(&#39;http://github.com&#39;)
      .url().is(&#39;http://doctorwhotv.co.uk/&#39;, &#39;Url is as expected&#39;)
      .done();
- </code></pre></p>
+ </code></pre>
 
 <p> and the not() helper is available too:</p>
 
@@ -620,44 +664,51 @@
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
      .url().is.not(&#39;http://doctorwhotv.co.uk/&#39;, &#39;Url is as expected&#39;)
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-doesntHaveUrl"></a><h2 class="method"> .doesntHaveUrl</h2><p> Asserts that the pages url does not match the expectation.</p>
+ </code></pre>
+ <a class="nav-helper" data-name="meth-doesntHaveUrl"></a>
+ <h2 class="method"> .doesntHaveUrl</h2>
+ <p> Asserts that the pages url does not match the expectation.</p>
 
 <p> <pre><code class="language-javascript">
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
      .url(&#39;http://doctorwhotv.co.uk/&#39;, &#39;Url is as expected&#39;)
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-attr"></a><h2 class="method"> .attr</h2><p> Asserts that an elements attribute is as expected.</p>
+ </code></pre>
+ <a class="nav-helper" data-name="meth-attr"></a>
+ <h2 class="method"> .attr</h2>
+ <p> Asserts that an elements attribute is as expected.</p>
 
-<p> <pre><code class="language-markup">
+<pre><code class="language-markup">
  &lt;form&gt;
    &lt;button class=&quot;jumpButton&quot; type=&quot;submit&quot;&gt;Fire&lt;/button&gt;
  &lt;/form&gt;
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://dalekjs.com/guineapig/&#39;)
     .assert.attr(&#39;.jumpButton&#39;, &#39;type&#39;, &#39;submit&#39;)
     .done();
- </code></pre></p>
+ </code></pre>
 
 <p> <pre><code class="language-markup">
  &lt;div id=&quot;dataDiv&quot; data-spot=&quot;cat&quot;&gt;&lt;/div&gt;
  </code></pre></p>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://dalekjs.com/guineapig/&#39;)
     .assert.attr(&#39;#dataDiv&#39;).is(&#39;data-spot&#39;, &#39;cat&#39;, &#39;We found Datas cat!&#39;)
     .done();
- </code></pre></p>
+ </code></pre>
 
-<p> <pre><code class="language-javascript">
+<pre><code class="language-javascript">
   test
     .open(&#39;http://dalekjs.com/guineapig/&#39;)
     .assert.attr(&#39;#dataDiv&#39;).is.not(&#39;data-spot&#39;, &#39;doc&#39;, &#39;Spot is not a dog!&#39;)
     .done();
- </code></pre></p></div></div></div></div><!--
+ </code></pre>
+</div></div></div></div><!--
 
             Footer
             --><footer id="footer" class="grid__item one-whole footer"><!--

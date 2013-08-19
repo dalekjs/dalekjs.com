@@ -49,6 +49,7 @@
                             <pre><code></code></pre>
                             <p class="description">To see dalek@drone.io in action, please check the <a href="https://github.com/dalekjs/guineapig">guineapig</a> project.</p>
                             </p>
+                            <p class="description"><i>Be aware of, that within drone.io and TravisCI, Dalek is only cappable of running PhantomJS, because no other browsers are available there!</i></p>
                             <h3>Jenkins</h3>
                             <p class="description">To make all the enterprise lovers happy (No, I don't mean Start Trek fans here), Dalek can output its testresults in jUnit format, using the dalek-reporter-junit. A more detailed setup guide will follow soon.</p>
                             </p><!--
@@ -67,7 +68,8 @@
                         --><div class="grid__item one-whole"><!--
                             --><a class="nav-helper" data-name="casperjs"></a><!--
                             --><h2>Should I ditch CasperJS &amp; switch to Dalek?</h2><!--
-                            --><p class="description">Not yet &amp; depending on your needs, maybe never. CasperJS is a beautiful &amp; mature tool, that does way more than just allow you to write tests. I peronally see it more like a nice API/abstraction layer for PhantomJS with a testing API on top of it. Btw.: Without Casper, Dalek wouldn't exist. The first draft of DalekJS used  </p><!--
+                            --><p class="description">Not yet &amp; depending on your needs, maybe never. CasperJS is a beautiful &amp; mature tool, that does way more than just allow you to write tests. I peronally see it more like a nice API/abstraction layer for PhantomJS with a testing API on top of it. Btw.: Without Casper, Dalek wouldn't exist. The first draft of DalekJS used CasperJS as a base to driver PhantomJS (before Ghostdriver was implemented in Phantom).<br/>
+                            Also, due to the fact that the WebDriver spec misses some (in my opionion) important methods (Checking HTTP Status Codes, getting informations out of the HTTP header), Dalek can never be as powerful as Casper is. AND most important, the Casper guys do great work, appriciate that as well as I do (Dalek &lt;3 Casper)</p><!--
                         --></div><!--
 
                     --></div><!--
