@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>DalekJS - Documentation - Browser - Mozilla Firefox</title>
+        <meta name="description" content="DalekJS - Documentation - Browser - Mozilla Firefox">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- icon-ish stuff -->
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+
+        <link rel="dns-prefetch" href="//dalekjs.com">
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//themes.googleusercontent.com">
+        <link rel="dns-prefetch" href="//www.google-analytics.com">
+
+        <!-- build:css ../css/main.css -->
+        <link rel="stylesheet" href="../bower_components/prism/prism-funky.css">
+        <link rel="stylesheet" href="../css/style.min.css">
+        <!-- endbuild -->
+
+        <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
+    </head>
+    <body data-buildtime="Monday, August 19th, 2013, 10:01:25 PM"><!--
+
+        --><div class="grid"><!--
+
+            --><header class="grid__item one-whole"><!--
+                --><nav role="select"><!--
+                    desktop menue
+                    --><ul class="nav nav--fit nav--block"><!--
+                        --><li><a href="../index.html">DALEKJS</a></li><!--
+                        --><li><a  href="../pages/getStarted.html">Get started</a></li><!--
+                        --><li><a class="active" href="../pages/documentation.html">Documentation</a></li><!--
+                        --><li><a  href="../pages/support.html">Support</a></li><!--
+                        --><li><a  href="../pages/faq.html">FAQ</a></li><!--
+                        --><li><a  href="../pages/merch.html">Merch</a></li><!--
+                    --></ul><!--
+
+                    mobile menue
+                    --><select onchange="if (this.value) window.location.href = this.value;"><!--
+                        --><option value="../index.html">DALEKJS</option><!--
+                        --><option  value="../pages/getStarted.html">Get started</option><!--
+                        --><option selected value="../pages/documentation.html">Documentation</option><!--
+                        --><option  value="../pages/support.html">Support</option><!--
+                        --><option  value="../pages/faq.html">FAQ</option><!--
+                        --><option  value="../pages/merch.html">Merch</option><!--
+                    --></select><!--
+                --></nav><!--
+            --></header><div class="grid__item one-whole"><div class="grid__item one-whole"><h1 class="topic">Firefox</h1><p> This module is a browser plugin for <a href="//github.com/dalekjs/dalek">DalekJS</a>.
+ It provides all a WebDriverServer &amp; browser launcher for Mozilla Firefox.</p>
+
+<p> The browser plugin can be installed with the following command:</p>
+
+<p> <pre><code class="language-bash">
+ $ npm install dalek-browser-firefox --save-dev
+ </code></pre></p>
+
+<p> You can use the browser plugin by adding a config option to the your Dalekfile</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;browsers&quot;: [&quot;firefox&quot;]
+ </code></pre></p>
+
+<p> Or you can tell Dalek that it should test in this browser via the command line:</p>
+
+<p> <pre><code class="language-bash">
+ $ dalek mytest.js -b firefox
+ </code></pre></p>
+
+<p> Because of the availability of the Firefox Marionette testing framework,
+ Dalek atm. can only drive the Firefox Nightly Debug builds.</p>
+
+<p> You can get them from Mozillas FTP server, for example the one from the 16th August <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/2013/06/2013-06-18-mozilla-central-debug/">http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/2013/08/2013-08-16-mozilla-central-debug/</a></p>
+
+<p> Dalek looks for the browser in the std. installation directory, if you installed the
+ browser in a different place, you can add the location of the browser executable to you Dalekfile,
+ because Dalek isn&#39;t capable of finding the executable yet on its own.</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;browsers&quot;: [{
+   &quot;firefox&quot;: {
+     &quot;path&quot;: &quot;~/Apps/FirefoxNightlyDebug.app/Contents/MacOS/firefox-bin&quot;
+   }
+ }]
+ </code></pre></p>
+
+<p> The Firefox plugin only implements a subset of Daleks Assertions &amp; Actions, so if you run into any bugs,
+ the issue is most probably related to missing commands.
+ Please report any issues you find, Thank you :)</p></div></div></div><!--
+
+            Footer
+            --><footer  class="grid__item one-whole footer"><!--
+                --><span class="footer__author">DalekJS created by <a class="footer__link" href="https://github.com/asciidisco">Sebastian Golasch</a></span><!--
+                --><span class="footer__author">Logo by <a class="footer__link" href="http://www.redbubble.com/people/scottbarker">Scott Barker</a></span><!--
+                --><span class="footer__author">Browser icons by <a class="footer__link" href="https://github.com/substack">Substack</a></span><!--
+            --></footer><!--
+        --></div>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-42520123-1', 'dalekjs.com');
+          ga('send', 'pageview');
+        </script>
+        <!-- build:js ../js/main.js -->
+        <script src="../bower_components/jquery/jquery.js"></script>
+        <script src="../bower_components/in-viewport/in-viewport.js"></script>
+        <script src="../bower_components/fastclick/lib/fastclick.js"></script>
+        <script src="../bower_components/iscroll/build/iscroll.js"></script>
+        <script src="../bower_components/prism/prism.js"></script>
+        <script src="../js/main.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>
