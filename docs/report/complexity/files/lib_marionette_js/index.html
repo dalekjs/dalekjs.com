@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/bootstrap-3.0.0-wip.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome-ie7.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet">
+  <link href="../../assets/css/plato.css" rel="stylesheet">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="brand" href="http://github.com/jsoverson/plato">Plato on Github</a>
+    <ul class="nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>lib/marionette.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="span6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"></i></a></h2>
+      <p class="stat">71.28</p>
+    </div>
+    <div class="span6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC"></i></h2>
+      <p class="stat">283</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="span6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="span6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty"></i></a></h2>
+      <p class="stat">26.54</p>
+    </div>
+    <div class="span6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs"></i></a></h2>
+      <p class="stat">1.53</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="span6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="span6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="span12">/*!
+ *
+ * Copyright (c) 2013 Sebastian Golasch
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a
+ * copy of this software and associated documentation files (the &quot;Software&quot;),
+ * to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ * DEALINGS IN THE SOFTWARE.
+ *
+ */
+
+&#039;use strict&#039;;
+
+// ext. libs
+var fs = require(&#039;fs&#039;);
+var net = require(&#039;net&#039;);
+var Q = require(&#039;q&#039;);
+
+/**
+ * Firefox Autotest (Marionette)
+ * connection handler &amp; request executor
+ *
+ * @module FirefoxDriver
+ * @class Marionette
+ * @namespace FirefoxDriver
+ */
+
+/**
+ * Configures the marionette socket
+ * Prepares the object properties
+ * Loads the marionette commands
+ *
+ * @constructor
+ * @param {EventEmitter} events
+ */
+
+var Marionette = function (events) {
+  // configure the marionette socket
+  this.socket = new net.Socket();
+  this.socket.on(&#039;error&#039;, this._onError.bind(this));
+  this.socket.on(&#039;data&#039;, this._onData.bind(this));
+
+  // configure marionette session container
+  this._marionetteID = null;
+
+  // store events instance
+  this.events = events;
+
+  // register marionette id setter
+  this.events.on(&#039;marionette:setMarionetteID&#039;, function (id) {
+    this._marionetteID = id;
+  }.bind(this));
+
+  // prepare the commands property
+  this.commands = {};
+
+  // prepare the last send command property
+  this._lastCommand = null;
+
+  // prepare the last message length property
+  this._lastMessageLength = null;
+
+  // load the commands
+  this._loadCommands();
+};
+
+/**
+ * Opens the marionette socket
+ *
+ * @method connect
+ * @param {integer} marionettePort
+ * @return {Q.promise} promise
+ * @public
+ */
+
+Marionette.prototype.connect = function (marionettePort) {
+  var deferred = Q.defer();
+  this.socket.on(&#039;connect&#039;, deferred.resolve);
+  this.socket.connect(marionettePort);
+  return deferred.promise;
+};
+
+/**
+ * Closes the marionette socket &amp; cleans up
+ *
+ * @method kill
+ * @return {Q.promise} promise
+ * @public
+ */
+
+Marionette.prototype.kill = function () {
+  var deferred = Q.defer();
+  this.socket.on(&#039;end&#039;, deferred.makeNodeResolver());
+  this.socket.end();
+  return deferred.promise;
+};
+
+/**
+ * Generates a function &amp; an event listener for every marionette command
+ *
+ * @method addCommand
+ * @param {object} command
+ * @return {object} command
+ * @public
+ */
+
+Marionette.prototype.addCommand = function (command) {
+  // generate the command function
+  this.commands[command.name] = function (params) {
+    var req = {};
+    var deferred = Q.defer();
+
+    deferred.promise.then(function (data) {
+      this.events.emit(&#039;marionette:cmd:&#039; + command.name + &#039;:response&#039;, data);
+    }.bind(this));
+
+    // parse the command skeleton &amp; create a message with values
+    Object.keys(command.request).forEach(function (key){
+      req[key] = this._parseRequestKey(command.request[key], params);
+    }.bind(this));
+
+    // issue the command
+    this._sendCommand(req, deferred);
+  }.bind(this);
+
+  // generate event listener for every marionette command
+  this.events.on(&#039;marionette:cmd:&#039; + command.name, this.commands[command.name].bind(this));
+  return command;
+};
+
+/**
+ * Loads the marionette commands from the commands library
+ *
+ * @method _loadCommands
+ * @chainable
+ * @private
+ */
+
+Marionette.prototype._loadCommands = function () {
+  var dir = __dirname + &#039;/commands/marionette/&#039;;
+  fs.readdirSync(dir).forEach(function (file) {
+    require(dir + file)(this);
+  }.bind(this));
+  return this;
+};
+
+/**
+ * Templating function that replaces placeholders in commands
+ * with their actual values
+ *
+ * @method _parseRequestKey
+ * @param {string} placeholder
+ * @param {object} params
+ * @return {string} content
+ * @private
+ */
+
+Marionette.prototype._parseRequestKey = function (placeholder, params) {
+  if (placeholder[0] !== &#039;:&#039;) {
+    return placeholder;
+  }
+
+  // check the params
+  if (!params) {
+    params = {};
+  }
+
+  // add the marionetteID to the params
+  params.marionetteId = this._marionetteID;
+
+  var content = &#039;&#039;;
+  Object.keys(params).forEach(function (key){
+    if (key === placeholder.substr(1)) {
+      content = params[key];
+    }
+  }.bind(this));
+
+  return content;
+};
+
+/**
+ * Will be called if a socket error occurs
+ *
+ * @method _onError
+ * @param {buffer} err
+ * @chainable
+ * @private
+ */
+
+Marionette.prototype._onError = function (err) {
+  // TODO: Use the super not yet implemented dalek error handler
+  console.log(&#039;ERR&#039;, String(err));
+  process.exit();
+  return this;
+};
+
+/**
+ * Handles the incoming data from the marionette sockets
+ *
+ * @method _onData
+ * @param {buffer} data
+ * @chainable
+ * @private
+ */
+
+Marionette.prototype._onData = function (data) {
+  var def = Q.defer();
+  var raw = String(data);
+  // extract the header out of the raw message
+  var colon = raw.indexOf(&#039;:&#039;);
+  var length = raw.substr(0, colon);
+  var msg = raw.substring(colon + 1);
+
+  // check if this is incoming data is a sibling
+  // to a previous received message
+  if (isNaN(parseInt(length, 10))) {
+    length = this._lastResponseLength;
+  }
+
+  // store message data
+  this._lastResponseLength = length;
+  this._lastResponse += msg;
+  this._lastRawResponse += raw;
+
+  // check if the message is complete
+  if((this._lastResponse.length + 1) &gt;= parseInt(length, 10)) {
+    // resolve the message
+    def.resolve(this._lastRawResponse);
+
+    // reset our message storage
+    this._lastRawResponse = &#039;&#039;;
+    this._lastResponse = &#039;&#039;;
+    this._lastResponseLength = null;
+  }
+
+  // release the message when it is completely received
+  Q.when(def.promise).then(function(data) {
+    // parse the message &amp; call the resolving function
+    var parsedMessage = this._parseMessage(data);
+
+    // avoid resolving the initial handshake command
+    if (!parsedMessage.applicationType) {
+      this._lastCommand.resolve(parsedMessage);
+    }
+
+  }.bind(this));
+
+  return this;
+};
+
+
+/**
+ * Parses a marionette response message
+ *
+ * @method _parseMessage
+ * @param {buffer} data
+ * @return {object} message
+ * @private
+ */
+
+Marionette.prototype._parseMessage = function (data) {
+  var raw = String(data);
+  var colon = raw.indexOf(&#039;:&#039;);
+  var message = JSON.parse(raw.substring(colon + 1));
+  return message;
+};
+
+/**
+ * Issues a command to the marionette server
+ * Generates a reference to the last called command,
+ * so that we are able to call the right receiver function for
+ * the response from marionette
+ *
+ * @method _sendCommand
+ * @param {object} command
+ * @param {Q.promise} deferred
+ * @chainable
+ * @private
+ */
+
+Marionette.prototype._sendCommand = function (command, deferred) {
+  // serialize message
+  var commandSerialized = JSON.stringify(command);
+  var msg = commandSerialized.length + &#039;:&#039; + commandSerialized;
+
+  // reference promise
+  this._lastCommand = deferred;
+  // send command
+  this.socket.write(msg);
+
+  return this;
+};
+
+module.exports = Marionette;</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ complexity.cyclomatic }} <br>
+    Length : {{ complexity.halstead.length }} <br>
+    Difficulty : {{ complexity.halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ complexity.halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>

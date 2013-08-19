@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>lib/marionette.js - dalek-browser-firefox</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="../assets/css/logo.png" title="dalek-browser-firefox"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.0.3</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/Browser.FirefoxDriver.html">Browser.FirefoxDriver</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.Marionette.Cookie.html">FirefoxDriver.Commands.Marionette.Cookie</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.Marionette.Execute.html">FirefoxDriver.Commands.Marionette.Execute</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.Marionette.Frame.html">FirefoxDriver.Commands.Marionette.Frame</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.Marionette.IME.html">FirefoxDriver.Commands.Marionette.IME</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.Marionette.Page.html">FirefoxDriver.Commands.Marionette.Page</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.Marionette.Session.html">FirefoxDriver.Commands.Marionette.Session</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.Marionette.Timeout.html">FirefoxDriver.Commands.Marionette.Timeout</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.Marionette.Url.html">FirefoxDriver.Commands.Marionette.Url</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.WebDriver.Cookie.html">FirefoxDriver.Commands.WebDriver.Cookie</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.WebDriver.Element.html">FirefoxDriver.Commands.WebDriver.Element</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.WebDriver.Frame.html">FirefoxDriver.Commands.WebDriver.Frame</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.WebDriver.Ime.html">FirefoxDriver.Commands.WebDriver.Ime</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.WebDriver.Interaction.html">FirefoxDriver.Commands.WebDriver.Interaction</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.WebDriver.Logging.html">FirefoxDriver.Commands.WebDriver.Logging</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.WebDriver.Page.html">FirefoxDriver.Commands.WebDriver.Page</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.WebDriver.Screenshot.html">FirefoxDriver.Commands.WebDriver.Screenshot</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.WebDriver.ScriptExecutor.html">FirefoxDriver.Commands.WebDriver.ScriptExecutor</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.WebDriver.Session.html">FirefoxDriver.Commands.WebDriver.Session</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.WebDriver.Storage.html">FirefoxDriver.Commands.WebDriver.Storage</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.WebDriver.Timeout.html">FirefoxDriver.Commands.WebDriver.Timeout</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.WebDriver.URL.html">FirefoxDriver.Commands.WebDriver.URL</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Commands.WebDriver.Window.html">FirefoxDriver.Commands.WebDriver.Window</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.Marionette.html">FirefoxDriver.Marionette</a></li>
+            
+                <li><a href="../classes/FirefoxDriver.WebDriverServer.html">FirefoxDriver.WebDriverServer</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/DalekJS.html">DalekJS</a></li>
+            
+                <li><a href="../modules/FirefoxDriver.html">FirefoxDriver</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: lib/marionette.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*!
+ *
+ * Copyright (c) 2013 Sebastian Golasch
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a
+ * copy of this software and associated documentation files (the &quot;Software&quot;),
+ * to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ * DEALINGS IN THE SOFTWARE.
+ *
+ */
+
+&#x27;use strict&#x27;;
+
+// ext. libs
+var fs = require(&#x27;fs&#x27;);
+var net = require(&#x27;net&#x27;);
+var Q = require(&#x27;q&#x27;);
+
+/**
+ * Firefox Autotest (Marionette)
+ * connection handler &amp; request executor
+ *
+ * @module FirefoxDriver
+ * @class Marionette
+ * @namespace FirefoxDriver
+ */
+
+/**
+ * Configures the marionette socket
+ * Prepares the object properties
+ * Loads the marionette commands
+ *
+ * @constructor
+ * @param {EventEmitter} events
+ */
+
+var Marionette = function (events) {
+  // configure the marionette socket
+  this.socket = new net.Socket();
+  this.socket.on(&#x27;error&#x27;, this._onError.bind(this));
+  this.socket.on(&#x27;data&#x27;, this._onData.bind(this));
+
+  // configure marionette session container
+  this._marionetteID = null;
+
+  // store events instance
+  this.events = events;
+
+  // register marionette id setter
+  this.events.on(&#x27;marionette:setMarionetteID&#x27;, function (id) {
+    this._marionetteID = id;
+  }.bind(this));
+
+  // prepare the commands property
+  this.commands = {};
+
+  // prepare the last send command property
+  this._lastCommand = null;
+
+  // prepare the last message length property
+  this._lastMessageLength = null;
+
+  // load the commands
+  this._loadCommands();
+};
+
+/**
+ * Opens the marionette socket
+ *
+ * @method connect
+ * @param {integer} marionettePort
+ * @return {Q.promise} promise
+ * @public
+ */
+
+Marionette.prototype.connect = function (marionettePort) {
+  var deferred = Q.defer();
+  this.socket.on(&#x27;connect&#x27;, deferred.resolve);
+  this.socket.connect(marionettePort);
+  return deferred.promise;
+};
+
+/**
+ * Closes the marionette socket &amp; cleans up
+ *
+ * @method kill
+ * @return {Q.promise} promise
+ * @public
+ */
+
+Marionette.prototype.kill = function () {
+  var deferred = Q.defer();
+  this.socket.on(&#x27;end&#x27;, deferred.makeNodeResolver());
+  this.socket.end();
+  return deferred.promise;
+};
+
+/**
+ * Generates a function &amp; an event listener for every marionette command
+ *
+ * @method addCommand
+ * @param {object} command
+ * @return {object} command
+ * @public
+ */
+
+Marionette.prototype.addCommand = function (command) {
+  // generate the command function
+  this.commands[command.name] = function (params) {
+    var req = {};
+    var deferred = Q.defer();
+
+    deferred.promise.then(function (data) {
+      this.events.emit(&#x27;marionette:cmd:&#x27; + command.name + &#x27;:response&#x27;, data);
+    }.bind(this));
+
+    // parse the command skeleton &amp; create a message with values
+    Object.keys(command.request).forEach(function (key){
+      req[key] = this._parseRequestKey(command.request[key], params);
+    }.bind(this));
+
+    // issue the command
+    this._sendCommand(req, deferred);
+  }.bind(this);
+
+  // generate event listener for every marionette command
+  this.events.on(&#x27;marionette:cmd:&#x27; + command.name, this.commands[command.name].bind(this));
+  return command;
+};
+
+/**
+ * Loads the marionette commands from the commands library
+ *
+ * @method _loadCommands
+ * @chainable
+ * @private
+ */
+
+Marionette.prototype._loadCommands = function () {
+  var dir = __dirname + &#x27;/commands/marionette/&#x27;;
+  fs.readdirSync(dir).forEach(function (file) {
+    require(dir + file)(this);
+  }.bind(this));
+  return this;
+};
+
+/**
+ * Templating function that replaces placeholders in commands
+ * with their actual values
+ *
+ * @method _parseRequestKey
+ * @param {string} placeholder
+ * @param {object} params
+ * @return {string} content
+ * @private
+ */
+
+Marionette.prototype._parseRequestKey = function (placeholder, params) {
+  if (placeholder[0] !== &#x27;:&#x27;) {
+    return placeholder;
+  }
+
+  // check the params
+  if (!params) {
+    params = {};
+  }
+
+  // add the marionetteID to the params
+  params.marionetteId = this._marionetteID;
+
+  var content = &#x27;&#x27;;
+  Object.keys(params).forEach(function (key){
+    if (key === placeholder.substr(1)) {
+      content = params[key];
+    }
+  }.bind(this));
+
+  return content;
+};
+
+/**
+ * Will be called if a socket error occurs
+ *
+ * @method _onError
+ * @param {buffer} err
+ * @chainable
+ * @private
+ */
+
+Marionette.prototype._onError = function (err) {
+  // TODO: Use the super not yet implemented dalek error handler
+  console.log(&#x27;ERR&#x27;, String(err));
+  process.exit();
+  return this;
+};
+
+/**
+ * Handles the incoming data from the marionette sockets
+ *
+ * @method _onData
+ * @param {buffer} data
+ * @chainable
+ * @private
+ */
+
+Marionette.prototype._onData = function (data) {
+  var def = Q.defer();
+  var raw = String(data);
+  // extract the header out of the raw message
+  var colon = raw.indexOf(&#x27;:&#x27;);
+  var length = raw.substr(0, colon);
+  var msg = raw.substring(colon + 1);
+
+  // check if this is incoming data is a sibling
+  // to a previous received message
+  if (isNaN(parseInt(length, 10))) {
+    length = this._lastResponseLength;
+  }
+
+  // store message data
+  this._lastResponseLength = length;
+  this._lastResponse += msg;
+  this._lastRawResponse += raw;
+
+  // check if the message is complete
+  if((this._lastResponse.length + 1) &gt;= parseInt(length, 10)) {
+    // resolve the message
+    def.resolve(this._lastRawResponse);
+
+    // reset our message storage
+    this._lastRawResponse = &#x27;&#x27;;
+    this._lastResponse = &#x27;&#x27;;
+    this._lastResponseLength = null;
+  }
+
+  // release the message when it is completely received
+  Q.when(def.promise).then(function(data) {
+    // parse the message &amp; call the resolving function
+    var parsedMessage = this._parseMessage(data);
+
+    // avoid resolving the initial handshake command
+    if (!parsedMessage.applicationType) {
+      this._lastCommand.resolve(parsedMessage);
+    }
+
+  }.bind(this));
+
+  return this;
+};
+
+
+/**
+ * Parses a marionette response message
+ *
+ * @method _parseMessage
+ * @param {buffer} data
+ * @return {object} message
+ * @private
+ */
+
+Marionette.prototype._parseMessage = function (data) {
+  var raw = String(data);
+  var colon = raw.indexOf(&#x27;:&#x27;);
+  var message = JSON.parse(raw.substring(colon + 1));
+  return message;
+};
+
+/**
+ * Issues a command to the marionette server
+ * Generates a reference to the last called command,
+ * so that we are able to call the right receiver function for
+ * the response from marionette
+ *
+ * @method _sendCommand
+ * @param {object} command
+ * @param {Q.promise} deferred
+ * @chainable
+ * @private
+ */
+
+Marionette.prototype._sendCommand = function (command, deferred) {
+  // serialize message
+  var commandSerialized = JSON.stringify(command);
+  var msg = commandSerialized.length + &#x27;:&#x27; + commandSerialized;
+
+  // reference promise
+  this._lastCommand = deferred;
+  // send command
+  this.socket.write(msg);
+
+  return this;
+};
+
+module.exports = Marionette;
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
