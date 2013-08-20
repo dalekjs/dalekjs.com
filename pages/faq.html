@@ -12,6 +12,7 @@
                         --><li class="nav-ci"><a href="#ci">CI</a></li><!--
                         --><li class="nav-coffeescript"><a href="#coffeescript">Coffeescript</a></li><!--
                         --><li class="nav-casperjs"><a href="#casperjs">CasperJS</a></li><!--
+                        --><li class="nav-canary"><a href="#canary">Canary builds</a></li><!--
                     --></ul><!--
                 --></div><!--
 
@@ -70,6 +71,17 @@
                             --><h2>Should I ditch CasperJS &amp; switch to Dalek?</h2><!--
                             --><p class="description">Not yet &amp; depending on your needs, maybe never. CasperJS is a beautiful &amp; mature tool, that does way more than just allow you to write tests. I peronally see it more like a nice API/abstraction layer for PhantomJS with a testing API on top of it. Btw.: Without Casper, Dalek wouldn't exist. The first draft of DalekJS used CasperJS as a base to driver PhantomJS (before Ghostdriver was implemented in Phantom).<br/>
                             Also, due to the fact that the WebDriver spec misses some (in my opionion) important methods (Checking HTTP Status Codes, getting informations out of the HTTP header), Dalek can never be as powerful as Casper is. AND most important, the Casper guys do great work, appriciate that as well as I do (Dalek &lt;3 Casper)</p><!--
+                        --></div><!--
+
+                        Canary builds
+                        --><div class="grid__item one-whole"><!--
+                            --><a class="nav-helper" data-name="canary"></a><!--
+                            --><h2>I love the thrill, can I get the latest &amp; greatest?</h2><!--
+                            --><p class="description">Sure, Dalek modules automatically generates Canary builds if a push to the GitHub repository passes all the tests! Just append <i>-canary</i> to the module name when adding it to you package.json or installing it via command line.</p><!--
+                            --><pre class="dalek-shell cmd-output"><code><!--
+                            --><span class="token shell-icon">$</span> <span class="token shell-dalek">npm</span> <span class="token shell-npm">install dalekjs-canary</span></pre></code><!--
+                            --><pre class="dalek-shell cmd-output"><code><!--
+                            --><span class="token shell-icon">$</span> <span class="token shell-dalek">npm</span> <span class="token shell-npm">install dalek-reporter-html-canary</span></pre></code><!--
                         --></div><!--
 
                     --></div><!--
