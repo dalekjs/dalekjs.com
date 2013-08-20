@@ -38,7 +38,7 @@ All contents of the `docs` folder are genrated automatically, never ever edit th
 manually, because all of you changes will be overridden!
 
 If you find a typo, or want to add smth. to one of the a page in the `docs` folder,
-llok for the corresponding dalek modules (f.e. if you want to change smth. in the firefox.html file, look for the dalek-browser-firefox module, in the json.html file, look for the dalek-reporter-json file, etc.).
+llok for the corresponding dalek modules (e.g. if you want to change smth. in the firefox.html file, look for the dalek-browser-firefox module, in the json.html file, look for the dalek-reporter-json file, etc.).
 
 The HTML files will be generated out of the DocBlock comments, every comment that is annotated with the `@api` annotation will be parsed and included in the HTML file (top to bottom). Markdown is supported within the DocBlock comments and should be used to apply some markup to the docs.
 
