@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>DalekJS - Documentation - Cli</title>
-        <meta name="description" content="DalekJS - Documentation - Cli">
+        <title>DalekJS - Documentation - Browser - Internet Explorer</title>
+        <meta name="description" content="DalekJS - Documentation - Browser - Internet Explorer">
         <meta name="viewport" content="width=device-width">
 
         <!-- icon-ish stuff -->
@@ -28,7 +28,7 @@
 
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Tuesday, August 20th, 2013, 3:17:37 PM"><!--
+    <body data-buildtime="Tuesday, August 20th, 2013, 2:28:24 PM"><!--
 
         --><div class="grid"><!--
 
@@ -54,29 +54,26 @@
                         --><option  value="../pages/merch.html">Merch</option><!--
                     --></select><!--
                 --></nav><!--
-            --></header><div class="grid__item one-whole"><div class="grid__item one-whole"><h1 class="topic">CLI</h1><p> Dalek Command Line Tools</p>
+            --></header><div class="grid__item one-whole"><div class="grid__item one-whole"><h1 class="topic">InternetExplorer</h1><p> This module is a browser plugin for <a href="//github.com/dalekjs/dalek">DalekJS</a>.
+ It provides all a WebDriverServer &amp; browser launcher for Internet Explorer.</p>
 
-<p> The command line interface is your interface to the world of DalekJS.
- This is the way to run your tests.
- There might be a web interface to Dalek in the future, but as long as there is not, you have to deal with this;
- But hey, this isn&#39;t difficult &amp; I know you can do it! *
- Available options:</p>
+<p> The browser plugin can be installed with the following command:</p>
 
-<p> &gt; --version, -v   Shows the version of the dalek-cli &amp; local dalek installation</p>
+<p> <pre><code class="language-bash">
+ $ npm install dalek-browser-ie --save-dev
+ </code></pre></p>
 
-<p> &gt; --reporter, -r  Reporter(s) you would like to invoke</p>
+<p> You can use the browser plugin by adding a config option to the your Dalekfile</p>
 
-<p> &gt; --driver, -d    Driver(s) you would like to invoke</p>
+<p> <pre><code class="language-javascript">
+ &quot;browsers&quot;: [&quot;IE&quot;]
+ </code></pre></p>
 
-<p> &gt; --browser, -b   Browser(s) you would like to invoke</p>
+<p> Or you can tell Dalek that it should test in this browser via the command line:</p>
 
-<p> &gt; --logLevel, -l  Log level, controls the amount of information outputted to the console (0 to 5)</p>
-
-<p> &gt; --no-colors     Disable colorized output in the console</p>
-
-<p> &gt; --no-symbols    Disable UTF-8 symbols in the console</p>
-
-<p> &gt; --help, -h      Displays the cli help</p></div></div></div><!--
+<p> <pre><code class="language-bash">
+ $ dalek mytest.js -b IE
+ </code></pre></p></div></div></div><!--
 
             Footer
             --><footer  class="grid__item one-whole footer"><!--
