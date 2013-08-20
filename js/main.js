@@ -23,6 +23,9 @@ $allCodeLi.on('click', activateEntry('code', $allCodeLi));
  * Sidebar
  */
 
+var scroller;
+var sideScroller;
+
 // activate entry
 var activateEntry = function ($elm) {
     $('.sidenav .active').removeClass('active');
@@ -64,7 +67,7 @@ activeSidebar();
 // iScroll sidenav
 var matches = window.matchMedia ? window.matchMedia('(min-width: 500px)').matches : true;
 if (document.getElementById('content') && matches) {
-    var scroller = new IScroll('#content', {
+    scroller = new IScroll('#content', {
         scrollbars: true,
         mouseWheel: true,
         interactiveScrollbars: true,
@@ -72,7 +75,7 @@ if (document.getElementById('content') && matches) {
         preventDefault: false
      });
 
-    var sideScroller = new IScroll('#sidenav', {
+    sideScroller = new IScroll('#sidenav', {
         mouseWheel: true,
         click: true,
         preventDefault: false
@@ -123,6 +126,89 @@ $(window).on('orientationchange', textOnIndex);
 $(window).on('resize', textOnIndex);
 textOnIndex();
 
+var getRepoFromModule = function (module) {
+    var repos = {
+        actions: 'dalek-internal-actions',
+        assertions: 'dalek-internal-assertions',
+        phantomjs: 'dalek-browser-phantomjs',
+        firefox: 'dalek-browser-firefox',
+        internetexplorer: 'dalek-browser-ie',
+        chrome: 'dalek-browser-chrome',
+        json: 'dalek-reporter-json',
+        html: 'dalek-reporter-html',
+        junit: 'dalek-reporter-junit',
+        console: 'dalek-reporter-console',
+        cli: 'dalek-cli'
+    };
+
+    return repos[module];
+};
+
+var loadOlderVersion = function (version) {
+    var module = window.location.pathname.replace('/docs/', '').replace('.html', '');
+    var url = '';
+
+    if (version.toLowerCase() === 'canary') {
+        url = 'https://api.github.com/repos/dalekjs/dalekjs.com/contents/docs/' + module + '.html';
+    } else {
+        url = 'https://api.github.com/repos/dalekjs/dalekjs.com/contents/docs/' + version + '/' + module + '.html';
+    }
+
+    $.get(url)
+     .success(function (data) {
+        var content = $(/<div class="grid"[^>]*>((.|[\n\r])*)<\/div>/im.exec(atob(data.content.replace(/\s/g, ''))));
+        $('body').append('<div id="hidden-container" style="display: none"></div>');
+        $('#hidden-container').html(content[0]);
+        var contents = $('#hidden-container .grid__item.one-whole .grid__item.one-whole').html();
+        var sidenav = $('#hidden-container #sidenav').html();
+        if (sidenav) {
+            $('#sidenav').fadeOut('fast', function () {
+            $('#sidenav').html(sidenav).fadeIn('fast');
+                sideScroller.refresh();
+            });
+
+        }
+        $('#hidden-container').remove();
+
+        $('body .grid__item.one-whole .grid__item.one-whole').fadeOut('fast', function () {
+            $('body .grid__item.one-whole .grid__item.one-whole').html(contents).fadeIn('fast', function () {
+                if (scroller) {
+                    scroller.refresh();
+                }
+            });
+            $('body .grid__item.one-whole .grid__item.one-whole pre code').each(function (idx, element) {
+                Prism.highlightElement(element, false, function () {});
+            });
+        });
+
+
+
+    });
+};
+
+if (window.location.pathname.search('docs') !== -1) {
+    var module = window.location.pathname.replace('/docs/', '').replace('.html', '');
+    var repo = getRepoFromModule(module);
+    var options = '<option value="canary">Canary</option>';
+
+    $.get('https://api.github.com/repos/dalekjs/' + repo + '/tags')
+     .success(function (tags) {
+        $.each(tags, function (idx, tag) {
+            options += '<option value="' + tag.name + '">' + tag.name + '</option>';
+        });
+        $('.grid').prepend('<select id="versions">' + options + '</select>');
+        $('#versions')
+            .css('position', 'fixed')
+            .css('top', '50px')
+            .css('right', '30px');
+     });
+
+    $('.grid').on('change', '#versions', function (event) {
+        var version = $('#versions').val();
+        loadOlderVersion(version);
+        event.preventDefault();
+    });
+}
 
 // monkey bang pow! the second... remove/add footer position on the on the merch site (hate it but, whatever)
 if (window.location.pathname.search('merch') !== -1) {
