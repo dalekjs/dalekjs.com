@@ -28,7 +28,7 @@
 
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Tuesday, August 20th, 2013, 4:00:30 PM"><!--
+    <body data-buildtime="Sunday, August 25th, 2013, 3:56:47 PM"><!--
 
         --><div class="grid"><!--
 
@@ -55,13 +55,12 @@
                     --></select><!--
                 --></nav><!--
             --></header><div class="grid__item one-whole"><div class="grid__item one-quarter sidenav" id="sidenav"><ul><li class="nav-meth-chain"><a href="#meth-chain">chain</a></li><li class="nav-meth-end"><a href="#meth-end">end</a></li><li class="nav-meth-numberOfElements"><a href="#meth-numberOfElements">numberOfElements</a></li><li class="nav-meth-numberOfVisibleElements"><a href="#meth-numberOfVisibleElements">numberOfVisibleElements</a></li><li class="nav-meth-val"><a href="#meth-val">val</a></li><li class="nav-meth-css"><a href="#meth-css">css</a></li><li class="nav-meth-width"><a href="#meth-width">width</a></li><li class="nav-meth-height"><a href="#meth-height">height</a></li><li class="nav-meth-selected"><a href="#meth-selected">selected</a></li><li class="nav-meth-notSelected"><a href="#meth-notSelected">notSelected</a></li><li class="nav-meth-enabled"><a href="#meth-enabled">enabled</a></li><li class="nav-meth-disabled"><a href="#meth-disabled">disabled</a></li><li class="nav-meth-cookie"><a href="#meth-cookie">cookie</a></li><li class="nav-meth-exists"><a href="#meth-exists">exists</a></li><li class="nav-meth-doesntExist"><a href="#meth-doesntExist">doesntExist</a></li><li class="nav-meth-notVisible"><a href="#meth-notVisible">notVisible</a></li><li class="nav-meth-visible"><a href="#meth-visible">visible</a></li><li class="nav-meth-doesntHaveText"><a href="#meth-doesntHaveText">doesntHaveText</a></li><li class="nav-meth-dialogDoesntHaveText"><a href="#meth-dialogDoesntHaveText">dialogDoesntHaveText</a></li><li class="nav-meth-text"><a href="#meth-text">text</a></li><li class="nav-meth-dialogText"><a href="#meth-dialogText">dialogText</a></li><li class="nav-meth-title"><a href="#meth-title">title</a></li><li class="nav-meth-title"><a href="#meth-title">title</a></li><li class="nav-meth-url"><a href="#meth-url">url</a></li><li class="nav-meth-doesntHaveUrl"><a href="#meth-doesntHaveUrl">doesntHaveUrl</a></li><li class="nav-meth-attr"><a href="#meth-attr">attr</a></li></ul></div><div class="grid__item three-quarters" id="content"><div class="grid__item one-whole" id="scroller"><h1 class="topic">Assertions</h1><p> Assertions check if the assumptions you made about a website are correct.
- Assetions might check if the title of a page is as expected,
- if an element has the expected text,
- if your mobile website version only displays a certian amount of elements
- and many more...</p><a class="nav-helper" data-name="meth-chain"></a><h2 class="method"> .chain</h2><p> It can be really cumbersome to always write assert, assert &amp; assert
+ For example they might check if the title of a page or the content text of
+ an element is as expected, or if your mobile website version only displays
+ a certain amount of elements.</p><a class="nav-helper" data-name="meth-chain"></a><h2 class="method"> .chain</h2><p> It can be really cumbersome to always write assert, assert &amp; assert
  all over the place when your doing multiple assertions.
- To avoid this you can open an assertion context in your test that
- allows you to write n assetions, but can avoid to type asset before each.</p>
+ To avoid this, open an assertion context in your test which allows
+ you to write (n) assertions without having to write &#39;assert&#39; before each.</p>
 
 <p> So, instead of writing this:</p>
 
@@ -113,7 +112,7 @@
      .done();
  </code></pre></p><a class="nav-helper" data-name="meth-numberOfElements"></a><h2 class="method"> .numberOfElements</h2><p> Asserts that a given element appears n times on the page.</p>
 
-<p> Given this portion of html, you would like to assure that all of these elements
+<p> Given this portion of HTML, you would like to assure that all of these elements
  are ending up in your rendered markup on your page.</p>
 
 <p> <pre><code class="language-markup">
@@ -146,19 +145,19 @@
  </code></pre></p>
 
 <p> If you dealing with the situation that you have a minimum of elements,
- you expect, you can use this helper...</p>
+ you expect, you can use this helper:</p>
 
 <p> <pre><code class="language-javascript">
  test.assert.numberOfElements(&#39;#blog-overview .teaser&#39;)
      .is.gt(2, &#39;At least 3 blog teasers are present&#39;)
  </code></pre>
- ... if you want to know if its &#39;greater than equal&#39;, you can use this one...</p>
+ If you want to know if its &#39;greater than equal&#39;, use this one</p>
 
 <p> <pre><code class="language-javascript">
  test.assert.numberOfElements(&#39;#blog-overview .teaser&#39;)
      .is.gte(2, &#39;At least 2 blog teasers are present&#39;)
  </code></pre>
- ... as well as their &#39;lower than&#39; and &#39;lower than equal&#39; equivalents</p>
+ as well as their &#39;lower than&#39; and &#39;lower than equal&#39; equivalents.</p>
 
 <p> <pre><code class="language-javascript">
  test.assert.numberOfElements(&#39;#blog-overview .teaser&#39;)
@@ -169,7 +168,7 @@
  test.assert.numberOfElements(&#39;#blog-overview .teaser&#39;)
      .is.lte(5, &#39;Less than, or 5 blog teasers are present&#39;)
  </code></pre>
- And if you just wan&#39;t to know, if a certain amount of teasers isn&#39;t present,
+ And if you just want to know, if a certain amount of teasers isnʼt present,
  you can still use the not() assertion helper</p>
 
 <p> <pre><code class="language-javascript">
@@ -177,7 +176,7 @@
      .is.not(5, &#39;There are more or less than 5 teasers present&#39;)
  </code></pre></p><a class="nav-helper" data-name="meth-numberOfVisibleElements"></a><h2 class="method"> .numberOfVisibleElements</h2><p> Asserts that a given element is visible n times in the current viewport.</p>
 
-<p> Given this portion of html, you would like to assure that all of these elements
+<p> Given this portion of HTML, you would like to assure that all of these elements
  are ending up in your rendered markup on your page.</p>
 
 <p> <pre><code class="language-markup">
@@ -210,19 +209,19 @@
  </code></pre></p>
 
 <p> If you dealing with the situation that you have a minimum of elements,
- you expect, you can use this helper...</p>
+ you expect, use this helper:</p>
 
 <p> <pre><code class="language-javascript">
  test.assert.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;)
      .is.gt(2, &#39;At least 3 blog teasers are visible&#39;)
  </code></pre>
- ... if you want to know if its &#39;greater than equal&#39;, you can use this one...</p>
+ If you want to know if its &#39;greater than equal&#39;, you can use this one</p>
 
 <p> <pre><code class="language-javascript">
  test.assert.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;)
      .is.gte(2, &#39;At least 2 blog teasers are visible&#39;)
  </code></pre>
- ... as well as their &#39;lower than&#39; and &#39;lower than equal&#39; equivalents</p>
+ as well as their &#39;lower than&#39; and &#39;lower than equal&#39; equivalents.</p>
 
 <p> <pre><code class="language-javascript">
  test.assert.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;)
@@ -233,7 +232,7 @@
  test.assert.numberOfVisibleElements(&#39;#blog-overview .teaser&#39;)
      .is.lte(5, &#39;Less than, or 5 blog teasers are visible&#39;)
  </code></pre>
- And if you just wan&#39;t to know, if a certain amount of teasers isn&#39;t visible,
+ And if you just want to know, if a certain amount of teasers isnʼt visible,
  you can still use the &#39;:not(): assertion helper</p>
 
 <p> <pre><code class="language-javascript">
@@ -241,7 +240,7 @@
      .is.not(5, &#39;There are more or less than 5 teasers visible&#39;)
  </code></pre></p><a class="nav-helper" data-name="meth-val"></a><h2 class="method"> .val</h2><p> Asserts that a given form field has the provided value.</p>
 
-<p> Given this portion of html, we would like to get the information which option element
+<p> Given this portion of HTML, we would like to get the information which option element
  is currently selected.</p>
 
 <p> <pre><code class="language-markup">
@@ -365,7 +364,8 @@
     .open(&#39;http://selectables.org&#39;)
     .assert.selected(&#39;#select_elm option:nth-child(2)&#39;)
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-notSelected"></a><h2 class="method"> .notSelected</h2><p> Determine if an &lt;option&gt; element, or an &lt;input&gt; element of type checkbox or radio is currently not selected.</p>
+ </code></pre></p><a class="nav-helper" data-name="meth-notSelected"></a><h2 class="method"> .notSelected</h2><p> Determine if an &lt;option&gt; element, or an &lt;input&gt; element of type
+ checkbox or radio is currently not selected.</p>
 
 <p> <pre><code class="language-markup">
  &lt;input type=&quot;checkbox&quot; id=&quot;unchecked_checkbox&quot; name=&quot;unchecked_checkbox&quot;/&gt;
@@ -436,11 +436,12 @@
    .open(&#39;http://doctor.thedoctor.com/doctor&#39;)
    .assert.exists(&#39;#so-lonely&#39;, &#39;The loneliest element in the universe exists&#39;)
    .done()
- </code></pre></p><a class="nav-helper" data-name="meth-doesntExist"></a><h2 class="method"> .doesntExist</h2><p> Asserts that an element matching the provided selector expression doesn&#39;t exists within the remote DOM environment.</p>
+ </code></pre></p><a class="nav-helper" data-name="meth-doesntExist"></a><h2 class="method"> .doesntExist</h2><p> Asserts that an element matching the provided selector expression doesnʼt
+ exists within the remote DOM environment.</p>
 
 <p> <pre><code class="language-markup">
  &lt;body&gt;
-   &lt;p id=&quot;so-lonely&quot;&gt;Last of the timelords&lt;/p&gt;
+   &lt;p id=&quot;so-lonely&quot;&gt;Last of the time lords&lt;/p&gt;
  &lt;/body&gt;
  </code></pre></p>
 
@@ -453,7 +454,7 @@
 
 <p> <pre><code class="language-markup">
  &lt;body&gt;
-   &lt;h1 style=&quot;display: none&quot;&gt;Me? So hidden...&lt;/h1&gt;
+   &lt;h1 style=&quot;display: none&quot;&gt;Me? So hidden …&lt;/h1&gt;
    &lt;h2&gt;Me? So in viewport...&lt;/h2&gt;
  &lt;/body&gt;
  </code></pre></p>
@@ -467,7 +468,7 @@
 
 <p> <pre><code class="language-markup">
  &lt;body&gt;
-   &lt;h1&gt;Me? So in viewport...&lt;/h1&gt;
+   &lt;h1&gt;Me? So in viewport …&lt;/h1&gt;
  &lt;/body&gt;
  </code></pre></p>
 
@@ -480,7 +481,7 @@
 
 <p> <pre><code class="language-markup">
  &lt;body&gt;
-   &lt;h1&gt;This is a casperjs sandbox&lt;/h1&gt;
+   &lt;h1&gt;This is a CasperJS sandbox&lt;/h1&gt;
  &lt;/body&gt;
  </code></pre></p>
 
@@ -564,7 +565,7 @@
 
 <p> <pre><code class="language-javascript">
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
-     .assert.title(&#39;Doctor Who TV&#39;, &#39;Not your daleks tv&#39;)
+     .assert.title(&#39;Doctor Who TV&#39;, &#39;Not your Daleks TV&#39;)
      .done();
  </code></pre></p>
 
@@ -572,7 +573,7 @@
 
 <p> <pre><code class="language-javascript">
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
-     .assert.title().is(&#39;Doctor Who TV&#39;, &#39;Not your daleks tv&#39;)
+     .assert.title().is(&#39;Doctor Who TV&#39;, &#39;Not your Daleks TV&#39;)
      .done();
  </code></pre></p>
 
@@ -580,24 +581,24 @@
 
 <p> <pre><code class="language-javascript">
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
-     .assert.title().is.not(&#39;Dalek Emperor TV&#39;, &#39;Not your daleks tv&#39;)
+     .assert.title().is.not(&#39;Dalek Emperor TV&#39;, &#39;Not your Daleks TV&#39;)
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-title"></a><h2 class="method"> .title</h2><p> Asserts that given title does not match the given expactions</p>
+ </code></pre></p><a class="nav-helper" data-name="meth-title"></a><h2 class="method"> .title</h2><p> Asserts that given title does not match the given expectations.</p>
 
 <p> <pre><code class="language-javascript">
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
-     .assert.doesntHaveTitle(&#39;Dalek Emperor TV&#39;, &#39;Not your daleks tv&#39;)
+     .assert.doesntHaveTitle(&#39;Dalek Emperor TV&#39;, &#39;Not your Daleks TV&#39;)
      .done();
  </code></pre></p><a class="nav-helper" data-name="meth-url"></a><h2 class="method"> .url</h2><p> Asserts that the pages url is as expected.</p>
 
 <p> <pre><code class="language-javascript">
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
-     .assert.url(&#39;http://doctorwhotv.co.uk/&#39;, &#39;Url is as expected&#39;)
+     .assert.url(&#39;http://doctorwhotv.co.uk/&#39;, &#39;URL is as expected&#39;)
      .done();
  </code></pre></p>
 
-<p> You can also check if the protocol changend,
- nice to see when you open github with http instead of https</p>
+<p> You can also check if the protocol changed,
+ nice to see when you open GitHub with &#39;http&#39; instead of &#39;https&#39;</p>
 
 <p> <pre><code class="language-javascript">
    test.open(&#39;http://github.com&#39;)
@@ -605,11 +606,11 @@
      .done();
  </code></pre></p>
 
-<p> Yep, using assertion helpersx is also possible:</p>
+<p> Yep, using assertion helpers is also possible:</p>
 
 <p> <pre><code class="language-javascript">
    test.open(&#39;http://github.com&#39;)
-     .assert.url().is(&#39;http://doctorwhotv.co.uk/&#39;, &#39;Url is as expected&#39;)
+     .assert.url().is(&#39;http://doctorwhotv.co.uk/&#39;, &#39;URL is as expected&#39;)
      .done();
  </code></pre></p>
 
@@ -617,13 +618,13 @@
 
 <p> <pre><code class="language-javascript">
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
-     .assert.url().is.not(&#39;http://doctorwhotv.co.uk/&#39;, &#39;Url is as expected&#39;)
+     .assert.url().is.not(&#39;http://doctorwhotv.co.uk/&#39;, &#39;URL is as expected&#39;)
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-doesntHaveUrl"></a><h2 class="method"> .doesntHaveUrl</h2><p> Asserts that the pages url does not match the expectation.</p>
+ </code></pre></p><a class="nav-helper" data-name="meth-doesntHaveUrl"></a><h2 class="method"> .doesntHaveUrl</h2><p> Asserts that the pages URL does not match the expectation.</p>
 
 <p> <pre><code class="language-javascript">
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
-     .assert.doesntHaveUrl(&#39;http://doctorwhotv.co.uk/&#39;, &#39;Url is not expected&#39;)
+     .assert.doesntHaveUrl(&#39;http://doctorwhotv.co.uk/&#39;, &#39;URL is not expected&#39;)
      .done();
  </code></pre></p><a class="nav-helper" data-name="meth-attr"></a><h2 class="method"> .attr</h2><p> Asserts that an elements attribute is as expected.</p>
 
@@ -647,7 +648,7 @@
 <p> <pre><code class="language-javascript">
   test
     .open(&#39;http://dalekjs.com/guineapig/&#39;)
-    .assert.attr(&#39;#dataDiv&#39;).is(&#39;data-spot&#39;, &#39;cat&#39;, &#39;We found Datas cat!&#39;)
+    .assert.attr(&#39;#dataDiv&#39;).is(&#39;data-spot&#39;, &#39;cat&#39;, &#39;We found Dataʼs cat!&#39;)
     .done();
  </code></pre></p>
 
