@@ -28,7 +28,7 @@
 
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Monday, August 26th, 2013, 7:48:34 PM"><!--
+    <body data-buildtime="Monday, September 16th, 2013, 4:36:22 PM"><!--
 
         --><div class="grid"><!--
 
@@ -63,13 +63,63 @@
  by adding a config option to the your Dalekfile:</p>
 
 <p> <pre><code class="language-javascript">
- &quot;browsers&quot;: [&quot;phantomjs&quot;, &quot;chrome&quot;]
+ &quot;browser&quot;: [&quot;phantomjs&quot;, &quot;chrome&quot;]
  </code></pre></p>
 
 <p> Or you can tell Dalek that it should test in this &amp; another browser via the command line:</p>
 
 <p> <pre><code class="language-bash">
  $ dalek mytest.js -b phantomjs,chrome
+ </code></pre></p>
+
+<p> The Webdriver Server tries to open Port 9001 by default,
+ if this port is blocked, it tries to use a port between 9002 &amp; 9091
+ You can specifiy a different port from within your <a href="/pages/config.html">Dalekfile</a> like so:</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;browsers&quot;: {
+   &quot;phantomjs&quot;: {
+     &quot;port&quot;: 5555 
+   }
+ }
+ </code></pre></p>
+
+<p> It is also possible to specify a range of ports:</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;browsers&quot;: {
+   &quot;phantomjs&quot;: {
+     &quot;portRange&quot;: [6100, 6120] 
+   }
+ }
+ </code></pre></p>
+
+<p> If you would like to use a different Phantom version than the one that comes bundled with the driver,
+ your are able to specify its location in your <a href="/pages/config.html">Dalekfile</a>:</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;browsers&quot;: {
+   &quot;phantomjs&quot;: {
+     &quot;binary&quot;: &quot;~/bin/phantomjs&quot; 
+   }
+ }
+ </code></pre></p>
+
+<p> If you would like to preserve the ability to use the bundled version,
+ you can also add an additional browser launcher in your <a href="/pages/config.html">Dalekfile</a>.</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;browsers&quot;: {
+   &quot;phantomjs:1.9.1&quot;: {
+     &quot;binary&quot;: &quot;~/bin/phantomjs&quot; 
+   }
+ }
+ </code></pre></p>
+
+<p> And then launch it like this:</p>
+
+<p> <pre><code class="language-bash">
+ $ dalek mytest.js -b phantomjs:1.9.1
  </code></pre></p></div></div></div><!--
 
             Footer
