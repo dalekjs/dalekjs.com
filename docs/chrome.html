@@ -28,7 +28,7 @@
 
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Sunday, August 25th, 2013, 3:59:24 PM"><!--
+    <body data-buildtime="Monday, September 16th, 2013, 3:19:02 PM"><!--
 
         --><div class="grid"><!--
 
@@ -63,16 +63,73 @@
  $ npm install dalek-browser-chrome --save-dev
  </code></pre></p>
 
-<p> You can use the browser plugin by adding a config option to the your Dalekfile</p>
+<p> You can use the browser plugin by adding a config option to the your <a href="/pages/config.html">Dalekfile</a></p>
 
 <p> <pre><code class="language-javascript">
- &quot;browsers&quot;: [&quot;chrome&quot;]
+ &quot;browser&quot;: [&quot;chrome&quot;]
  </code></pre></p>
 
 <p> Or you can tell Dalek that it should test in this browser via the command line:</p>
 
 <p> <pre><code class="language-bash">
  $ dalek mytest.js -b chrome
+ </code></pre></p>
+
+<p> The Webdriver Server tries to open Port 9002 by default,
+ if this port is blocked, it tries to use a port between 9003 &amp; 9092
+ You can specifiy a different port from within your <a href="/pages/config.html">Dalekfile</a> like so:</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;browsers&quot;: {
+   &quot;chrome&quot;: {
+     &quot;port&quot;: 5555 
+   }
+ }
+ </code></pre></p>
+
+<p> It is also possible to specify a range of ports:</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;browsers&quot;: {
+   &quot;chrome&quot;: {
+     &quot;portRange&quot;: [6100, 6120] 
+   }
+ }
+ </code></pre></p>
+
+<p> If you would like to test Chrome Canary oder Chromium releases, you can simply apply a snd. argument,
+ which defines the browser type:</p>
+
+<p> <pre><code class="language-bash">
+ $ dalek mytest.js -b chrome:canary
+ </code></pre></p>
+
+<p> for canary, and if you would like to use chromium, just append <code>:chromium</code>:</p>
+
+<p> <pre><code class="language-bash">
+ $ dalek mytest.js -b chrome:chromium
+ </code></pre></p>
+
+<p> This will only work if you installed your browser in the default locations,
+ if the browsers binary is located in a non default location, you are able to specify
+ its location in your <a href="/pages/config.html">Dalekfile</a>:</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;browsers&quot;: {
+   &quot;chrome&quot;: {
+     &quot;binary&quot;: &quot;/Applications/Custom Located Chrome.app/MacOS/Contents/Chrome&quot; 
+   }
+ }
+ </code></pre></p>
+
+<p> This also works for the canary &amp;amp; chromium builds</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;browsers&quot;: {
+   &quot;chrome&quot;: {
+     &quot;binary&quot;: &quot;/Applications/Custom Located Chrome.app/MacOS/Contents/Chrome&quot; 
+   }
+ }
  </code></pre></p></div></div></div><!--
 
             Footer
