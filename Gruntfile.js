@@ -156,7 +156,11 @@ module.exports = function(grunt) {
           'build/docs/test.html': 'build/docs/test.html',
           'build/docs/testsuite.html': 'build/docs/testsuite.html',
           'build/docs/timer.html': 'build/docs/timer.html',
-          'build/docs/webdriver.html': 'build/docs/webdriver.html'
+          'build/docs/webdriver.html': 'build/docs/webdriver.html',
+          'build/docs/android.html': 'build/docs/android.html',
+          'build/docs/ios.html': 'build/docs/ios.html',
+          'build/docs/grunt.html': 'build/docs/grunt.html',
+          'build/docs/yeoman.html': 'build/docs/yeoman.html'
         }
       }
     },
@@ -253,7 +257,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  //grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
@@ -262,6 +266,6 @@ module.exports = function(grunt) {
 
   // Default
   grunt.registerTask('default', ['connect', 'sass', 'cssmin', 'watch']);
-  grunt.registerTask('build', ['clean', 'jshint', 'sass', 'cssmin', 'uglify', 'templates', 'copy', 'rev', 'usemin', 'htmlmin'/*, 'compress'*/]);
+  grunt.registerTask('build', ['clean', 'jshint', 'sass', 'cssmin', 'uglify', 'templates', 'copy', 'rev', 'usemin', 'htmlmin', 'compress']);
 
 };
