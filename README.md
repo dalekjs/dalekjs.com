@@ -1,6 +1,6 @@
 # [DalekJS Homepage](http://dalekjs.com)
 
-This is the repo that should be foreked when you want to edit Daleks Homepage.
+This is the repo that should be forked when you want to edit Daleks Homepage.
 
 ## How to work with the page
 
@@ -34,15 +34,15 @@ You can edit all files in the `root` folder, as well as the html files in the `p
 
 ## Do not edit!
 
-All contents of the `docs` folder are genrated automatically, never ever edit them
-manually, because all of you changes will be overridden!
+All contents of the `docs` folder are generated automatically, never ever edit them
+manually, because all your changes will be overridden!
 
-If you find a typo, or want to add smth. to one of the a page in the `docs` folder,
-llok for the corresponding dalek modules (e.g. if you want to change smth. in the firefox.html file, look for the dalek-browser-firefox module, in the json.html file, look for the dalek-reporter-json file, etc.).
+If you find a typo or want to add smth. to one of the pages in the `docs` folder,
+look for the corresponding dalek modules (e.g. if you want to change smth. in the firefox.html file, look for the dalek-browser-firefox module, in the json.html file, look for the dalek-reporter-json file, etc.).
 
 The HTML files will be generated out of the DocBlock comments, every comment that is annotated with the `@api` annotation will be parsed and included in the HTML file (top to bottom). Markdown is supported within the DocBlock comments and should be used to apply some markup to the docs.
 
-Also, to syntax highlight specific parts with Prism, you can add langauge specific code blocks:
+Also, to syntax highlight specific parts with Prism, you can add language specific code blocks:
 
 Example:
 
