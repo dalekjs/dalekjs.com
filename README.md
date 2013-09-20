@@ -1,6 +1,6 @@
 # [DalekJS Homepage](http://dalekjs.com)
 
-This is the repo that should be foreked when you want to edit Daleks Homepage.
+This is the repo that should be forked when you want to edit Daleks Homepage.
 
 ## How to work with the page
 
