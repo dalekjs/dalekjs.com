@@ -28,7 +28,7 @@
 
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Tuesday, August 20th, 2013, 2:28:24 PM"><!--
+    <body data-buildtime="Tuesday, September 24th, 2013, 5:39:07 AM"><!--
 
         --><div class="grid"><!--
 
@@ -73,6 +73,28 @@
 
 <p> <pre><code class="language-bash">
  $ dalek mytest.js -b IE
+ </code></pre></p>
+
+<p> The Webdriver Server tries to open Port 5555 by default,
+ if this port is blocked, it tries to use a port between 5555 &amp; 5564
+ You can specifiy a different port from within your <a href="/pages/config.html">Dalekfile</a> like so:</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;browsers&quot;: {
+   &quot;ie&quot;: {
+     &quot;port&quot;: 6555 
+   }
+ }
+ </code></pre></p>
+
+<p> It is also possible to specify a range of ports:</p>
+
+<p> <pre><code class="language-javascript">
+ &quot;browsers&quot;: {
+   &quot;ie&quot;: {
+     &quot;portRange&quot;: [6100, 6120] 
+   }
+ }
  </code></pre></p></div></div></div><!--
 
             Footer
