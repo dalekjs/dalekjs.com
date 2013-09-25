@@ -28,7 +28,7 @@
 
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Monday, September 23rd, 2013, 2:30:09 PM"><!--
+    <body data-buildtime="Wednesday, September 25th, 2013, 7:40:01 AM"><!--
 
         --><div class="grid"><!--
 
@@ -54,7 +54,7 @@
                         --><option  value="../pages/merch.html">Merch</option><!--
                     --></select><!--
                 --></nav><!--
-            --></header><div class="grid__item one-whole"><div class="grid__item one-quarter sidenav" id="sidenav"><ul><li class="nav-meth-query"><a href="#meth-query">query</a></li><li class="nav-meth-$"><a href="#meth-$">$</a></li><li class="nav-meth-toFrame"><a href="#meth-toFrame">toFrame</a></li><li class="nav-meth-toParent"><a href="#meth-toParent">toParent</a></li><li class="nav-meth-toWindow"><a href="#meth-toWindow">toWindow</a></li><li class="nav-meth-toParentWindow"><a href="#meth-toParentWindow">toParentWindow</a></li><li class="nav-meth-screenshot"><a href="#meth-screenshot">screenshot</a></li><li class="nav-meth-wait"><a href="#meth-wait">wait</a></li><li class="nav-meth-reload"><a href="#meth-reload">reload</a></li><li class="nav-meth-forward"><a href="#meth-forward">forward</a></li><li class="nav-meth-back"><a href="#meth-back">back</a></li><li class="nav-meth-click"><a href="#meth-click">click</a></li><li class="nav-meth-submit"><a href="#meth-submit">submit</a></li><li class="nav-meth-open"><a href="#meth-open">open</a></li><li class="nav-meth-type"><a href="#meth-type">type</a></li><li class="nav-meth-sendKeys"><a href="#meth-sendKeys">sendKeys</a></li><li class="nav-meth-answer"><a href="#meth-answer">answer</a></li><li class="nav-meth-execute"><a href="#meth-execute">execute</a></li><li class="nav-meth-waitFor"><a href="#meth-waitFor">waitFor</a></li><li class="nav-meth-accept"><a href="#meth-accept">accept</a></li><li class="nav-meth-dismiss"><a href="#meth-dismiss">dismiss</a></li><li class="nav-meth-resize"><a href="#meth-resize">resize</a></li><li class="nav-meth-maximize"><a href="#meth-maximize">maximize</a></li><li class="nav-meth-setCookie"><a href="#meth-setCookie">setCookie</a></li><li class="nav-meth-waitForElement"><a href="#meth-waitForElement">waitForElement</a></li><li class="nav-meth-setValue"><a href="#meth-setValue">setValue</a></li></ul></div><div class="grid__item three-quarters" id="content"><div class="grid__item one-whole" id="scroller"><h1 class="topic">Actions</h1><p> Actions are a way to control your browsers, e.g. simulate user interactions
+            --></header><div class="grid__item one-whole"><div class="grid__item one-quarter sidenav" id="sidenav"><ul><li class="nav-meth-query"><a href="#meth-query">query</a></li><li class="nav-meth-$"><a href="#meth-$">$</a></li><li class="nav-meth-toFrame"><a href="#meth-toFrame">toFrame</a></li><li class="nav-meth-toParent"><a href="#meth-toParent">toParent</a></li><li class="nav-meth-toWindow"><a href="#meth-toWindow">toWindow</a></li><li class="nav-meth-toParentWindow"><a href="#meth-toParentWindow">toParentWindow</a></li><li class="nav-meth-screenshot"><a href="#meth-screenshot">screenshot</a></li><li class="nav-meth-wait"><a href="#meth-wait">wait</a></li><li class="nav-meth-reload"><a href="#meth-reload">reload</a></li><li class="nav-meth-forward"><a href="#meth-forward">forward</a></li><li class="nav-meth-back"><a href="#meth-back">back</a></li><li class="nav-meth-click"><a href="#meth-click">click</a></li><li class="nav-meth-submit"><a href="#meth-submit">submit</a></li><li class="nav-meth-open"><a href="#meth-open">open</a></li><li class="nav-meth-type"><a href="#meth-type">type</a></li><li class="nav-meth-sendKeys"><a href="#meth-sendKeys">sendKeys</a></li><li class="nav-meth-answer"><a href="#meth-answer">answer</a></li><li class="nav-meth-execute"><a href="#meth-execute">execute</a></li><li class="nav-meth-waitFor"><a href="#meth-waitFor">waitFor</a></li><li class="nav-meth-accept"><a href="#meth-accept">accept</a></li><li class="nav-meth-dismiss"><a href="#meth-dismiss">dismiss</a></li><li class="nav-meth-resize"><a href="#meth-resize">resize</a></li><li class="nav-meth-maximize"><a href="#meth-maximize">maximize</a></li><li class="nav-meth-setCookie"><a href="#meth-setCookie">setCookie</a></li><li class="nav-meth-waitForElement"><a href="#meth-waitForElement">waitForElement</a></li><li class="nav-meth-setValue"><a href="#meth-setValue">setValue</a></li><li class="nav-meth-log.dom"><a href="#meth-log.dom">log.dom</a></li><li class="nav-meth-log.message"><a href="#meth-log.message">log.message</a></li></ul></div><div class="grid__item three-quarters" id="content"><div class="grid__item one-whole" id="scroller"><h1 class="topic">Actions</h1><p> Actions are a way to control your browsers, e.g. simulate user interactions
  like clicking elements, open urls, filling out input fields, etc.</p><a class="nav-helper" data-name="meth-query"></a><h2 class="method"> .query</h2><p> It can be really cumbersome to repeat selectors all over when performing
  multiple actions or assertions on the same element(s).
  When you use the query method (or its alias $), you&#39;re able to specify a
@@ -514,7 +514,7 @@ You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/se
 <p> <pre><code class="language-javascript">
  test.open(&#39;http://myticker.org&#39;)
    .assert.text(&#39;.ticker-element:first-child&#39;, &#39;First!&#39;, &#39;First ticker element is visible&#39;)
-   // now we load the next ticker element, default timeout is 5 seconds
+   // now we load the next ticker element, defsult timeout is 5 seconds
    .waitForElement(&#39;.ticker-element:nth-child(2)&#39;)
    .assert.text(&#39;.ticker-element:nth-child(2)&#39;, &#39;Me snd. one&#39;, &#39;Snd. ticker element is visible&#39;)
    // Lets assume that this AJAX call can take longer, so we raise the default timeout to 10 seconds
@@ -531,6 +531,45 @@ You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/se
  test.open(&#39;http://dalekjs.com&#39;)
      .setValue(&#39;#ijustwannahaveavalue&#39;, &#39;a value&#39;)
      .title().is(&#39;DalekJS - Frequently asked questions&#39;, &#39;What the F.A.Q.&#39;);
+ </code></pre></p><a class="nav-helper" data-name="meth-log.dom"></a><h2 class="method"> .log.dom</h2><p> Logs a part of the remote dom</p>
+
+<p> <pre><code class="language-markup">
+ &lt;body&gt;
+   &lt;div id=&quot;smth&quot;&gt;
+     &lt;input type=&quot;hidden&quot; value=&quot;not really a value&quot; id=&quot;ijustwannahaveavalue&quot;/&gt;
+   &lt;/div&gt;
+ &lt;/body&gt;
+ </code></pre></p>
+
+<p> <pre><code class="language-javascript">
+ test.open(&#39;http://dalekjs.com/guineapig&#39;)
+     .log.dom(&#39;#smth&#39;)
+     .done();
+ </code></pre></p>
+
+<p> Will output this:</p>
+
+<p> <pre><code class="language-markup">
+  DOM: #smth &lt;input type=&quot;hidden&quot; value=&quot;not really a value&quot; id=&quot;ijustwannahaveavalue&quot;/&gt;
+ </code></pre></p><a class="nav-helper" data-name="meth-log.message"></a><h2 class="method"> .log.message</h2><p> Logs a user defined message</p>
+
+<p> <pre><code class="language-javascript">
+ test.open(&#39;http://dalekjs.com/guineapig&#39;)
+     .execute(function () {
+       this.data(&#39;aKey&#39;, &#39;aValue&#39;);
+     })
+     .log.message(function () {
+       return test.data(&#39;aKey&#39;); // outputs MESSAGE: &#39;aValue&#39;
+     })
+     .done();
+ </code></pre></p>
+
+<p> &#39;Normal&#39; messages can be logged too:</p>
+
+<p> <pre><code class="language-javascript">
+ test.open(&#39;http://dalekjs.com/guineapig&#39;)
+     .log.message(&#39;FooBar&#39;) // outputs MESSAGE: FooBar
+     .done();
  </code></pre></p></div></div></div></div><!--
 
             Footer
