@@ -113,7 +113,7 @@ module.exports = function(grunt) {
       compress: {
         files: {
           'build/css/main.css': [
-            'bower_components/prism/prism-funky.css',
+            'bower_components/prism/themes/prism-funky.css',
             'css/style.min.css'
           ]
         }
