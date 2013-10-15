@@ -160,7 +160,8 @@ module.exports = function(grunt) {
           'build/docs/android.html': 'build/docs/android.html',
           'build/docs/ios.html': 'build/docs/ios.html',
           'build/docs/grunt.html': 'build/docs/grunt.html',
-          'build/docs/yeoman.html': 'build/docs/yeoman.html'
+          'build/docs/yeoman.html': 'build/docs/yeoman.html',
+          'build/docs/sauce.html': 'build/docs/sauce.html'
         }
       }
     },
