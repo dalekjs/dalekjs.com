@@ -136,22 +136,51 @@
                             --><a class="nav-helper" data-name="userinteraction"></a><!--
                             --><h2>Add user interactions</h2><!--
                             --><p class="description">Wow, we came that far in such a short amount of time. Isn't it awesome? I believe it is =)</p><!--
+                            --><p class="description">This chapter adds some information on how to simulate a real user, in Daleks context, such method calls are called 'actions'. You already issued an action when telling the browser to `open` a page. One of the things you will be using most are the `click` &amp; `type` actions.</p><!--
+                            --><p class="description">Click simulates a user clicking on an element (most of the time, it will be a link, but you can select any element you want to click on it).<br />Type lets you enter data into a form field.</p><!--                        
+                            --><p class="description">To explain this actions in more detail, we will write a little test that checks if the Amazons search field on the homepage is working as we expect:.</p><!--                     --><pre class="code-thingie"><code class="language-javascript"><!--
+                    -->module.exports = {
+<!--                -->'Amazon does its thing': function (test) {
+<!--                -->  test
+<!--                -->    .open('http://www.amazon.com/')
+<!--                -->    .type('#twotabsearchtextbox', 'Blues Brothers VHS')
+<!--                -->    .click('.nav-submit-input')
+<!--                -->    .waitForElement('#result_0')
+<!--                -->    .assert.text('#result_0 .newaps a span').is('The Blues Brothers [VHS]')
+<!--                -->    .done();
+<!--                -->}
+<!--                -->};<!--
+                    --></code></pre><!--
+                            --><p class="description">Cool, we just simulated a real user interacting with a webpage, now lets take this thing a step further &amp; add a 'real' browser, that your regular users will use.</p><!--
                         --></div><!--
 
                         Add in a "real" browser
                         --><div class="grid__item one-whole"><!--
                             --><a class="nav-helper" data-name="realbrowser"></a><!--
                             --><h2>Add a "real" browser</h2><!--
-                            --><p class="description"><strong style="color: red; font-Family: 'Londrina solid'; font-size: 24px">TBA.</strong></p><!--
+                            --><p class="description">After struggling with tons of blog posts &amp; documentation on how to setup browsers for Selenium &amp; Watir, I just wanted to have a really simple &amp; sane way to add a browser to your testing suite:</p><!--
+                        --><pre class="dalek-shell"><code><!--
+<!--                    --><span class="token shell-icon">$</span> <span class="token shell-npm">npm install</span> <span class="token shell-dalek">dalek-browser-chrome</span> <span class="token shell-npm">--save-dev</span><!--
+                            --></code></pre><!--        
+                            --><p class="description">Yep, that was it, now you can call your testsuite with an additional parameter &amp; you´re good to go.</p><!--
+                    --><pre class="dalek-shell cmd-output"><code><!--
+                    --><span class="token shell-icon">$</span> <span class="token shell-dalek">dalek</span> <span class="token shell-npm">test/my_first_test.js -b chrome</span></code></pre><!--
                         --></div><!--
 
                         Create a report
                         --><div class="grid__item one-whole"><!--
                             --><a class="nav-helper" data-name="report"></a><!--
                             --><h2>Create a report</h2><!--
-                            --><p class="description"><strong style="color: red; font-Family: 'Londrina solid'; font-size: 24px">TBA.</strong></p><!--
+                            --><p class="description">We are about to finish our little DalekJS crash course with this chapter, I´m very proud of you still reading the guide. In this last step we will install a reporter that will help you store the results of your test run. There are several reporters available, but we will use the HTML reporter here. This reporter will generate a set of static HTML pages &amp; store that in a folder on your disk. Of course, the installation is as easy as always, just:</p><!--
+                        --><pre class="dalek-shell"><code><!--                            
+<!--                    --><span class="token shell-icon">$</span> <span class="token shell-npm">npm install</span> <span class="token shell-dalek">dalek-reporter-html</span> <span class="token shell-npm">--save-dev</span><!--
+                            --></code></pre><!--
+                            --><p class="description">Cool, now just add another parameter to your `dalek` call</p><!--
+                    --><pre class="dalek-shell cmd-output"><code><!--
+                    --><span class="token shell-icon">$</span> <span class="token shell-dalek">dalek</span> <span class="token shell-npm">test/my_first_test.js -r console,html</span></code></pre><!--
+                            --><p class="description">This will create a new folder for you, called "report/dalek", in there you will find an `index.html` with all the information from your test run.</p><!--
+                            --><p class="description">You? Still here? You are my hero, now lets go ahead &amp; write some useful tests for your application. Happy testing &amp; when you still have some questions, check the <a href="/pages/documentation.html">Docs</a> or ping me via IRC, Twitter, Github or mail.</p><!--
                         --></div><!--
-
                     --></div><!--
                  --></div><!--
         Footer
