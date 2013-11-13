@@ -329,7 +329,10 @@ test.open(&#39;http://home.dalek.com&#39;)
  .assert.val(&#39;#truth&#39;, &#39;out THERE is&#39;, &#39;Text has been set&#39;)
  .done();
 </code></pre>
-You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/session/:sessionId/element/:id/value">here</a> to read up on special keys and unicodes for them (note that a code of U+EXXX is actually written in code as \uEXXX).</p><p>&gt; Note: Does not work correctly in Firefox with special keys</p></li></ul><a data-name="meth-sendKeys" class="nav-helper"></a><h2 class="method"> .sendKeys</h2><p> This acts just like .type() with a key difference.
+You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/session/:sessionId/element/:id/value">here</a> to read up on special keys and unicodes for them (note that a code of U+EXXX is actually written in code as \uEXXX).</p>
+<p>&gt; Note: Does not work correctly in Firefox with special keys</p></li>
+    
+</ul><a data-name="meth-sendKeys" class="nav-helper"></a><h2 class="method"> .sendKeys</h2><p> This acts just like .type() with a key difference.
  This action can be used on non-input elements (useful for test site wide keyboard shortcuts and the like).
  So assumeing we have a keyboard shortcut that display an alert box, we could test that with something like this:</p>
 
@@ -338,8 +341,8 @@ You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/se
      .sendKeys(&#39;body&#39;, &#39;\uE00C&#39;)
      .assert.dialogText(&#39;press the escape key give this alert text&#39;)
      .done();
- </code></pre></p>
-
+ </code></pre>
+You can go <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol#/session/:sessionId/element/:id/value">here</a> to read up on special keys and unicodes for them (note that a code of U+EXXX is actually written in code as \uEXXX).</p>
 <p> &gt; Note: Does not work correctly in Firefox with special keys</p><a data-name="meth-answer" class="nav-helper"></a><h2 class="method"> .answer</h2><p> Types a text into the text inout field of a prompt dialog.
  Like you would do when using your keyboard.</p>
 
