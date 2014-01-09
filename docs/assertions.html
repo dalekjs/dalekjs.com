@@ -28,7 +28,7 @@
 
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Thursday, January 9th, 2014, 4:05:21 PM"><!--
+    <body data-buildtime="Thursday, January 9th, 2014, 4:24:43 PM"><!--
 
         --><div class="grid"><!--
 
@@ -98,7 +98,7 @@
      .done();
  </code></pre></p>
 
-<p> Always make sure, you terminate it with the <a href="#meth-end">end</a> method!</p><a class="nav-helper" data-name="meth-end"></a><h2 class="method"> .end</h2><p> Terminates an assertion chain or a query</p>
+<p> Always make sure to terminate it with the <a href="#meth-end">end</a> method!</p><a class="nav-helper" data-name="meth-end"></a><h2 class="method"> .end</h2><p> Terminates an assertion chain or a query</p>
 
 <p> <pre><code class="language-javascript">
  test.open(&#39;http://doctorwhotv.co.uk/&#39;)
@@ -330,7 +330,7 @@
    &lt;div id=&quot;fixed-dimensions&quot; style=&quot;width: 100px&quot;&gt;&lt;/div&gt;
  </code></pre></p>
 
-<p> <code></code>`javascript
+<p> <pre><code class="language-javascript">
   test
     .open(&#39;http://localhost:5000/index.html&#39;)
     // all true, all pixel
@@ -342,15 +342,14 @@
     .assert.width(&#39;#fixed-dimensions&#39;).is.lt(120)
     .assert.width(&#39;#fixed-dimensions&#39;).is.lte(110)
     .assert.width(&#39;#fixed-dimensions&#39;).is.between([90, 110])
-    .done();</p>
-
-<p> <code></code>`</p><a class="nav-helper" data-name="meth-height"></a><h2 class="method"> .height</h2><p> Checks the actual height of an element.</p>
+    .done();
+ </code></pre></p><a class="nav-helper" data-name="meth-height"></a><h2 class="method"> .height</h2><p> Checks the actual height of an element.</p>
 
 <p> <pre><code class="language-markup">
    &lt;div id=&quot;fixed-dimensions&quot; style=&quot;height: 100px&quot;&gt;&lt;/div&gt;
  </code></pre></p>
 
-<p> <code></code>`javascript
+<p> <pre><code class="language-javascript">
   test
     .open(&#39;http://localhost:5000/index.html&#39;)
     // all true, all pixel
@@ -362,9 +361,8 @@
     .assert.height(&#39;#fixed-dimensions&#39;).is.lt(120)
     .assert.height(&#39;#fixed-dimensions&#39;).is.lte(110)
     .assert.height(&#39;#fixed-dimensions&#39;).is.between([90, 110])
-    .done();</p>
-
-<p> <code></code>`</p><a class="nav-helper" data-name="meth-selected"></a><h2 class="method"> .selected</h2><p> Determine if an &lt;option&gt; element, or an &lt;input&gt; element of type checkbox or radio is currently selected.</p>
+    .done();
+ </code></pre></p><a class="nav-helper" data-name="meth-selected"></a><h2 class="method"> .selected</h2><p> Determine if an &lt;option&gt; element, or an &lt;input&gt; element of type checkbox or radio is currently selected.</p>
 
 <p> <pre><code class="language-markup">
  &lt;input type=&quot;checkbox&quot; id=&quot;unchecked_checkbox&quot; name=&quot;unchecked_checkbox&quot;/&gt;
@@ -625,7 +623,7 @@
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
      .assert.doesntHaveTitle(&#39;Dalek Emperor TV&#39;, &#39;Not your Daleks TV&#39;)
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-url"></a><h2 class="method"> .url</h2><p> Asserts that the pages url is as expected.</p>
+ </code></pre></p><a class="nav-helper" data-name="meth-url"></a><h2 class="method"> .url</h2><p> Asserts that the page’s url is as expected.</p>
 
 <p> <pre><code class="language-javascript">
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
