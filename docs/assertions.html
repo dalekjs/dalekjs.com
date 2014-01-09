@@ -28,7 +28,7 @@
 
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Wednesday, November 27th, 2013, 9:59:10 AM"><!--
+    <body data-buildtime="Thursday, January 9th, 2014, 4:03:02 PM"><!--
 
         --><div class="grid"><!--
 
@@ -279,7 +279,9 @@
    // lets change the favourite by typing smth. new
   .type(&#39;#fav-enemy&#39;, &#39;Cyberman&#39;)
   .assert.val(&#39;#fav-enemy&#39;, &#39;Cyberman&#39;, &#39;Cyberman are so cyber&#39;)
- </code></pre></p><a class="nav-helper" data-name="meth-css"></a><h2 class="method"> .css</h2><p> Checks the computed style.</p>
+ </code></pre></p><a class="nav-helper" data-name="meth-css"></a><h2 class="method"> .css</h2><p> Checks the computed style.
+ Note: When selecting values like em or percent, they will be converted to px. So it&#39;s currently not possible
+ to check em, %, ... values, only px.</p>
 
 <p> <pre><code class="language-markup">
  &lt;div id=&quot;superColoredElement&quot;&gt;Rose&lt;/div&gt;
@@ -297,6 +299,30 @@
     .open(&#39;http://unicorns.rainbows.io&#39;)
     .assert.css(&#39;#superColoredElement&#39;, &#39;background-color&#39;, &#39;rgba(255, 0, 0, 1)&#39;)
     .assert.css(&#39;#superColoredElement&#39;, &#39;color&#39;, &#39;rgba(0, 128, 0, 1)&#39;)
+    .done();
+ </code></pre></p>
+
+<p> Can also check if a computed style is greater or lower than the expected value.
+ TODO: We might extract the part that determines the comparison operator to reuse it in other test. We might also
+       add &gt;= and &lt;=.</p>
+
+<p> <pre><code class="language-markup">
+ &lt;div id=&quot;fancyPlacedElement&quot;&gt;Tulip&lt;/div&gt;
+ </code></pre></p>
+
+<p> <pre><code class="language-css">
+ #fancyPlacedElement {
+   top: 100px;
+ }
+ </code></pre></p>
+
+<p> <pre><code class="language-javascript">
+  test
+    .open(&#39;http://unicorns.rainbows.io&#39;)
+    .assert.css(&#39;#fancyPlacedElement&#39;, &#39;top&#39;, &#39;&gt;50px&#39;) // 100 is greater than 50, success
+    .assert.css(&#39;#fancyPlacedElement&#39;, &#39;top&#39;, &#39;&lt;150px&#39;) // 100 is lower than 150, success
+    .assert.css(&#39;#fancyPlacedElement&#39;, &#39;top&#39;, &#39;&gt;150px&#39;) // 100 is lower than 150, fail
+    .assert.css(&#39;#fancyPlacedElement&#39;, &#39;top&#39;, &#39;&lt;50px&#39;) // 100 is greater than 50, fail
     .done();
  </code></pre></p><a class="nav-helper" data-name="meth-width"></a><h2 class="method"> .width</h2><p> Checks the actual width of an element.</p>
 
