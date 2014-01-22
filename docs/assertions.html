@@ -28,7 +28,7 @@
 
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Wednesday, January 15th, 2014, 2:42:31 PM"><!--
+    <body data-buildtime="Wednesday, January 22nd, 2014, 9:55:06 AM"><!--
 
         --><div class="grid"><!--
 
@@ -520,7 +520,9 @@
     .open(&#39;http://dalekjs.com/guineapig/&#39;)
     .assert.doesntHaveText(&#39;h1&#39;, &#39;This page is a Dalek sandbox&#39;, &#39;It´s a sandbox!&#39;)
     .done();
- </code></pre></p><a class="nav-helper" data-name="meth-dialogDoesntHaveText"></a><h2 class="method"> .dialogDoesntHaveText</h2><p> Asserts that given text does not exist in the current alert/prompt/confirm dialog.</p>
+ </code></pre></p>
+
+<p> &gt; NOTE: You cant match for a substring with contain() here.</p><a class="nav-helper" data-name="meth-dialogDoesntHaveText"></a><h2 class="method"> .dialogDoesntHaveText</h2><p> Asserts that given text does not exist in the current alert/prompt/confirm dialog.</p>
 
 <p> <pre><code class="language-markup">
  &lt;a href=&quot;#&quot; id=&quot;alert_confirm&quot; onclick=&quot;confirm(&#39;Confirm me!&#39;)&quot;&gt;I make confirm&lt;/a&gt;
@@ -535,7 +537,8 @@
     .done();
  </code></pre></p>
 
-<p> &gt; NOTE: Does not work in Firefox &amp; PhantomJS</p><a class="nav-helper" data-name="meth-text"></a><h2 class="method"> .text</h2><p> Asserts that given text does exist in the provided selector.</p>
+<p> &gt; NOTE: You cant match for a substring with contain() here.
+ &gt; NOTE: Does not work in Firefox &amp; PhantomJS</p><a class="nav-helper" data-name="meth-text"></a><h2 class="method"> .text</h2><p> Asserts that given text does exist in the provided selector.</p>
 
 <p> <pre><code class="language-markup">
  &lt;body&gt;
@@ -563,6 +566,15 @@
   test
     .open(&#39;http://dalekjs.com/guineapig/&#39;)
     .assert.text(&#39;h1&#39;).is.not(&#39;This page is a CasperJS sandbox&#39;, &#39;Exterminate!&#39;)
+    .done();
+ </code></pre></p>
+
+<p> and you can also check for the occurrence of a substring with to.contain() (but don&#39;t try to chain it with not() as this is not possible)</p>
+
+<p> <pre><code class="language-javascript">
+  test
+    .open(&#39;http://dalekjs.com/guineapig/&#39;)
+    .assert.text(&#39;h1&#39;).to.contain(&#39;CasperJS&#39;)
     .done();
  </code></pre></p><a class="nav-helper" data-name="meth-dialogText"></a><h2 class="method"> .dialogText</h2><p> Asserts that given alertText does exist in the provided alert/confirm or prompt dialog.</p>
 
@@ -611,11 +623,19 @@
      .done();
  </code></pre></p>
 
-<p> and the not() helper is available too:</p>
+<p> the not() helper is available too:</p>
 
 <p> <pre><code class="language-javascript">
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
      .assert.title().is.not(&#39;Dalek Emperor TV&#39;, &#39;Not your Daleks TV&#39;)
+     .done();
+ </code></pre></p>
+
+<p> and you can also match for a substring with to.contain() (but don&#39;t try to chain it with not() as this is not possible):</p>
+
+<p> <pre><code class="language-javascript">
+   test.open(&#39;http://doctorwhotv.co.uk/&#39;)
+     .assert.title().to.contain(&#39;Emperor&#39;)
      .done();
  </code></pre></p><a class="nav-helper" data-name="meth-doesntHaveTitle"></a><h2 class="method"> .doesntHaveTitle</h2><p> Asserts that given title does not match the given expectations.</p>
 
@@ -648,11 +668,19 @@
      .done();
  </code></pre></p>
 
-<p> and the not() helper is available too:</p>
+<p> the not() helper is available too:</p>
 
 <p> <pre><code class="language-javascript">
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
      .assert.url().is.not(&#39;http://doctorwhotv.co.uk/&#39;, &#39;URL is as expected&#39;)
+     .done();
+ </code></pre></p>
+
+<p> and you can also match for a substring with to.contain() (but don&#39;t try to chain it with not() as this is not possible):</p>
+
+<p> <pre><code class="language-javascript">
+   test.open(&#39;http://doctorwhotv.co.uk/&#39;)
+     .assert.url().to.contain(&#39;doctor&#39;)
      .done();
  </code></pre></p><a class="nav-helper" data-name="meth-doesntHaveUrl"></a><h2 class="method"> .doesntHaveUrl</h2><p> Asserts that the pages URL does not match the expectation.</p>
 
@@ -660,7 +688,15 @@
    test.open(&#39;http://doctorwhotv.co.uk/&#39;)
      .assert.doesntHaveUrl(&#39;http://doctorwhotv.co.uk/&#39;, &#39;URL is not expected&#39;)
      .done();
- </code></pre></p><a class="nav-helper" data-name="meth-attr"></a><h2 class="method"> .attr</h2><p> Asserts that an elements attribute is as expected.</p>
+ </code></pre></p>
+
+<p> Oh, you might also match for a substring with to.contain():</p>
+
+<ul><li><pre><code class="language-javascript">
+test.open(&#39;http://doctorwhotv.co.uk/&#39;)
+ .assert.doesntHaveUrl().to.contain(&#39;doctor&#39;)
+ .done();
+</code></pre></li></ul><a class="nav-helper" data-name="meth-attr"></a><h2 class="method"> .attr</h2><p> Asserts that an elements attribute is as expected.</p>
 
 <p> <pre><code class="language-markup">
  &lt;form&gt;
@@ -676,7 +712,7 @@
  </code></pre></p>
 
 <p> <pre><code class="language-markup">
- &lt;div id=&quot;dataDiv&quot; data-spot=&quot;cat&quot;&gt;&lt;/div&gt;
+ &lt;div class=&quot;wellImUpperUpperClassHighSociety&quot; id=&quot;dataDiv&quot; data-spot=&quot;cat&quot;&gt;&lt;/div&gt;
  </code></pre></p>
 
 <p> <pre><code class="language-javascript">
@@ -690,6 +726,24 @@
   test
     .open(&#39;http://dalekjs.com/guineapig/&#39;)
     .assert.attr(&#39;#dataDiv&#39;).is.not(&#39;data-spot&#39;, &#39;doc&#39;, &#39;Spot is not a dog!&#39;)
+    .done();
+ </code></pre></p>
+
+<p> You can also use attr() for checking if a class is existent</p>
+
+<p> <pre><code class="language-javascript">
+  test
+    .open(&#39;http://dalekjs.com/guineapig/&#39;)
+    .assert.attr(&#39;#dataDiv&#39;, &#39;class&#39;, &#39;wellImUpperUpperClassHighSociety&#39;)
+    .done();
+ </code></pre></p>
+
+<p> and you can also match a substring (e. g. a single class if more classes are on that elem) with to.contain():</p>
+
+<p> <pre><code class="language-javascript">
+  test
+    .open(&#39;http://dalekjs.com/guineapig/&#39;)
+    .assert.attr(&#39;#dataDiv&#39;, &#39;class&#39;).to.contain(&#39;upperUpperClass&#39;)
     .done();
  </code></pre></p></div></div></div></div><!--
 
