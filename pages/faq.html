@@ -30,8 +30,8 @@
                             --><a class="nav-helper" data-name="selenium"></a><!--
                             --><h2>Does DalekJS depend on Selenium?</h2><!--
                             --><p class="description">Short answer: No.
-                            Dalek uses the Webdriver specifications, the JSON-Wire protocol to communicate with the browsers it utilitizes, when applicaple. The Webdriver specification evolved out of the Selenium project &amp; then got submitted as a draft to the W3C. So, in some ways, Daleks existance would not be possible without the work the Selenium project has done so far.
-                            But Daleks only dependency is Node, no need to install Java or download the Selenium.jar file.
+                            Dalek uses the WebDriver JSON-Wire protocol to communicate with the browsers it utilitizes, when applicable. The Webdriver specification evolved out of the Selenium project, after which it was submitted as a draft to the W3C. So, in some ways, Daleks existence would not be possible without the work the Selenium project has done so far.
+                            However, as Dalek's only dependency is node.js, there is no need to install Java or download the Selenium.jar file.
                             </p><!--
                         --></div><!--
 
@@ -40,20 +40,20 @@
                             --><a class="nav-helper" data-name="ci"></a><!--
                             --><h2>How do I use DalekJS in my CI env?</h2><!--
                             --><p class="description">
-                            Dalek was developed with Continous Integration systems in mind. Basically there should be no problem with any CI system that is able to execute shell commands, but Dalek has been tested
+                            Dalek was developed with Continous Integration systems in mind. Basically, there should be no problem with any CI system that is able to execute shell commands, but Dalek has been tested with the following CI platforms:
                             <h3>Travis CI</h3>
                             <p class="description">Running tests with Travis is as easy as stealing sweets from a baby.<br/>A basic .travis.yml to enable Dalek in your Travis install looks like this:
                             <pre><code></code></pre>
-                             <p class="description">Daleks <a href="https://github.com/dalekjs/guineapig">guineapig</a> project itself gets testes with Travis, if you are lazy, you can use this as a boilerplate.</p>
+                             <p class="description">Dalek's <a href="https://github.com/dalekjs/guineapig">guineapig</a> project runs tests with Travis. If you are lazy, you can use this as a boilerplate.</p>
                             </p>
                             <h3>drone.io</h3>
-                            <p class="description">If you think Travis was an easy one, than drone.io is like CI for dummies. Just add these 3 lines to your run configuration and be happy.
+                            <p class="description">If you think Travis was an easy one, then drone.io is like CI for dummies. Just add these 3 lines to your run configuration and be happy.
                             <pre><code></code></pre>
                             <p class="description">To see dalek@drone.io in action, please check the <a href="https://github.com/dalekjs/guineapig">guineapig</a> project.</p>
                             </p>
-                            <p class="description"><i>Be aware of, that within drone.io and TravisCI, Dalek is only cappable of running PhantomJS, because no other browsers are available there!</i></p>
+                            <p class="description"><i>Be aware of, that within drone.io and TravisCI, Dalek is only capable of running PhantomJS, because no other browsers are available there!</i></p>
                             <h3>Jenkins</h3>
-                            <p class="description">To make all the enterprise lovers happy (No, I don't mean Start Trek fans here), Dalek can output its testresults in jUnit format, using the dalek-reporter-junit. A more detailed setup guide will follow soon.</p>
+                            <p class="description">To make all the enterprise lovers happy (No, I don't mean Star Trek fans here), Dalek can output its test results in JUnit format, using dalek-reporter-junit. A more detailed setup guide will follow soon.</p>
                             </p><!--
                         --></div><!--
 
@@ -61,7 +61,7 @@
                         --><div class="grid__item one-whole"><!--
                             --><a class="nav-helper" data-name="coffeescript"></a><!--
                             --><h2>Can I write my tests in Coffeescript?</h2><!--
-                            --><p class="description">Sure. As the lovely ghosts of PhantomJS &amp; CasperJS showed us, people like to write Coffeescript for some reason. All you need to get your coffee brewing at the correct temperature is to indicate that you would like to run Coffeescript instead of JavaScript</p><!--
+                            --><p class="description">Sure. As the lovely ghosts of PhantomJS &amp; CasperJS showed us, people like to write Coffeescript for some reason. All you need to get your coffee brewing at the correct temperature is to indicate that you would like to run Coffeescript instead of JavaScript:</p><!--
                             --><pre class="dalek-shell cmd-output"><code><!--
                             --><span class="token shell-icon">$</span> <span class="token shell-dalek">dalek</span> <span class="token shell-npm">test/my_first_test.coffee</span></pre></code><!--
                         --></div><!--
@@ -70,15 +70,15 @@
                         --><div class="grid__item one-whole"><!--
                             --><a class="nav-helper" data-name="casperjs"></a><!--
                             --><h2>Should I ditch CasperJS &amp; switch to Dalek?</h2><!--
-                            --><p class="description">Not yet &amp; depending on your needs, maybe never. CasperJS is a beautiful &amp; mature tool, that does way more than just allow you to write tests. I peronally see it more like a nice API/abstraction layer for PhantomJS with a testing API on top of it. Btw.: Without Casper, Dalek wouldn't exist. The first draft of DalekJS used CasperJS as a base to driver PhantomJS (before Ghostdriver was implemented in Phantom).<br/>
-                            Also, due to the fact that the WebDriver spec misses some (in my opionion) important methods (Checking HTTP Status Codes, getting informations out of the HTTP header), Dalek can never be as powerful as Casper is. AND most important, the Casper guys do great work, appriciate that as well as I do (Dalek &lt;3 Casper)</p><!--
+                            --><p class="description">Not yet, and depending on your needs, maybe never. CasperJS is a beautiful and mature tool that does way more than just allow you to write tests. I personally see it more like a nice API/abstraction layer for PhantomJS with a testing API on top of it. By the way: Without Casper, Dalek wouldn't exist. The first draft of DalekJS used CasperJS as a base to driver PhantomJS (before Ghostdriver was implemented in Phantom).<br/>
+                            Also, due to the fact that the WebDriver spec misses some (in my opinion) important methods (e.g., checking HTTP status codes and getting information out of the HTTP headers), Dalek can never be as powerful as Casper is. AND most important, the Casper guys do great work, appreciate that as well as I do (Dalek &lt;3 Casper)</p><!--
                         --></div><!--
 
                         Canary builds
                         --><div class="grid__item one-whole"><!--
                             --><a class="nav-helper" data-name="canary"></a><!--
                             --><h2>I love the thrill, can I get the latest &amp; greatest?</h2><!--
-                            --><p class="description">Sure, Dalek modules automatically generate <i>Canary</i> builds if a push to the GitHub repository passes all the tests! Just append <i>-canary</i> to the module name when adding it to you package.json or installing it via command line.</p><!--
+                            --><p class="description">Sure, Dalek modules automatically generate <i>Canary</i> builds if a push to the GitHub repository passes all the tests! Just append <i>-canary</i> to the module name when adding it to you package.json or install it via command line.</p><!--
                             --><pre class="dalek-shell cmd-output"><code><!--
                             --><span class="token shell-icon">$</span> <span class="token shell-dalek">npm</span> <span class="token shell-npm">install dalekjs-canary</span></pre></code><!--
                             --><pre class="dalek-shell cmd-output"><code><!--
@@ -91,7 +91,7 @@
                             --><h2>What do other people say about Dalek?</h2><!--
                             --><p class="description">
                                 <ul style="list-style-type: none">
-                                    <li><a href="http://dev.jimdo.com/2013/09/24/the-jimdo-sessions-episode-3-dalek-js-with-asciidisco/" target="_blank">Jimdo Sessions</a> - <span>Some short recap of the Jimdo Sessions visit</span></li>
+                                    <li><a href="http://dev.jimdo.com/2013/09/24/the-jimdo-sessions-episode-3-dalek-js-with-asciidisco/" target="_blank">Jimdo Sessions</a> - <span>A short recap of the Jimdo Sessions visit</span></li>
                                     <li><a href="http://kmturley.blogspot.de/2013/10/automated-testing-using-javascript.html" target="_blank">Creative technologist</a> - <span>A Dalek demo project</span></li>
                                     <li><a href="http://dvolvr.davidwaterston.com/2013/08/05/dalekjs-a-cross-platform-javascript-based-alternative-to-selenium" target="_blank">dvolvr</a> - <span>Summary of Dalek features</span></li>
                                 </ul>
