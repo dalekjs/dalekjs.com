@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>DalekJS - Documentation - Driver Sauce Labs</title>
-        <meta name="description" content="DalekJS - Documentation - Driver Sauce Labs">
+        <title>DalekJS - Documentation - Browser - Internet Explorer</title>
+        <meta name="description" content="DalekJS - Documentation - Browser - Internet Explorer">
         <meta name="viewport" content="width=device-width">
 
         <!-- icon-ish stuff -->
@@ -28,7 +28,7 @@
 
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Friday, November 28th, 2014, 2:54:14 PM"><!--
+    <body data-buildtime="Sunday, March 30th, 2014, 5:21:12 PM"><!--
 
         --><div class="grid"><!--
 
@@ -54,84 +54,48 @@
                         --><option  value="../pages/merch.html">Merch</option><!--
                     --></select><!--
                 --></nav><!--
-            --></header><div class="grid__item one-whole"><div class="grid__item one-whole"><h1 class="topic">Sauce</h1><p> This module is a driver plugin for <a href="//github.com/dalekjs/dalek">DalekJS</a>.
- It connects Daleks testsuite with the remote testing environment of <a href="https://saucelabs.com">Sauce Labs</a>.</p>
+            --></header><div class="grid__item one-whole"><div class="grid__item one-whole"><h1 class="topic">InternetExplorer</h1><p> This module is a browser plugin for <a href="//github.com/dalekjs/dalek">DalekJS</a>.
+ It provides all a WebDriverServer &amp; browser launcher for Internet Explorer.</p>
 
-<p> The driver can be installed with the following command:</p>
-
-<p> <pre><code class="language-bash">
- $ npm install dalek-driver-sauce --save-dev
- </code></pre></p>
-
-<p> You can use the driver by adding a config option to the your <a href="/docs/config.html">Dalekfile</a></p>
-
-<p> <pre><code class="language-javascript">
- &quot;driver&quot;: [&quot;sauce&quot;]
- </code></pre></p>
-
-<p> Or you can tell Dalek that it should run your tests via sauces service via the command line:</p>
+<p> The browser plugin can be installed with the following command:</p>
 
 <p> <pre><code class="language-bash">
- $ dalek mytest.js -d sauce
+ $ npm install dalek-browser-ie --save-dev
  </code></pre></p>
 
-<p> In order to run your tests within the Sauce Labs infrastructure, you must add your sauce username &amp; key 
- to your dalek configuration. Those two parameters must be set in order to get this driver up &amp; running.
- You can specifiy them within your <a href="/docs/config.html">Dalekfile</a> like so:</p>
+<p> You can use the browser plugin by adding a config option to the your Dalekfile</p>
 
 <p> <pre><code class="language-javascript">
- &quot;driver.sauce&quot;: {
-   &quot;user&quot;: &quot;dalekjs&quot;,
-   &quot;key&quot;: &quot;aaaaaa-1234-567a-1abc-1br6d9f68689&quot;
- }
+ &quot;browsers&quot;: [&quot;IE&quot;]
  </code></pre></p>
 
-<p> It is also possible to specify a set of other extra saucy parameters like <code>name</code> &amp; <code>tags</code>:</p>
+<p> Or you can tell Dalek that it should test in this browser via the command line:</p>
 
-<p> <pre><code class="language-javascript">
- &quot;driver.sauce&quot;: {
-   &quot;user&quot;: &quot;dalekjs&quot;,
-   &quot;key&quot;: &quot;aaaaaa-1234-567a-1abc-1br6d9f68689&quot;,
-   &quot;name&quot;: &quot;Guineapig&quot;,
-   &quot;tags&quot;: [&quot;dalek&quot;, &quot;testproject&quot;]
- }
+<p> <pre><code class="language-bash">
+ $ dalek mytest.js -b IE
  </code></pre></p>
 
-<p> If you would like to have a more control over the browser/OS combinations that are available, you are able 
- to configure you custom combinations:</p>
+<p> The Webdriver Server tries to open Port 5555 by default,
+ if this port is blocked, it tries to use a port between 5555 &amp; 5564
+ You can specifiy a different port from within your <a href="/pages/config.html">Dalekfile</a> like so:</p>
 
 <p> <pre><code class="language-javascript">
- &quot;browsers&quot;: [{
-   &quot;chrome&quot;: {
-     &quot;platform&quot;: &quot;OS X 10.6&quot;,
-     &quot;actAs&quot;: &quot;chrome&quot;,
-     &quot;version&quot;: 27
-   },
-   &quot;chromeWin&quot;: {
-     &quot;platform&quot;: &quot;Windows 7&quot;,
-     &quot;actAs&quot;: &quot;chrome&quot;,
-     &quot;version&quot;: 27
-   },
-   &quot;chromeLinux&quot;: {
-     &quot;platform&quot;: &quot;Linux&quot;,
-     &quot;actAs&quot;: &quot;chrome&quot;,
-     &quot;version&quot;: 26
+ &quot;browsers&quot;: {
+   &quot;ie&quot;: {
+     &quot;port&quot;: 6555 
    }
+ }
  </code></pre></p>
 
-<p> You can then call your custom browsers like so:</p>
-
-<p> <pre><code class="language-bash">
- $ dalek mytest.js -d sauce -b chrome,chromeWin,chromeLinux
- </code></pre></p>
-
-<p> or you can define them in your Dalekfile:</p>
+<p> It is also possible to specify a range of ports:</p>
 
 <p> <pre><code class="language-javascript">
- &quot;browser&quot;: [&quot;chrome&quot;, &quot;chromeWin&quot;, &quot;chromeLinux&quot;]
- </code></pre></p>
-
-<p> A list of all available browser/OS combinations, can be found <a href="https://saucelabs.com/docs/platforms">here</a>.</p></div></div></div><!--
+ &quot;browsers&quot;: {
+   &quot;ie&quot;: {
+     &quot;portRange&quot;: [6100, 6120] 
+   }
+ }
+ </code></pre></p></div></div></div><!--
 
             Footer
             --><footer  class="grid__item one-whole footer"><!--
