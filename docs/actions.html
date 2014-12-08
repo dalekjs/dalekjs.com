@@ -28,7 +28,7 @@
 
         <link href='//fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
     </head>
-    <body data-buildtime="Monday, December 8th, 2014, 2:16:47 PM"><!--
+    <body data-buildtime="Monday, December 8th, 2014, 2:24:30 PM"><!--
 
         --><div class="grid"><!--
 
@@ -177,23 +177,23 @@
 
 <ul><li><code>:browser</code> - The browser name (e.g. &#39;Chrome&#39;, &#39;Safari&#39;, &#39;Firefox&#39;, etc.)</li><li><code>:version</code> -  The browser version (e.g. &#39;10<em>0&#39;, &#39;23</em>11_5&#39;, etc.)</li><li><code>:os</code> - The operating system (e.g. <code>OSX</code>, <code>Windows</code>, <code>Linux</code>)</li><li><code>:osVersion</code> - The operating system version (e.g <code>XP</code>, <code>7</code>, <code>10_8</code>, etc.)</li><li><code>:viewport</code> - The current viewport in pixels (e.g. <code>w1024_h768</code>)</li><li><code>:timestamp</code> - UNIX like timestapm (e.g. <code>637657345</code>)</li><li><code>:date</code> - Current date in format MM<em>DD</em>YYYY (e.g. <code>12_24_2013</code>)</li><li><p><code>:datetime</code> - Current datetime in format MM<em>DD</em>YYYY<em>HH</em>mm_ss (e.g. <code>12_24_2013_14_55_23</code>)</p><p><pre><code class="language-javascript">
 // creates &#39;my/folder/my_file.png&#39;
-test.screenshot(&#39;my/folder/my_file&#39;);
+test.screenshot(&#39;my/folder/my_file.png&#39;);
 // creates &#39;my/page/in/safari/homepage.png&#39;
-test.screenshot(&#39;my/page/in/:browser/homepage&#39;);
+test.screenshot(&#39;my/page/in/:browser/homepage.png&#39;);
 // creates &#39;my/page/in/safari_6_0_1/homepage.png&#39;
-test.screenshot(&#39;my/page/in/:browser_:version/homepage&#39;);
+test.screenshot(&#39;my/page/in/:browser_:version/homepage.png&#39;);
 // creates &#39;my/page/in/safari_6_0_1/on/osx/homepage.png&#39;
-test.screenshot(&#39;my/page/in/:browser_:version/on/:os/homepage&#39;);
+test.screenshot(&#39;my/page/in/:browser_:version/on/:os/homepage.png&#39;);
 // creates &#39;my/page/in/safari_6_0_1/on/osx_10_8/homepage.png&#39;
-test.screenshot(&#39;my/page/in/:browser_:version/on/:os_:osVersion/homepage&#39;);
+test.screenshot(&#39;my/page/in/:browser_:version/on/:os_:osVersion/homepage.png&#39;);
 // creates &#39;my/page/at/w1024_h768/homepage.png&#39;
-test.screenshot(&#39;my/page/at/:viewport/homepage&#39;);
+test.screenshot(&#39;my/page/at/:viewport/homepage.png&#39;);
 // creates &#39;my/page/at/637657345/homepage.png&#39;
-test.screenshot(&#39;my/page/in_time/:timestamp/homepage&#39;);
+test.screenshot(&#39;my/page/in_time/:timestamp/homepage.png&#39;);
 // creates &#39;my/page/at/12_24_2013/homepage.png&#39;
-test.screenshot(&#39;my/page/in_time/:date/homepage&#39;);
+test.screenshot(&#39;my/page/in_time/:date/homepage.png&#39;);
 // creates &#39;my/page/at/12_24_2013_14_55_23/homepage.png&#39;
-test.screenshot(&#39;my/page/in_time/:datetime/homepage&#39;);
+test.screenshot(&#39;my/page/in_time/:datetime/homepage.png&#39;);
 </code></pre></p></li></ul><a class="nav-helper" data-name="meth-wait"></a><h2 class="method"> .wait</h2><p> Pause steps suite execution for a given amount of time, and optionally execute a step on done.</p>
 
 <p> This makes sense, if you have a ticker for example, tht scrolls like every ten seconds
