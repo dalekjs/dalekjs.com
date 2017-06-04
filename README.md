@@ -1,3 +1,11 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
+# DalekJS is not maintained any longer :cry:
+
+We recommend [TestCafé](http://devexpress.github.io/testcafe/) for your automated browser testing needs.
+
+---
+
 # [DalekJS Homepage](http://dalekjs.com)
 
 This is the repo that should be forked when you want to edit Daleks Homepage.
